@@ -5,6 +5,10 @@ module top #(
     output logic [31:0] a0
 );
 
+// Temporary universal signals (remove these once pipeline registers are added)
+logic PCsrc;
+logic [WIDTH-1:0] instr, PC, ImmOp;
+
 // // // Fetch stage // // //
 
 logic PCsrc_E;
@@ -30,7 +34,7 @@ assign PC = PC_F;
 // // // Decode stage // // //
 
 // Control flags
-logic ALUsrc, PCsrc, RegWriteSrc, RegWrite, ImmSrc;
+logic ALUsrc, RegWriteSrc, RegWrite, ImmSrc;
 logic [2:0] ALUctrl;
 
 // Register indexes
@@ -38,7 +42,6 @@ logic [4:0] rs1, rs2, rd;
 
 // Other values
 logic EQ;
-logic [31:0] ImmOp, instr, PC;
 
 // Bus splitting
 assign rs2 = instr[24:20];
