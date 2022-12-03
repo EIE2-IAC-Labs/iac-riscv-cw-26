@@ -1,7 +1,33 @@
-module top (
+module top #(
+    parameter WIDTH = 32
+) (
     input logic clk, rst,
     output logic [31:0] a0
 );
+
+// // // Fetch stage // // //
+
+logic PCsrc_E;
+logic [WIDTH-1:0] PCTarget_E, instr_F, PC_F, PCPlus4_F;
+
+top_fetch top_fetch(
+    .clk(clk),
+    .rst(rst),
+    .PCsrc_E(PCsrc_E),
+    .PCTarget_E(PCTarget_E),
+    .instr_F(instr_F),
+    .PC_F(PC_F),
+    .PCPlus4_F(PCPlus4_F)
+);
+
+// Temporary signal assignment
+assign PCsrc_E = PCsrc;
+assign PCTarget_E = PC_F + (ImmOp << 1);
+assign instr = instr_F;
+assign PC = PC_F;
+
+// // // End of fetch stage // // //
+// // // Decode stage // // //
 
 // Control flags
 logic ALUsrc, PCsrc, RegWriteSrc, RegWrite, ImmSrc;
@@ -43,7 +69,5 @@ top_control_mem_extend top_cme(
     .PCsrc(PCsrc),
     .RegWriteSrc(RegWriteSrc),
     .ImmOp(ImmOp));
-
-top_PC top_PC(clk, rst, ImmOp, PCsrc, PC);
 
 endmodule
