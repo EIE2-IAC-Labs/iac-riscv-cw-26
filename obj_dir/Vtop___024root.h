@@ -15,30 +15,25 @@ class Vtop___024root final : public VerilatedModule {
     // DESIGN SPECIFIC STATE
     VL_IN8(clk,0,0);
     VL_IN8(rst,0,0);
+    CData/*0:0*/ top__DOT__ImmSrc;
     CData/*7:0*/ top__DOT__top_fetch__DOT__instr_mem__DOT__byte1;
     CData/*7:0*/ top__DOT__top_fetch__DOT__instr_mem__DOT__byte2;
     CData/*7:0*/ top__DOT__top_fetch__DOT__instr_mem__DOT__byte3;
     CData/*7:0*/ top__DOT__top_fetch__DOT__instr_mem__DOT__byte4;
-    CData/*7:0*/ top__DOT__top_cme__DOT__InstructionMemory__DOT__byte1;
-    CData/*7:0*/ top__DOT__top_cme__DOT__InstructionMemory__DOT__byte2;
-    CData/*7:0*/ top__DOT__top_cme__DOT__InstructionMemory__DOT__byte3;
-    CData/*7:0*/ top__DOT__top_cme__DOT__InstructionMemory__DOT__byte4;
     CData/*0:0*/ __Vclklast__TOP__clk;
-    SData/*11:0*/ top__DOT__top_cme__DOT__SignExtend__DOT__imm;
+    SData/*11:0*/ top__DOT__top_decode__DOT__SignExtend__DOT__imm;
     VL_OUT(a0,31,0);
+    IData/*31:0*/ top__DOT__ALUResult;
     IData/*31:0*/ top__DOT__instr_F;
     IData/*31:0*/ top__DOT__PC_F;
-    IData/*31:0*/ top__DOT__ImmOp;
-    IData/*31:0*/ top__DOT__instr;
+    IData/*31:0*/ top__DOT__RD1_D;
+    IData/*31:0*/ top__DOT__ImmExt_D;
     IData/*31:0*/ top__DOT__top_fetch__DOT__next_PC;
-    IData/*31:0*/ top__DOT__aluTop__DOT__ALUout;
-    IData/*31:0*/ top__DOT__aluTop__DOT__ALUop1;
+    IData/*31:0*/ top__DOT__top_decode__DOT__control_unit__DOT__instr;
     IData/*31:0*/ top__DOT__aluTop__DOT__ALUop2;
-    IData/*31:0*/ top__DOT__top_cme__DOT__ControlUnit__DOT__instr;
     VlUnpacked<CData/*7:0*/, 28> top__DOT__top_fetch__DOT__instr_mem__DOT__rom_array;
-    VlUnpacked<IData/*31:0*/, 32> top__DOT__aluTop__DOT__RegFile__DOT__reg_array;
+    VlUnpacked<IData/*31:0*/, 32> top__DOT__top_decode__DOT__register__DOT__reg_array;
     VlUnpacked<IData/*31:0*/, 10000> top__DOT__aluTop__DOT__ram__DOT__ram_array;
-    VlUnpacked<CData/*7:0*/, 28> top__DOT__top_cme__DOT__InstructionMemory__DOT__rom_array;
     VlUnpacked<CData/*0:0*/, 2> __Vm_traceActivity;
 
     // INTERNAL VARIABLES
