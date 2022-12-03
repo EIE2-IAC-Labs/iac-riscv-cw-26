@@ -47,6 +47,7 @@ logic ALUsrc_D, PCsrc_D;
 logic [4:0] Rd_D, Rd_W;
 logic [WIDTH-1:0] instr_D, RD1_D, RD2_D, ImmExt_D, PC_D, PCPlus4_D, result_W;
 
+// TODO Split the control unit between the decode and execute stages such that PCsrc is set in the execute stage (for evaluating branches).
 top_decode top_decode(
     .clk(clk),
     .rst(rst),
@@ -81,7 +82,7 @@ assign RD2 = RD2_D;
 assign ImmOp = ImmExt_D;
 assign PC_D = PC;
 assign PCPlus4_D = PCPlus4_F;
-assign result_W = resultSrc ? ReadData : ALUResult;
+assign result_W = resultSrc ? ReadData : ALUResult; // TODO Move this conditional to the writeback stage.
 assign PCsrc = PCsrc_D;
 
 // Other values
