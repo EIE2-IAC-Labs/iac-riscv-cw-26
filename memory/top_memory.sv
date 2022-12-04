@@ -3,7 +3,7 @@ module top_memory #(
 ) (
     input logic clk,
     input logic rst,
-    input logic [WIDTH-1:0] memWrite_M,
+    input logic memWrite_M,
     input logic [WIDTH-1:0] ALUResult_M,
     input logic [WIDTH-1:0] writeData_M,
     output logic [WIDTH-1:0] readData_M

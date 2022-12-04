@@ -19,7 +19,7 @@ always_comb begin
     a0 = reg_array[10]; // a0 is register 10, NOT register 0
 end
 
-always_ff @(posedge clk) begin
+always_ff @(negedge clk) begin // Writeback stage happens on negative edge of clock to reduce number of cycles taken.
     if (WE3) reg_array[rd] <= WD3;
 end
 

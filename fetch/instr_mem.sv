@@ -7,7 +7,7 @@ module instr_mem #(
     output logic [INSTRUCTION_WIDTH-1:0] RD
 );
 
-logic [DATA_WIDTH-1:0] rom_array [27:0];
+logic [DATA_WIDTH-1:0] rom_array [139:0];
 logic [DATA_WIDTH-1:0] byte1;
 logic [DATA_WIDTH-1:0] byte2;
 logic [DATA_WIDTH-1:0] byte3;
