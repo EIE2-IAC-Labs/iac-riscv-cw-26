@@ -77,10 +77,11 @@ VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
                                                | (((IData)(vlSelf->top__DOT__top_fetch__DOT__instr_mem__DOT__byte3) 
                                                    << 8U) 
                                                   | (IData)(vlSelf->top__DOT__top_fetch__DOT__instr_mem__DOT__byte4))));
-    vlSelf->top__DOT__top_fetch__DOT__next_PC = (((1U 
-                                                   == (IData)(vlSelf->top__DOT__branch_E)) 
-                                                  & (vlSelf->top__DOT__RD1_E 
-                                                     != vlSelf->top__DOT__top_execute__DOT__ALUop2))
+    vlSelf->top__DOT__top_fetch__DOT__next_PC = (((IData)(vlSelf->top__DOT__jump_E) 
+                                                  | ((1U 
+                                                      == (IData)(vlSelf->top__DOT__branch_E)) 
+                                                     & (vlSelf->top__DOT__RD1_E 
+                                                        != vlSelf->top__DOT__top_execute__DOT__ALUop2)))
                                                   ? 
                                                  (vlSelf->top__DOT__PC_E 
                                                   + 
@@ -114,6 +115,7 @@ VL_ATTR_COLD void Vtop___024root___eval_initial(Vtop___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_initial\n"); );
     // Body
     Vtop___024root___initial__TOP__0(vlSelf);
+    vlSelf->__Vm_traceActivity[2U] = 1U;
     vlSelf->__Vm_traceActivity[1U] = 1U;
     vlSelf->__Vm_traceActivity[0U] = 1U;
     vlSelf->__Vclklast__TOP__clk = vlSelf->clk;
@@ -125,6 +127,7 @@ VL_ATTR_COLD void Vtop___024root___eval_settle(Vtop___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_settle\n"); );
     // Body
     Vtop___024root___settle__TOP__0(vlSelf);
+    vlSelf->__Vm_traceActivity[2U] = 1U;
     vlSelf->__Vm_traceActivity[1U] = 1U;
     vlSelf->__Vm_traceActivity[0U] = 1U;
 }
@@ -145,36 +148,35 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->a0 = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__instr_F = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__PC_F = VL_RAND_RESET_I(32);
-    vlSelf->top__DOT__PCsrc_D = VL_RAND_RESET_I(1);
     vlSelf->top__DOT__instr_D = VL_RAND_RESET_I(32);
-    vlSelf->top__DOT__ImmExt_D = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__PC_D = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__PCPlus4_D = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT__ImmExt_D = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__decode_execute_reg__ALUctrl_E = VL_RAND_RESET_I(3);
-    vlSelf->top__DOT__regWrite_E = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT__resultSrc_E = VL_RAND_RESET_I(2);
-    vlSelf->top__DOT__memWrite_E = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT__jump_E = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT__branch_E = VL_RAND_RESET_I(3);
-    vlSelf->top__DOT__Rd_E = VL_RAND_RESET_I(5);
     vlSelf->top__DOT__RD1_E = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__RD2_E = VL_RAND_RESET_I(32);
-    vlSelf->top__DOT__PC_E = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__ImmExt_E = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__PCPlus4_E = VL_RAND_RESET_I(32);
-    vlSelf->top__DOT__regWrite_M = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT__resultSrc_M = VL_RAND_RESET_I(2);
-    vlSelf->top__DOT__memWrite_M = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT__Rd_M = VL_RAND_RESET_I(5);
+    vlSelf->top__DOT__PC_E = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT__regWrite_E = VL_RAND_RESET_I(1);
+    vlSelf->top__DOT__memWrite_E = VL_RAND_RESET_I(1);
+    vlSelf->top__DOT__jump_E = VL_RAND_RESET_I(1);
+    vlSelf->top__DOT__resultSrc_E = VL_RAND_RESET_I(2);
+    vlSelf->top__DOT__branch_E = VL_RAND_RESET_I(3);
+    vlSelf->top__DOT__Rd_E = VL_RAND_RESET_I(5);
     vlSelf->top__DOT__ALUResult_M = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__writeData_M = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__PCPlus4_M = VL_RAND_RESET_I(32);
-    vlSelf->top__DOT__regWrite_W = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT__resultSrc_W = VL_RAND_RESET_I(2);
-    vlSelf->top__DOT__Rd_W = VL_RAND_RESET_I(5);
+    vlSelf->top__DOT__regWrite_M = VL_RAND_RESET_I(1);
+    vlSelf->top__DOT__memWrite_M = VL_RAND_RESET_I(1);
+    vlSelf->top__DOT__resultSrc_M = VL_RAND_RESET_I(2);
+    vlSelf->top__DOT__Rd_M = VL_RAND_RESET_I(5);
     vlSelf->top__DOT__ALUResult_W = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__readData_W = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__PCPlus4_W = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT__regWrite_W = VL_RAND_RESET_I(1);
+    vlSelf->top__DOT__resultSrc_W = VL_RAND_RESET_I(2);
+    vlSelf->top__DOT__Rd_W = VL_RAND_RESET_I(5);
     vlSelf->top__DOT__top_fetch__DOT__next_PC = VL_RAND_RESET_I(32);
     for (int __Vi0=0; __Vi0<140; ++__Vi0) {
         vlSelf->top__DOT__top_fetch__DOT__instr_mem__DOT__rom_array[__Vi0] = VL_RAND_RESET_I(8);
@@ -193,7 +195,7 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
         vlSelf->top__DOT__top_memory__DOT__ram__DOT__ram_array[__Vi0] = VL_RAND_RESET_I(32);
     }
     vlSelf->top__DOT__top_memory__DOT__ram__DOT____Vlvbound_h844a59a0__0 = VL_RAND_RESET_I(32);
-    for (int __Vi0=0; __Vi0<2; ++__Vi0) {
+    for (int __Vi0=0; __Vi0<3; ++__Vi0) {
         vlSelf->__Vm_traceActivity[__Vi0] = VL_RAND_RESET_I(1);
     }
 }

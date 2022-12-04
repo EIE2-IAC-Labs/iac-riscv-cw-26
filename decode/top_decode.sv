@@ -3,7 +3,6 @@ module top_decode #(
 ) (
     input logic clk,
     input logic rst,
-    input logic EQ,
     input logic [WIDTH-1:0] instr_D,
     input logic regWrite_W,
     input logic [4:0] Rd_W,
@@ -36,7 +35,6 @@ register register (
 );
 
 control_unit control_unit(
-    .EQ(EQ),
     .funct3(instr_D[14:12]),
     .opcode(instr_D[6:0]),
     .RegWrite(regWrite_D),

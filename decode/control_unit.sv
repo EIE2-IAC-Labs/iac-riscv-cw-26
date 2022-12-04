@@ -1,6 +1,5 @@
 module control_unit #(
 ) (
-    input logic EQ,
     input logic [14:12] funct3,
     input logic [6:0] opcode,
     output logic RegWrite,
