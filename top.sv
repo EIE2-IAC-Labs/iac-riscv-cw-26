@@ -6,20 +6,20 @@ module top #(
 );
 
 // Temporary universal signals (remove these once pipeline registers are added)
-logic PCsrc, ALUsrc, resultSrc, regWrite, ImmSrc;
+logic PCsrc, ALUsrc, resultSrc, regWrite, ImmSrc, EQ, memWrite, jump;
+logic [2:0] branch;
 logic [3:0] ALUctrl;
 logic [4:0] Rd;
-logic [WIDTH-1:0] instr, PC, ImmOp, RD1, RD2, PCPlus4, ALUResult, ReadData;
+logic [WIDTH-1:0] instr, PC, ImmOp, RD1, RD2, PCPlus4, ALUResult, readData, writeData;
 
 // // // Fetch stage // // //
 
-logic PCsrc_E;
-logic [WIDTH-1:0] PCTarget_E, instr_F, PC_F, PCPlus4_F;
+logic [WIDTH-1:0] instr_F, PC_F, PCPlus4_F;
 
 top_fetch top_fetch(
     .clk(clk),
     .rst(rst),
-    .PCsrc_E(PCsrc_E),
+    .PCsrc_E(PCsrc),
     .PCTarget_E(PCTarget_E),
     .instr_F(instr_F),
     .PC_F(PC_F),
@@ -27,8 +27,6 @@ top_fetch top_fetch(
 );
 
 // Temporary signal assignments
-assign PCsrc_E = PCsrc;
-assign PCTarget_E = PC_F + (ImmOp << 1);
 assign instr = instr_F;
 assign PC = PC_F;
 assign PCPlus4 = PCPlus4_F;
@@ -39,15 +37,14 @@ assign PCPlus4 = PCPlus4_F;
 
 logic regWrite_D, regWrite_W;
 logic [1:0] resultSrc_D;
-// logic memWrite_D;
-// logic jump_D;
-// logic [2:0] branch_D;
+logic memWrite_D;
+logic jump_D;
+logic [2:0] branch_D;
 logic [3:0] ALUctrl_D;
 logic ALUsrc_D, PCsrc_D;
 logic [4:0] Rd_D, Rd_W;
 logic [WIDTH-1:0] instr_D, RD1_D, RD2_D, ImmExt_D, PC_D, PCPlus4_D, result_W;
 
-// TODO Split the control unit between the decode and execute stages such that PCsrc is set in the execute stage (for evaluating branches).
 top_decode top_decode(
     .clk(clk),
     .rst(rst),
@@ -58,14 +55,14 @@ top_decode top_decode(
     .result_W(result_W),
     .regWrite_D(regWrite_D),
     .resultSrc_D(resultSrc_D),
-    .PCsrc_D(PCsrc_D),
     .ALUctrl_D(ALUctrl_D),
     .ALUsrc_D(ALUsrc_D),
     .RD1_D(RD1_D),
     .RD2_D(RD2_D),
     .Rd_D(Rd_D),
     .ImmExt_D(ImmExt_D),
-    .a0(a0)
+    .a0(a0),
+    .branch_D(branch_D)
 );
 
 // Temporary signal assignments
@@ -82,23 +79,68 @@ assign RD2 = RD2_D;
 assign ImmOp = ImmExt_D;
 assign PC_D = PC;
 assign PCPlus4_D = PCPlus4_F;
-assign result_W = resultSrc ? ReadData : ALUResult; // TODO Move this conditional to the writeback stage.
+assign result_W = resultSrc ? readData : ALUResult; // TODO Move this conditional to the writeback stage.
 assign PCsrc = PCsrc_D;
+assign memWrite = memWrite_D;
+assign jump = jump_D;
+assign branch = branch_D;
 
-// Other values
-logic EQ;
+// // // End of decode stage // // //
 
-aluTop aluTop(
-    .clk(clk), 
-    .ALUsrc(ALUsrc),
-    .ALUctrl(ALUctrl),
-    .RD1(RD1),
-    .RD2(RD2),
-    .ImmOp(ImmOp),
+// // // Execute stage // // //
+
+logic regWrite_E;
+logic [1:0] resultSrc_E;
+logic memWrite_E;
+logic jump_E;
+logic [2:0] branch_E;
+logic [3:0] ALUctrl_E;
+logic ALUsrc_E;
+logic PCsrc_E;
+logic [4:0] Rd_E;
+logic [WIDTH-1:0] RD1_E, RD2_E, PC_E, ImmExt_E, PCPlus4_E, ALUResult_E, writeData_E, PCTarget_E;
+
+top_execute top_execute(
+    .clk(clk),
+    .ALUctrl(ALUctrl_E),
+    .ALUsrc(ALUsrc_E),
+    .RD1(RD1_E),
+    .RD2(RD2_E),
+    .ImmOp(ImmExt_E),
     .EQ(EQ),
     .a0(a0),
-    .ALUout(ALUResult),
-    .memOut(ReadData)
-    );
+    .ALUout(ALUResult_E)
+);
+
+// Temporary signal assignments
+assign regWrite_E = regWrite;
+assign resultSrc_E = resultSrc;
+assign memWrite_E = memWrite;
+assign jump_E = jump;
+assign branch_E = branch;
+assign ALUctrl_E = ALUctrl;
+assign ALUsrc_E = ALUsrc;
+assign PCsrc_E = branch == 3'b001 && EQ == 0; // TODO Move this into a dedicated 'branch control unit' in the top execute schematic
+assign PCsrc = PCsrc_E;
+assign Rd_E = Rd;
+assign RD1_E = RD1;
+assign RD2_E = RD2;
+assign PC_E = PC;
+assign ImmExt_E = ImmOp;
+assign PCPlus4_E = PCPlus4;
+assign ALUResult = ALUResult_E;
+assign PCTarget_E = PC_E + (ImmOp << 1); // TODO Move this into the top execute stage component
+
+// // // End of execute stage // // //
+
+// Temporary memory logic for testing execute stage
+ram ram(
+    .we(memWrite),
+    .wd(writeData),
+    .a(ALUResult),
+    .clk(clk),
+    .rd(readData)
+);
 
 endmodule
+
