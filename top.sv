@@ -81,9 +81,12 @@ assign PC_D = PC;
 assign PCPlus4_D = PCPlus4_F;
 assign result_W = resultSrc ? readData : ALUResult; // TODO Move this conditional to the writeback stage.
 assign PCsrc = PCsrc_D;
-assign memWrite = memWrite_D;
-assign jump = jump_D;
 assign branch = branch_D;
+// TODO Drive the below signals in the control unit.
+assign memWrite_D = 0;
+assign memWrite = memWrite_D;
+assign jump_D = 0;
+assign jump = jump_D;
 
 // // // End of decode stage // // //
 
@@ -120,7 +123,7 @@ assign jump_E = jump;
 assign branch_E = branch;
 assign ALUctrl_E = ALUctrl;
 assign ALUsrc_E = ALUsrc;
-assign PCsrc_E = branch == 3'b001 && EQ == 0; // TODO Move this into a dedicated 'branch control unit' in the top execute schematic
+assign PCsrc_E = branch == 3'b001 && EQ == 0; // TODO Move this into a dedicated 'branch control unit' in top_execute
 assign PCsrc = PCsrc_E;
 assign Rd_E = Rd;
 assign RD1_E = RD1;
@@ -129,18 +132,41 @@ assign PC_E = PC;
 assign ImmExt_E = ImmOp;
 assign PCPlus4_E = PCPlus4;
 assign ALUResult = ALUResult_E;
-assign PCTarget_E = PC_E + (ImmOp << 1); // TODO Move this into the top execute stage component
+assign PCTarget_E = PC_E + (ImmOp << 1); // TODO Move this into top_execute
+assign writeData_E = RD2_E;
+assign writeData = writeData_E;
 
 // // // End of execute stage // // //
 
-// Temporary memory logic for testing execute stage
-ram ram(
-    .we(memWrite),
-    .wd(writeData),
-    .a(ALUResult),
+// // // Memory stage // // //
+
+logic regWrite_M;
+logic [1:0] resultSrc_M;
+logic memWrite_M;
+logic [4:0] Rd_M;
+logic [WIDTH-1:0] ALUResult_M, writeData_M, PCPlus4_M, readData_M;
+
+top_memory top_memory(
     .clk(clk),
-    .rd(readData)
+    .rst(rst),
+    .memWrite_M(memWrite_M),
+    .ALUResult_M(ALUResult_M),
+    .writeData_M(writeData_M),
+    .readData_M(readData_M)
 );
+
+// Temporary signal assignments
+assign regWrite_M = regWrite;
+assign resultSrc_M = resultSrc;
+assign memWrite_M = memWrite;
+assign Rd_M = Rd;
+assign ALUResult_M = ALUResult;
+assign writeData_M = writeData;
+assign PCPlus4_M = PCPlus4;
+assign readData = readData_M;
+
+// // // End of memory stage // // //
+
 
 endmodule
 
