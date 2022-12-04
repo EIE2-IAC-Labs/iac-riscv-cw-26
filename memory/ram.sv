@@ -12,7 +12,7 @@ logic [ADDRESS_LENGTH-1:0] ram_array [9999:0];
 
 initial begin
     $display("Loading data memory.");
-    $readmemh("alu/dataram.mem", ram_array);
+    $readmemh("memory/dataram.mem", ram_array);
 end
 
 assign rd = ram_array[a];

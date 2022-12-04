@@ -35,15 +35,15 @@ assign PCPlus4 = PCPlus4_F;
 
 // // // Decode stage // // //
 
-logic regWrite_D, regWrite_W;
+logic regWrite_D;
 logic [1:0] resultSrc_D;
 logic memWrite_D;
 logic jump_D;
 logic [2:0] branch_D;
 logic [3:0] ALUctrl_D;
 logic ALUsrc_D, PCsrc_D;
-logic [4:0] Rd_D, Rd_W;
-logic [WIDTH-1:0] instr_D, RD1_D, RD2_D, ImmExt_D, PC_D, PCPlus4_D, result_W;
+logic [4:0] Rd_D;
+logic [WIDTH-1:0] instr_D, RD1_D, RD2_D, ImmExt_D, PC_D, PCPlus4_D;
 
 top_decode top_decode(
     .clk(clk),
@@ -67,19 +67,16 @@ top_decode top_decode(
 
 // Temporary signal assignments
 assign regWrite = regWrite_D;
-assign regWrite_W = regWrite;
 assign resultSrc = resultSrc_D;
 assign ALUctrl = ALUctrl_D;
 assign ALUsrc = ALUsrc_D;
 assign Rd = Rd_D;
-assign Rd_W = Rd;
 assign instr_D = instr;
 assign RD1 = RD1_D;
 assign RD2 = RD2_D;
 assign ImmOp = ImmExt_D;
 assign PC_D = PC;
 assign PCPlus4_D = PCPlus4_F;
-assign result_W = resultSrc ? readData : ALUResult; // TODO Move this conditional to the writeback stage.
 assign PCsrc = PCsrc_D;
 assign branch = branch_D;
 // TODO Drive the below signals in the control unit.
@@ -167,6 +164,29 @@ assign readData = readData_M;
 
 // // // End of memory stage // // //
 
+// // // Writeback stage // // //
+
+logic regWrite_W;
+logic [1:0] resultSrc_W;
+logic [4:0] Rd_W;
+logic [WIDTH-1:0] ALUResult_W, readData_W, PCPlus4_W, result_W;
+top_writeback top_writeback(
+    .ALUResult_W(ALUResult_W),
+    .readData_W(readData_W),
+    .PCPlus4_W(PCPlus4_W),
+    .resultSrc_W(resultSrc_W),
+    .result_W(result_W)
+);
+
+// Temporary signal assignments
+assign regWrite_W = regWrite;
+assign resultSrc_W = resultSrc;
+assign Rd_W = Rd;
+assign ALUResult_W = ALUResult;
+assign readData_W = readData;
+assign PCPlus4_W = PCPlus4;
+
+// // // End of writeback stage // // //
 
 endmodule
 

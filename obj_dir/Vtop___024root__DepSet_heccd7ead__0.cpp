@@ -21,11 +21,22 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
     if (((1U == vlSelf->top__DOT__top_decode__DOT__control_unit__DOT__instr) 
          | (3U == vlSelf->top__DOT__top_decode__DOT__control_unit__DOT__instr))) {
         __Vdlyvval__top__DOT__top_decode__DOT__register__DOT__reg_array__v0 
-            = ((3U == vlSelf->top__DOT__top_decode__DOT__control_unit__DOT__instr)
-                ? ((0x270fU >= (0x3fffU & vlSelf->top__DOT__ALUResult_E))
-                    ? vlSelf->top__DOT__top_memory__DOT__ram__DOT__ram_array
-                   [(0x3fffU & vlSelf->top__DOT__ALUResult_E)]
-                    : 0U) : vlSelf->top__DOT__ALUResult_E);
+            = ((3U != vlSelf->top__DOT__top_decode__DOT__control_unit__DOT__instr)
+                ? vlSelf->top__DOT__ALUResult_E : (
+                                                   (3U 
+                                                    == vlSelf->top__DOT__top_decode__DOT__control_unit__DOT__instr)
+                                                    ? 
+                                                   ((0x270fU 
+                                                     >= 
+                                                     (0x3fffU 
+                                                      & vlSelf->top__DOT__ALUResult_E))
+                                                     ? 
+                                                    vlSelf->top__DOT__top_memory__DOT__ram__DOT__ram_array
+                                                    [
+                                                    (0x3fffU 
+                                                     & vlSelf->top__DOT__ALUResult_E)]
+                                                     : 0U)
+                                                    : 0U));
         __Vdlyvset__top__DOT__top_decode__DOT__register__DOT__reg_array__v0 = 1U;
         __Vdlyvdim0__top__DOT__top_decode__DOT__register__DOT__reg_array__v0 
             = (0x1fU & (vlSelf->top__DOT__instr_F >> 7U));
