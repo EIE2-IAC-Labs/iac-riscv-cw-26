@@ -12,8 +12,7 @@ module top_decode #(
     output logic [1:0] resultSrc_D,
     //output logic memWrite_D,
     //output logic jump_D,
-    //output logic [2:0] branch_D,
-    output logic PCsrc_D,
+    output logic [2:0] branch_D,
     output logic [3:0] ALUctrl_D,
     output logic ALUsrc_D,
     output logic [4:0] Rd_D,
@@ -44,8 +43,8 @@ control_unit control_unit(
     .ALUctrl(ALUctrl_D),
     .ALUsrc(ALUsrc_D),
     .ImmSrc(ImmSrc_D),
-    .PCsrc(PCsrc_D),
-    .RegWriteSrc(resultSrc_D)
+    .RegWriteSrc(resultSrc_D),
+    .branch(branch_D)
 );
 
 sign_extend SignExtend (

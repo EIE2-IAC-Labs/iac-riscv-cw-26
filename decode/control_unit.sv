@@ -7,8 +7,8 @@ module control_unit #(
     output logic [2:0] ALUctrl,
     output logic ALUsrc,
     output logic ImmSrc,
-    output logic PCsrc,
-    output logic RegWriteSrc
+    output logic RegWriteSrc,
+    output logic [2:0] branch
 );
 
 typedef enum {UNDEFINED, ADDI, BNE, LW} Instr;
@@ -33,7 +33,7 @@ always_comb begin
     ALUctrl = 3'b000; // Only one operation on ALUout for now, addition
     ALUsrc = instr == ADDI || instr == LW;
     ImmSrc = instr == BNE;
-    PCsrc = instr == BNE && EQ == 0;
+    branch = instr == BNE; // TODO Extend this logic to work with different branches
 end
 
 endmodule
