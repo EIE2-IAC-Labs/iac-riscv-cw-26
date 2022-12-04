@@ -1,0 +1,1 @@
+The current test program has 4 no-ops between every instruction. This is to test the progression of each instruction through the pipeline in isolation. This also means the immediate operands for the branches has to be modified to branch further. The differences can be seen in the old_instructions.mem and instructions.mem files.
