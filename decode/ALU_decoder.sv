@@ -28,6 +28,7 @@ always_comb begin
             ALUControlD = 010;
         else
             ALUControlD = 000; // Default.
+        ALUBranch = 0;
 
             
 end    
