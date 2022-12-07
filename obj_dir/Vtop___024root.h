@@ -56,7 +56,7 @@ class Vtop___024root final : public VerilatedModule {
     IData/*31:0*/ top__DOT__top_fetch__DOT__next_PC;
     IData/*31:0*/ top__DOT__top_decode__DOT__control_unit__DOT__instr;
     IData/*31:0*/ top__DOT__top_execute__DOT__ALUop2;
-    IData/*31:0*/ top__DOT__top_memory__DOT__ram__DOT____Vlvbound_h844a59a0__0;
+    IData/*31:0*/ top__DOT__top_memory__DOT__ram__DOT____Vlvbound_h3927efeb__0;
     VlUnpacked<CData/*7:0*/, 140> top__DOT__top_fetch__DOT__instr_mem__DOT__rom_array;
     VlUnpacked<IData/*31:0*/, 32> top__DOT__top_decode__DOT__register__DOT__reg_array;
     VlUnpacked<IData/*31:0*/, 10000> top__DOT__top_memory__DOT__ram__DOT__ram_array;
