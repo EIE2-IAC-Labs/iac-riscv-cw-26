@@ -1,38 +1,40 @@
 module control_unit #(
 ) (
-    input logic [14:12] funct3,
     input logic [6:0] opcode,
-    output logic RegWrite,
-    output logic [2:0] ALUctrl,
-    output logic ALUsrc,
-    output logic ImmSrc,
-    output logic RegWriteSrc,
-    output logic [2:0] branch
+    input logic [2:0] funct3,
+    input logic [6:0] funct7,
+
+
+    output logic RegWriteD,
+    output logic [1:0] ResultSrcD,
+    output logic MemWriteD,
+    output logic ALUsrcD,
+    output logic ImmSrcD,
+    output logic [2:0] BranchD,
+    output logic JumpD,
+    output logic [2:0] ALUControlD
 );
 
-typedef enum {UNDEFINED, ADDI, BNE, LW} Instr;
-Instr instr = UNDEFINED;
+logic [1:0] instr_type;       // interconnect wire.
 
-// Determine instruction
-always_comb begin
-    if (opcode == 7'b0010011 && funct3 == 3'b000)
-        instr = ADDI;
-    else if (opcode == 7'b1100011 && funct3 == 3'b001)
-        instr = BNE;
-    else if (opcode == 7'b0000011 && funct3 == 3'b010)
-        instr = LW;
-    else
-        instr = UNDEFINED;
-end
+main_decoder main_control (
+    .funct3(funct3),
+    .opcode(opcode),
+    .RegWrite(RegWriteD),
+    .ResultSrc(ResultSrcD),
+    .MemWrite(MemWriteD),
+    .ALUsrc(ALUsrcD),
+    .ImmSrc(ImmSrcD),
+    .branch(BranchD),
+    .jump(JumpD),
+    .ALUOp(instr_type)
+);
 
-// Set outputs
-always_comb begin
-    RegWrite = instr == ADDI || instr == LW;
-    RegWriteSrc = instr == LW;
-    ALUctrl = 3'b000; // Only one operation on ALUout for now, addition
-    ALUsrc = instr == ADDI || instr == LW;
-    ImmSrc = instr == BNE;
-    branch = instr == BNE; // TODO Extend this logic to work with different branches
-end
-
+ALU_decoder alu_control (
+    .ALUOp(instr_type),
+    .funct3(funct3),
+    .funct7_bit(funct7[6]),
+    .ALUControl(ALUControlD)
+)
+    
 endmodule
