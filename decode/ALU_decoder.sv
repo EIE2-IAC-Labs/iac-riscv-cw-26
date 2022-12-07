@@ -3,14 +3,16 @@ module ALU_decoder #(
     input logic [1:0] ALUOp,
     input logic [2:0] funct3,
     input logic funct7_bit,
-    output logic [2:0] ALUControlD
+    output logic [2:0] ALUControlD,
+    output logic ALUBranchD,
 )
 
 always_comb begin
     if (ALUOp == 00)
         ALUControlD = 000;
     else if (ALUOp == 01)
-        ALUControlD = 001;
+        ALUControlD = funct3;
+        ALUBranchD = 1;
     else
         if (funct3 == 000 || funct7_bit == 0)
             ALUControlD = 000;
