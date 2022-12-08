@@ -19,8 +19,17 @@ module half_byte_word #(
 
     zero_extend ze(h,b,he,be);
 
-    if(lh)  assign dout = he;
-    else if(lb) assign dout = be;
-    else assign dout = data;
+    if(lh)  begin
+        assign dout = he;
+    end
+    else if(lb) begin
+        assign dout = be;
+    end
+    else if(lw) begin
+        assign dout = data;
+    end
+    else begin
+        assign dout = CPU_WORD{1'b0}
+    end
 
 endmodule
