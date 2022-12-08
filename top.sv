@@ -126,7 +126,6 @@ top_execute top_execute(
     .ImmOp(ImmExt_E),
     .jump_E(jump_E),
     .branch_E(branch_E),
-    .EQ(EQ),
     .ALUout(ALUResult_E),
     .PCsrc_E(PCsrc_E)
 );

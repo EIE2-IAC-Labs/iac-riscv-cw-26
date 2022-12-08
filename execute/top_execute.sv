@@ -7,11 +7,11 @@ module top_execute #(
     input logic [DATA_WIDTH-1:0] ImmOp,
     input logic jump_E,
     input logic [2:0] branch_E,
-    output logic EQ,
     output logic [DATA_WIDTH-1:0] ALUout,
     output logic PCsrc_E
 );
 
+logic EQ;
 logic [DATA_WIDTH-1:0] ALUop2;
 
 assign ALUop2 = ALUsrc ? ImmOp : RD2;
