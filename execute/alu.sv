@@ -3,58 +3,36 @@ module alu #(
 ) (
     input logic [DATA_WIDTH-1:0] ALUop1,
     input logic [DATA_WIDTH-1:0] ALUop2,
-    input logic [3:0] ALUctrl,
-    //input logic ALUBranch,
+    input logic [2:0] ALUctrl,
+    input logic ALUBranch,
     output logic [DATA_WIDTH-1:0] SUM,
     output logic EQ
 );
 
-
 always_comb begin
-
-        case (ALUctrl[2:0])
-        
-            3'b000: begin
-                    SUM = ALUctrl[3] ? ALUop1 - ALUop2 : ALUop1 + ALUop2; // SUB ADD
-                    EQ = (ALUop1 == ALUop2); //BEQ
-            end
-
-            3'b001: begin
-                    SUM = ALUop1 << ALUop2; //
-                    EQ = (ALUop1 != ALUop2); //BNE
-            end
-
-            3'b010: SUM = ALUop1 & ALUop2; // AND
-
-            3'b011: SUM = ALUop1 | ALUop2; // OR
-
-            3'b101: begin
-                SUM = ALUop1 < ALUop2 ? 1:0; // set less than 
-                EQ = (signed ALUop1 >= signed ALUop2); // signed BGE
-            end
-
-            3'b100: begin
-                SUM = ALUop1 ^ ALUop2;
-                EQ = (signed ALUop1 < signed ALUop2); //signed BLT
-            end
-
-            3'b110: begin
-                SUM = ALUCtrl[3] ? ALUop1 >>> ALUop2 : ALUop1 >> ALUop2; // SRA SRL
-                EQ =  ALUop1 < ALUop2; // unsigned BLTU
-            end
-
-            3'b111: begin 
-                SUM = ALUop1 << ALUop2; // left shift
-                EQ =  ALUop1 >=  ALUop2; // unsigned BGEU
-            end
-
-            default: begin
-                SUM = ALUop1;
-                EQ = (ALUop1 == ALUop2);
-            end
-
+    if (ALUBranch) begin
+        case (ALUctrl)
+            3'b000: EQ = (ALUop1 == ALUop2);
+            3'b001: EQ = (ALUop1 != ALUop2);
+            3'b100: EQ = (ALUop1 < ALUop2);
+            3'b101: EQ = (ALUop1 >= ALUop2);
+            default: EQ = 0;
+        endcase
+         
+    end
+    else begin
+        case (ALUctrl)
+            3'b000: SUM = ALUop1 + ALUop2;
+            3'b001: SUM = ALUop1 - ALUop2;
+            3'b010: SUM = ALUop1 & ALUop2;
+            3'b011: SUM = ALUop1 | ALUop2;
+            3'b101: SUM = ALUop1 < ALUop2 ? 1:0; // set less than 
+            3'b111: SUM = ALUop1 << ALUop2 //left shift
+            default: SUM = ALUop1;
         endcase
 
+        assign EQ = (ALUop1 == ALUop2);
+    end
 end
 
 endmodule
