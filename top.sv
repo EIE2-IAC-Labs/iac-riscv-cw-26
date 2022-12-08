@@ -127,12 +127,15 @@ top_execute top_execute(
     .RD1(RD1_E),
     .RD2(RD2_E),
     .ImmOp(ImmExt_E),
+    .jump_E(jump_E),
+    .branch_E(branch_E),
     .EQ(EQ),
-    .ALUout(ALUResult_E)
+    .ALUout(ALUResult_E),
+    .PCsrc_E(PCsrc_E)
 );
 
 // Temporary signal assignments
-assign PCsrc_E = jump_E || (branch_E == 3'b001 && EQ == 0); // TODO Move this into a dedicated 'branch control unit' in top_execute
+// assign PCsrc_E = jump_E || (branch_E == 3'b001 && EQ == 0);
 assign PCTarget_E = PC_E + (ImmExt_E << 1); // TODO Move this into top_execute
 assign writeData_E = RD2_E; // TODO Move this into top_execute
 
