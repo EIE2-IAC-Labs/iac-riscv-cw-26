@@ -6,7 +6,7 @@ module main_decoder #(
     output logic [1:0] ResultSrcD,
     output logic MemWriteD,
     output logic ALUsrcD,
-    output logic ImmSrcD,
+    output logic [2:0] ImmSrcD,
     output logic [2:0] BranchD,
     output logic JumpD,
     output logic [1:0] ALUOp
@@ -43,32 +43,32 @@ end
 always_comb begin
     RegWriteD = instr == R_type || instr == addi || instr == slli || instr == lw || instr == U_type;
     if (instr == lw)
-        ResultSrcD = 01;
+        ResultSrcD = 2'b01;
     else if (instr == jal || instr == jalr)
-        ResultSrcD = 10;
+        ResultSrcD = 2'b10;
     else
-        ResultSrcD = 00;
+        ResultSrcD = 2'b00;
     MemWriteD = instr == S_type;
     ALUsrcD = instr == addi || instr == slli || instr == lw || instr == U_type || instr == S_type;
     if (instr == U_type)
-        ImmSrcD = 001;
+        ImmSrcD = 3'b001;
     else if (instr == S_type)
-        ImmSrcD = 010;
+        ImmSrcD = 3'b010;
     else if (instr == B_type)
-        ImmSrcD = 011;
+        ImmSrcD = 3'b011;
     else if (instr == jal)
-        ImmSrcD = 100;
+        ImmSrcD = 3'b100;
     else
-        ImmSrcD = 000; // Including jalr.
+        ImmSrcD = 3'b000; // Including jalr.
     BranchD = instr == B_type;
     JumpD = instr == jal || instr == jalr;
     if (instr == lw || instr == S_type)
-        ALUOp = 00;
+        ALUOp = 2'b00;
     else if (instr == B_type)
-        ALUOp = 01;
+        ALUOp = 2'b01;
     else
         // Mainly for I-type and R-type.
-        ALUOp = 10;
+        ALUOp = 2'b10;
 end
 
 endmodule

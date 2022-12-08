@@ -9,7 +9,7 @@ module control_unit #(
     output logic [1:0] ResultSrcD,
     output logic MemWriteD,
     output logic ALUsrcD,
-    output logic ImmSrcD,
+    output logic [2:0] ImmSrcD,
     output logic [2:0] BranchD,
     output logic JumpD,
     output logic [2:0] ALUControlD
@@ -33,7 +33,7 @@ main_decoder main_control (
 ALU_decoder alu_control (
     .ALUOp(instr_type),
     .funct3(funct3),
-    .funct7_bit(funct7[6]),
+    .funct7_bit(funct7[5]),
     .ALUControlD(ALUControlD)
 );
     

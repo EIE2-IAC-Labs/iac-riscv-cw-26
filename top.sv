@@ -114,7 +114,7 @@ logic [2:0] branch_E;
 logic [3:0] ALUctrl_E;
 logic [4:0] Rd_E;
 // Internal signals
-logic EQ;
+// logic EQ;
 // Output signals
 logic [WIDTH-1:0] ALUResult_E, writeData_E, PCTarget_E;
 

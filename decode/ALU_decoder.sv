@@ -7,25 +7,25 @@ module ALU_decoder #(
 );
 
 always_comb begin
-    if (ALUOp == 00)
-        ALUControlD = 000;
-    else if (ALUOp == 01)
-        ALUControlD = 001;
+    if (ALUOp == 2'b00)
+        ALUControlD = 3'b000;
+    else if (ALUOp == 2'b01)
+        ALUControlD = 3'b001;
     else
-        if (funct3 == 000 || funct7_bit == 0)
-            ALUControlD = 000;
-        else if (funct3 == 000 || funct7_bit == 1)
-            ALUControlD = 001;
-        else if (funct3 == 001)
-            ALUControlD = 111; // slli (not in lecture slides)
-        else if (funct3 == 010)
-            ALUControlD = 101;
-        else if (funct3 == 110)
-            ALUControlD = 011;
-        else if (funct3 == 111)
-            ALUControlD = 010;
+        if (funct3 == 3'b000 && funct7_bit == 0)
+            ALUControlD = 3'b000;
+        else if (funct3 == 3'b000 && funct7_bit == 1)
+            ALUControlD = 3'b001;
+        else if (funct3 == 3'b001)
+            ALUControlD = 3'b111; // slli (not in lecture slides)
+        else if (funct3 == 3'b010)
+            ALUControlD = 3'b101;
+        else if (funct3 == 3'b110)
+            ALUControlD = 3'b011;
+        else if (funct3 == 3'b111)
+            ALUControlD = 3'b010;
         else
-            ALUControlD = 000; // Default.
+            ALUControlD = 3'b000; // Default.
 
             
 end    
