@@ -24,7 +24,7 @@ always_comb begin
     else if (ImmSrcD == 011)
         imm_type_1 = {InstrD[31], InstrD[7], InstrD[30:25], InstrD[11:8]};
     else if (ImmSrcD == 100)
-        imm_type_jal = {InstrD[31], InstrD[19:12], InstrD[20], InstrD[30:21]}
+        imm_type_jal = {InstrD[31], InstrD[19:12], InstrD[20], InstrD[30:21]};
     // jalr is included in 000.
     
     // If we have an imm_type_1 instruction, which includes jalr.

@@ -57,20 +57,17 @@ top_decode top_decode(
     .result_W(result_W), // As above
     .regWrite_D(regWrite_D),
     .resultSrc_D(resultSrc_D),
+    .memWrite_D(memWrite_D),
+    .jump_D(jump_D),
+    .branch_D(branch_D),
     .ALUctrl_D(ALUctrl_D),
     .ALUsrc_D(ALUsrc_D),
     .RD1_D(RD1_D),
     .RD2_D(RD2_D),
     .Rd_D(Rd_D),
     .ImmExt_D(ImmExt_D),
-    .a0(a0),
-    .branch_D(branch_D)
+    .a0(a0)
 );
-
-// TODO The signals below have temporary assignments. Move them to the control unit.
-assign memWrite_D = 0;
-assign jump_D = 0;
-
 
 // // // Decode-execute pipeline register // // //
 

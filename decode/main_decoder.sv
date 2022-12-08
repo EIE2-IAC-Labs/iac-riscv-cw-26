@@ -53,13 +53,13 @@ always_comb begin
     if (instr == U_type)
         ImmSrcD = 001;
     else if (instr == S_type)
-        ImmSrcD == 010;
+        ImmSrcD = 010;
     else if (instr == B_type)
-        ImmSrcD == 011;
+        ImmSrcD = 011;
     else if (instr == jal)
-        ImmSrcD == 100;
+        ImmSrcD = 100;
     else
-        ImmSrcD == 000; // Including jalr.
+        ImmSrcD = 000; // Including jalr.
     BranchD = instr == B_type;
     JumpD = instr == jal || instr == jalr;
     if (instr == lw || instr == S_type)
