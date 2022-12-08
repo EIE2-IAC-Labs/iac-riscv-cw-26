@@ -9,7 +9,7 @@ module zero_extend #(
     output logic [LEN-1:0] be
 );
 
-assign be = {(LEN-BYTE_LEN)'b0, byte_input};
-assign he = {(LEN-HALF_LEN)'b0, half_input};
+assign be = {(LEN-BYTE_LEN){1'b0}, byte_input};
+assign he = {(LEN-HALF_LEN){1'b0}, half_input};
     
 endmodule
