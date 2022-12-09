@@ -1,9 +1,9 @@
+/* verilator lint_off MODDUP */
 module top_memory #(
     parameter WIDTH = 32
 ) (
     input logic clk,
-    input logic rst,
-    input logic memWrite_M,
+    // input logic memWrite_M,
     input logic sw,
     input logic sh,
     input logic sb,
@@ -15,7 +15,7 @@ module top_memory #(
     output logic [WIDTH-1:0] readData_M
 );
 
-logic [WIDTH-1:0] dout
+logic [WIDTH-1:0] dout;
 
 ram ram(
     .sw(sw),
@@ -33,6 +33,6 @@ half_byte_word hbw(
     .lb(lb),
     .data(dout),
     .dout(readData_M)
-)
+);
 
 endmodule

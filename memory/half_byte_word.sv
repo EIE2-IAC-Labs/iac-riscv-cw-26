@@ -18,18 +18,19 @@ module half_byte_word #(
     assign b = data[BYTE_LEN-1:0];
 
     zero_extend ze(h,b,he,be);
-
-    if(lh)  begin
-        assign dout = he;
-    end
-    else if(lb) begin
-        assign dout = be;
-    end
-    else if(lw) begin
-        assign dout = data;
-    end
-    else begin
-        assign dout = CPU_WORD{1'b0}
+    always_comb begin
+        if(lh)  begin
+            assign dout = he;
+        end
+        else if(lb) begin
+            assign dout = be;
+        end
+        else if(lw) begin
+            assign dout = data;
+        end
+        else begin
+            assign dout = {CPU_WORD{1'b0}};
+        end
     end
 
 endmodule

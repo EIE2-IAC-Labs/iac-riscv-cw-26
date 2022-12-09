@@ -1,5 +1,5 @@
 module ram #(
-    parameter logic ADDRESS_LENGTH = 32,
+    parameter ADDRESS_LENGTH = 32,
     parameter WORD_LENGTH = 8
 ) (
     //input logic we,
@@ -19,14 +19,14 @@ logic [WORD_LENGTH-1:0] d1;
 logic [WORD_LENGTH-1:0] d2;
 logic [WORD_LENGTH-1:0] d3;
 
-assign d0 = wd[BYTE_LEN-1:0];
-assign d1 = wd[2*(BYTE_LEN)-1:BYTE_LEN];
-assign d2 = wd[3*(BYTE_LEN)-1:2*(BYTE_LEN)];
-assign d3 = wd[4*(BYTE_LEN)-1:3*(BYTE_LEN)];
+assign d0 = wd[WORD_LENGTH-1:0];
+assign d1 = wd[2*(WORD_LENGTH)-1:WORD_LENGTH];
+assign d2 = wd[3*(WORD_LENGTH)-1:2*(WORD_LENGTH)];
+assign d3 = wd[4*(WORD_LENGTH)-1:3*(WORD_LENGTH)];
 
 initial begin
     $display("Loading data memory.");
-    $readmemh("memory/dataram.mem", ram_array);
+    $readmemh("dataram.mem", ram_array);
 end
 
 assign rd = {ram_array[a+3],ram_array[a+2],ram_array[a+1],ram_array[a]};
