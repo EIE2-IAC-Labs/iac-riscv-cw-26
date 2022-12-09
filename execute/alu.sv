@@ -10,7 +10,7 @@ module alu #(
 );
 
 
-always_comb begin
+always_latch begin
 
         case (ALUctrl[2:0])
         
@@ -20,7 +20,7 @@ always_comb begin
             end
 
             3'b001: begin
-                    SUM = ALUop1 << ALUop2; //
+                    SUM = ALUop1 << ALUop2; //SLL
                     EQ = (ALUop1 != ALUop2); //BNE
             end
 
@@ -30,16 +30,16 @@ always_comb begin
 
             3'b101: begin
                 SUM = ALUop1 < ALUop2 ? 1:0; // set less than 
-                EQ = (signed ALUop1 >= signed ALUop2); // signed BGE
+                EQ = (signed'(ALUop1) >= signed'(ALUop2)); // signed BGE
             end
 
             3'b100: begin
                 SUM = ALUop1 ^ ALUop2;
-                EQ = (signed ALUop1 < signed ALUop2); //signed BLT
+                EQ = (signed'(ALUop1) < signed'(ALUop2)); //signed BLT
             end
 
             3'b110: begin
-                SUM = ALUCtrl[3] ? ALUop1 >>> ALUop2 : ALUop1 >> ALUop2; // SRA SRL
+                SUM = ALUctrl[3] ? ALUop1 >>> ALUop2 : ALUop1 >> ALUop2; // SRA SRL
                 EQ =  ALUop1 < ALUop2; // unsigned BLTU
             end
 
