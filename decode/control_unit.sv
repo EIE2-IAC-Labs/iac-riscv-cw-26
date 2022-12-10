@@ -14,7 +14,7 @@ module control_unit #(
     output logic JumpD,
     output logic [2:0] R_size,
     output logic [2:0] DMem_size,
-    output logic [2:0] ALUControlD
+    output logic [3:0] ALUControlD
 );
 
 logic [1:0] instr_type;       // interconnect wire.

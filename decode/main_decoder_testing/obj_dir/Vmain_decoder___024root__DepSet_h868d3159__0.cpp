@@ -19,11 +19,13 @@ VL_INLINE_OPT void Vmain_decoder___024root___combo__TOP__0(Vmain_decoder___024ro
                     | (IData)(vlSelf->opcode));
     vlSelf->main_decoder__DOT__instr = Vmain_decoder__ConstPool__TABLE_h23a0d96f_0
         [__Vtableidx1];
-    vlSelf->RegWriteD = (((((1U == vlSelf->main_decoder__DOT__instr) 
-                            | (2U == vlSelf->main_decoder__DOT__instr)) 
-                           | (3U == vlSelf->main_decoder__DOT__instr)) 
-                          | (4U == vlSelf->main_decoder__DOT__instr)) 
-                         | (5U == vlSelf->main_decoder__DOT__instr));
+    vlSelf->RegWriteD = (((((((1U == vlSelf->main_decoder__DOT__instr) 
+                              | (2U == vlSelf->main_decoder__DOT__instr)) 
+                             | (3U == vlSelf->main_decoder__DOT__instr)) 
+                            | (4U == vlSelf->main_decoder__DOT__instr)) 
+                           | (5U == vlSelf->main_decoder__DOT__instr)) 
+                          | (8U == vlSelf->main_decoder__DOT__instr)) 
+                         | (9U == vlSelf->main_decoder__DOT__instr));
     vlSelf->JumpD = ((8U == vlSelf->main_decoder__DOT__instr) 
                      | (9U == vlSelf->main_decoder__DOT__instr));
     if ((4U == vlSelf->main_decoder__DOT__instr)) {

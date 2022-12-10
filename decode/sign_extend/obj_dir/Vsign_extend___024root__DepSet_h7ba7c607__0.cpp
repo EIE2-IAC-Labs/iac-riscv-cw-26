@@ -14,42 +14,62 @@ VL_INLINE_OPT void Vsign_extend___024root___combo__TOP__0(Vsign_extend___024root
     vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_1 = 0U;
     vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_lui = 0U;
     vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_jal = 0U;
-    if ((0U == (IData)(vlSelf->ImmSrcD))) {
-        vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_1 
-            = (vlSelf->InstrD >> 0x14U);
-    } else if ((1U == (IData)(vlSelf->ImmSrcD))) {
+    if ((4U & (IData)(vlSelf->ImmSrcD))) {
+        if ((1U & (~ ((IData)(vlSelf->ImmSrcD) >> 1U)))) {
+            if ((1U & (~ (IData)(vlSelf->ImmSrcD)))) {
+                vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_jal 
+                    = ((0x80000U & (vlSelf->InstrD 
+                                    >> 0xcU)) | ((0x7f800U 
+                                                  & (vlSelf->InstrD 
+                                                     >> 1U)) 
+                                                 | ((0x400U 
+                                                     & (vlSelf->InstrD 
+                                                        >> 0xaU)) 
+                                                    | (0x3ffU 
+                                                       & (vlSelf->InstrD 
+                                                          >> 0x15U)))));
+            }
+        }
+        vlSelf->ImmExtD = ((2U & (IData)(vlSelf->ImmSrcD))
+                            ? 0U : ((1U & (IData)(vlSelf->ImmSrcD))
+                                     ? 0U : (((- (IData)(
+                                                         (1U 
+                                                          & (vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_jal 
+                                                             >> 0x13U)))) 
+                                              << 0x14U) 
+                                             | vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_jal)));
+    } else if ((2U & (IData)(vlSelf->ImmSrcD))) {
+        if ((1U & (IData)(vlSelf->ImmSrcD))) {
+            vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_1 
+                = ((0x800U & (vlSelf->InstrD >> 0x14U)) 
+                   | ((0x400U & (vlSelf->InstrD << 3U)) 
+                      | ((0x3f0U & (vlSelf->InstrD 
+                                    >> 0x15U)) | (0xfU 
+                                                  & (vlSelf->InstrD 
+                                                     >> 8U)))));
+            vlSelf->ImmExtD = (((- (IData)((1U & ((IData)(vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_1) 
+                                                  >> 0xbU)))) 
+                                << 0xcU) | (IData)(vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_1));
+        } else {
+            vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_1 
+                = ((0xfe0U & (vlSelf->InstrD >> 0x14U)) 
+                   | (0x1fU & (vlSelf->InstrD >> 7U)));
+            vlSelf->ImmExtD = (((- (IData)((1U & ((IData)(vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_1) 
+                                                  >> 0xbU)))) 
+                                << 0xcU) | (IData)(vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_1));
+        }
+    } else if ((1U & (IData)(vlSelf->ImmSrcD))) {
         vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_lui 
             = (vlSelf->InstrD >> 0xcU);
-    } else if ((2U == (IData)(vlSelf->ImmSrcD))) {
+        vlSelf->ImmExtD = (vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_lui 
+                           << 0xcU);
+    } else {
         vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_1 
-            = ((0xfe0U & (vlSelf->InstrD >> 0x14U)) 
-               | (0x1fU & (vlSelf->InstrD >> 7U)));
-    } else if ((3U == (IData)(vlSelf->ImmSrcD))) {
-        vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_1 
-            = ((0x800U & (vlSelf->InstrD >> 0x14U)) 
-               | ((0x400U & (vlSelf->InstrD << 3U)) 
-                  | ((0x3f0U & (vlSelf->InstrD >> 0x15U)) 
-                     | (0xfU & (vlSelf->InstrD >> 8U)))));
-    } else if ((4U == (IData)(vlSelf->ImmSrcD))) {
-        vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_jal 
-            = ((0x80000U & (vlSelf->InstrD >> 0xcU)) 
-               | ((0x7f800U & (vlSelf->InstrD >> 1U)) 
-                  | ((0x400U & (vlSelf->InstrD >> 0xaU)) 
-                     | (0x3ffU & (vlSelf->InstrD >> 0x15U)))));
+            = (vlSelf->InstrD >> 0x14U);
+        vlSelf->ImmExtD = (((- (IData)((1U & ((IData)(vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_1) 
+                                              >> 0xbU)))) 
+                            << 0xcU) | (IData)(vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_1));
     }
-    vlSelf->ImmExtD = ((((0U == (IData)(vlSelf->ImmSrcD)) 
-                         | (2U == (IData)(vlSelf->ImmSrcD))) 
-                        | (3U == (IData)(vlSelf->ImmSrcD)))
-                        ? ((0x800U & (IData)(vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_1))
-                            ? (0xfffff000U | (IData)(vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_1))
-                            : (IData)(vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_1))
-                        : ((4U == (IData)(vlSelf->ImmSrcD))
-                            ? ((0x80000U & vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_jal)
-                                ? (0xfff00000U | vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_jal)
-                                : vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_jal)
-                            : ((1U == (IData)(vlSelf->ImmSrcD))
-                                ? (vlSelf->sign_extend__DOT__unnamedblk1__DOT__imm_type_lui 
-                                   << 0xcU) : 0U)));
 }
 
 void Vsign_extend___024root___eval(Vsign_extend___024root* vlSelf) {
