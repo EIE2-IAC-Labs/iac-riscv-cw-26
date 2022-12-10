@@ -43,6 +43,7 @@ end
 always_comb begin
     RegWriteD = instr == R_type || instr == addi || instr == slli || instr == lw || instr == U_type;
     if (instr == lw)
+    
         ResultSrcD = 2'b01;
     else if (instr == jal || instr == jalr)
         ResultSrcD = 2'b10;
@@ -69,6 +70,7 @@ always_comb begin
     else
         // Mainly for I-type and R-type.
         ALUOp = 2'b10;
+
 end
 
 endmodule
