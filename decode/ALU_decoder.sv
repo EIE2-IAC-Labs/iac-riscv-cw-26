@@ -8,9 +8,12 @@ module ALU_decoder #(
 );
 
 always_comb begin
+
     case(ALUOp)
+
         2'b00: ALUControlD = 4'b0;
         2'b01: ALUControlD = {1'b0, funct3};
+
         default: begin
             case(funct3)
                 3'b000: ALUControlD = {funct7_bit, 3'b000}; // ADD SUB
@@ -33,29 +36,6 @@ endcase
     $display("Funct7 = %b ",funct7_bit);
     $display("ALUControlD = %b \n ",ALUControlD);
 
-
-    // if (ALUOp == 00)
-    //     ALUControlD = 000;
-    // else if (ALUOp == 01)
-    //     ALUControlD = funct3;
-    //     ALUBranchD = 1;
-    // else
-    //     if (funct3 == 000 || funct7_bit == 0)
-    //         ALUControlD = 000;
-    //     else if (funct3 == 000 || funct7 == 1)
-    //         ALUControlD == 001;
-    //     else if (funct3 == 001)
-    //         ALUControlD = 111 // slli (not in lecture slides)
-    //     else if (funct3 == 010)
-    //         ALUControlD = 101;
-    //     else if (funct3 == 110)
-    //         ALUControlD = 011;
-    //     else if (funct3 == 111)
-    //         ALUControlD = 010;
-    //     else
-    //         ALUControlD = 000; // Default.
-    //     ALUBranch = 0;
-     
 end    
 
 endmodule
