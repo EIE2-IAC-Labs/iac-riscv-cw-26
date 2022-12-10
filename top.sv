@@ -57,20 +57,17 @@ top_decode top_decode(
     .result_W(result_W), // As above
     .regWrite_D(regWrite_D),
     .resultSrc_D(resultSrc_D),
+    .memWrite_D(memWrite_D),
+    .jump_D(jump_D),
+    .branch_D(branch_D),
     .ALUctrl_D(ALUctrl_D),
     .ALUsrc_D(ALUsrc_D),
     .RD1_D(RD1_D),
     .RD2_D(RD2_D),
     .Rd_D(Rd_D),
     .ImmExt_D(ImmExt_D),
-    .a0(a0),
-    .branch_D(branch_D)
+    .a0(a0)
 );
-
-// TODO The signals below have temporary assignments. Move them to the control unit.
-assign memWrite_D = 0;
-assign jump_D = 0;
-
 
 // // // Decode-execute pipeline register // // //
 
@@ -117,7 +114,7 @@ logic [2:0] branch_E;
 logic [3:0] ALUctrl_E;
 logic [4:0] Rd_E;
 // Internal signals
-logic EQ;
+// logic EQ;
 // Output signals
 logic [WIDTH-1:0] ALUResult_E, writeData_E, PCTarget_E;
 
@@ -127,12 +124,14 @@ top_execute top_execute(
     .RD1(RD1_E),
     .RD2(RD2_E),
     .ImmOp(ImmExt_E),
-    .EQ(EQ),
-    .ALUout(ALUResult_E)
+    .jump_E(jump_E),
+    .branch_E(branch_E),
+    .ALUout(ALUResult_E),
+    .PCsrc_E(PCsrc_E)
 );
 
 // Temporary signal assignments
-assign PCsrc_E = jump_E || (branch_E == 3'b001 && EQ == 0); // TODO Move this into a dedicated 'branch control unit' in top_execute
+// assign PCsrc_E = jump_E || (branch_E == 3'b001 && EQ == 0);
 assign PCTarget_E = PC_E + (ImmExt_E << 1); // TODO Move this into top_execute
 assign writeData_E = RD2_E; // TODO Move this into top_execute
 

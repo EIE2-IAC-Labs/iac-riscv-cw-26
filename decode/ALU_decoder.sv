@@ -36,6 +36,7 @@ endcase
     $display("Funct7 = %b ",funct7_bit);
     $display("ALUControlD = %b \n ",ALUControlD);
 
+
 end    
 
 endmodule
