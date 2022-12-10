@@ -9,11 +9,15 @@ module sign_extend #(
     output logic [data_width-1:0] ImmExtD
 );
 
-logic [imm_width1-1:0] imm_type_1;
-logic [imm_width2-1:0] imm_type_lui;
-logic [imm_width3-1:0] imm_type_jal;
-
 always_comb begin
+
+    logic [imm_width1-1:0] imm_type_1 = {imm_width1{1'b0}};
+    logic [imm_width2-1:0] imm_type_lui = {imm_width2{1'b0}};
+    logic [imm_width3-1:0] imm_type_jal = {imm_width3{1'b0}};
+
+    // Program runs error for some reason if any bits of input are unused.
+    logic [6:0] opcode = InstrD[6:0];
+    opcode = opcode;
     // Determine what bits of the instruction will be used in imm, based on ImmSrcD.
     if (ImmSrcD == 3'b000)
         imm_type_1 = InstrD[31:20];
@@ -26,27 +30,34 @@ always_comb begin
     else if (ImmSrcD == 3'b100)
         imm_type_jal = {InstrD[31], InstrD[19:12], InstrD[20], InstrD[30:21]};
     // jalr is included in 000.
+    else
+        imm_type_1 = imm_type_1;
+        imm_type_lui = imm_type_lui;
+        imm_type_jal = imm_type_jal;
     
     // If we have an imm_type_1 instruction, which includes jalr.
     if (ImmSrcD == 3'b000 || ImmSrcD == 3'b010 || ImmSrcD == 3'b011) begin
-        if(imm_type_1[11] == 0) // If the msb is a 0, we sign extend to 32-bits with 0s.
+        if(imm_type_1[11] == 1'b0) // If the msb is a 0, we sign extend to 32-bits with 0s.
             ImmExtD = {{data_width - imm_width1{1'b0}}, imm_type_1};
         else // If the msb is a 1, we sign extend to 32-bits with 1s.
             ImmExtD = {{data_width - imm_width1{1'b1}}, imm_type_1};
     end
 
     // If we have an imm_type_jal instruction, sign extend by only adding 11 bits to the MSB end.
-    if (ImmSrcD == 3'b100) begin
-        if(imm_type_jal[19] == 0) // If the msb is a 0, we sign extend to 32-bits with 0s.
+    else if (ImmSrcD == 3'b100) begin
+        if(imm_type_jal[19] == 1'b0) // If the msb is a 0, we sign extend to 32-bits with 0s.
             ImmExtD = {{data_width - imm_width3{1'b0}}, imm_type_jal};
         else // If the msb is a 1, we sign extend to 32-bits with 1s.
             ImmExtD = {{data_width - imm_width3{1'b1}}, imm_type_jal};
     end
 
     // If we have an imm_type_lui command, sign extend by only adding 11 0s to the LSB end.
-    if (ImmSrcD == 3'b001) begin
+    else if (ImmSrcD == 3'b001) begin
             ImmExtD = {imm_type_lui, {data_width - imm_width2{1'b0}}};
     end
+
+    else
+        ImmExtD = {data_width{1'b0}};
     
 end
     
