@@ -12,7 +12,9 @@ module control_unit #(
     output logic [2:0] ImmSrcD,
     output logic [2:0] BranchD,
     output logic JumpD,
-    output logic [2:0] ALUControlD
+    output logic [2:0] R_size,
+    output logic [2:0] DMem_size,
+    output logic [3:0] ALUControlD
 );
 
 logic [1:0] instr_type;       // interconnect wire.
@@ -27,6 +29,8 @@ main_decoder main_control (
     .ImmSrcD(ImmSrcD),
     .BranchD(BranchD),
     .JumpD(JumpD),
+    .R_size(R_size),
+    .DMem_size(DMem_size),
     .ALUOp(instr_type)
 );
 
