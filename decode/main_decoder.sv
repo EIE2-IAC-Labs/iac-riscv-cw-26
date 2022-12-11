@@ -62,10 +62,29 @@ always_comb begin
         B_type: ALUOp = 2'b01;
         default: ALUOp = 2'b10;
     endcase
-    case(instr)
-        L_type: R_size = funct3;
-        S_type: DMem_size = funct3;
-    endcase
+    
+    // Handling memory unit size.
+    if(instr == L_type)
+        case(funct3)
+            3'b010: DMem_size = 3'b100;
+            3'b001: DMem_size = 3'b010;
+            3'b101: DMem_size = 3'b010;
+            3'b000: DMem_size = 3'b001;
+            3'b100: DMem_size = 3'b001;
+            default: DMem_size = 3'b100;
+        endcase
+        R_size = 3'b000;
+    else if(instr == S_type)
+        case(funct3)
+            3'b010: R_size = 3'b100;
+            3'b001: R_size = 3'b010;
+            3'b000: R_size = 3'b001;
+            default: R_size = 3'b000;
+        endcase
+        DMem_size = 3'b100;
+    else
+        R_size = 3'b000;
+        DMem_size = 3'b100;
 end
 
 endmodule
