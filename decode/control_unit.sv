@@ -10,7 +10,7 @@ module control_unit #(
     output logic MemWriteD,
     output logic ALUsrcD,
     output logic [2:0] ImmSrcD,
-    output logic [2:0] BranchD,
+    output logic BranchD,
     output logic JumpD,
     output logic [2:0] R_size,
     output logic [2:0] DMem_size,
