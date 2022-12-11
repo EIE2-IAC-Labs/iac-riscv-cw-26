@@ -12,7 +12,7 @@ module ram #(
     output logic [ADDRESS_LENGTH-1:0] rd
 );
 
-logic [WORD_LENGTH-1:0] ram_array[32'h1FFF:32'h1000];
+logic [WORD_LENGTH-1:0] ram_array[32'h1FFFF:0];
 
 logic [WORD_LENGTH-1:0] d0;
 logic [WORD_LENGTH-1:0] d1;
