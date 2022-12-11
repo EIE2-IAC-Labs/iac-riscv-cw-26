@@ -7,7 +7,6 @@ module control_unit #(
 
     output logic RegWriteD,
     output logic [1:0] ResultSrcD,
-    output logic MemWriteD,
     output logic ALUsrcD,
     output logic [2:0] ImmSrcD,
     output logic BranchD,
@@ -24,7 +23,6 @@ main_decoder main_control (
     .opcode(opcode),
     .RegWriteD(RegWriteD),
     .ResultSrcD(ResultSrcD),
-    .MemWriteD(MemWriteD),
     .ALUsrcD(ALUsrcD),
     .ImmSrcD(ImmSrcD),
     .BranchD(BranchD),

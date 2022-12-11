@@ -42,7 +42,7 @@ logic [WIDTH-1:0] instr_D, PC_D, PCPlus4_D;
 // Operands
 logic [WIDTH-1:0] RD1_D, RD2_D, ImmExt_D;
 // Control signals
-logic regWrite_D, memWrite_D, jump_D, ALUsrc_D;
+logic regWrite_D, jump_D, ALUsrc_D;
 logic [1:0] resultSrc_D;
 logic [2:0] branch_D, R_size_D, DMem_size_D;
 logic [3:0] ALUctrl_D;
@@ -57,7 +57,6 @@ top_decode top_decode(
     .result_W(result_W), // As above
     .regWrite_D(regWrite_D),
     .resultSrc_D(resultSrc_D),
-    .memWrite_D(memWrite_D),
     .jump_D(jump_D),
     .branch_D(branch_D),
     .ALUctrl_D(ALUctrl_D),
@@ -77,7 +76,6 @@ decode_execute_reg decode_execute_reg(
     .clk(clk),
     .rst(rst),
     .regWrite_D(regWrite_D),
-    .memWrite_D(memWrite_D),
     .jump_D(jump_D),
     .branch_D(branch_D),
     .ALUsrc_D(ALUsrc_D),
@@ -92,7 +90,6 @@ decode_execute_reg decode_execute_reg(
     .R_size_D(R_size_D),
     .DMem_size_D(DMem_size_D),
     .regWrite_E(regWrite_E),
-    .memWrite_E(memWrite_E),
     .jump_E(jump_E),
     .branch_E(branch_E),
     .ALUsrc_E(ALUsrc_E),
@@ -130,7 +127,7 @@ top_execute top_execute(
     .RD1(RD1_E),
     .RD2(RD2_E),
     .ImmOp(ImmExt_E),
-    .PC_E(PC_E)
+    .PC_E(PC_E),
     .jump_E(jump_E),
     .branch_E(branch_E),
     .ALUout(ALUResult_E),
