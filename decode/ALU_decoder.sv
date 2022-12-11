@@ -28,13 +28,14 @@ always_comb begin
             endcase
         end
 
-endcase
+    endcase
 
-//Displaying results for testing purposes from aludecode_tb.cpp testbench file
-    $display("ALUOP = %b ",ALUOp); 
-    $display("Funct3 = %b ",funct3);
-    $display("Funct7 = %b ",funct7_bit);
-    $display("ALUControlD = %b \n ",ALUControlD);
+    // Omit this testing code in order to look at warning messages
+    // //Displaying results for testing purposes from aludecode_tb.cpp testbench file
+    // $display("ALUOP = %b ",ALUOp); 
+    // $display("Funct3 = %b ",funct3);
+    // $display("Funct7 = %b ",funct7_bit);
+    // $display("ALUControlD = %b \n ",ALUControlD);
 
 
 end    

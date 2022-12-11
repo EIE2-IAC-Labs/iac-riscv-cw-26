@@ -44,7 +44,7 @@ logic [WIDTH-1:0] RD1_D, RD2_D, ImmExt_D;
 // Control signals
 logic regWrite_D, memWrite_D, jump_D, ALUsrc_D;
 logic [1:0] resultSrc_D;
-logic [2:0] branch_D;
+logic [2:0] branch_D, R_size_D, DMem_size_D;
 logic [3:0] ALUctrl_D;
 logic [4:0] Rd_D;
 
@@ -66,7 +66,9 @@ top_decode top_decode(
     .RD2_D(RD2_D),
     .Rd_D(Rd_D),
     .ImmExt_D(ImmExt_D),
-    .a0(a0)
+    .a0(a0),
+    .R_size_D(R_size_D),
+    .DMem_size_D(DMem_size_D)
 );
 
 // // // Decode-execute pipeline register // // //
@@ -87,6 +89,8 @@ decode_execute_reg decode_execute_reg(
     .PC_D(PC_D),
     .ImmExt_D(ImmExt_D),
     .PCPlus4_D(PCPlus4_D),
+    .R_size_D(R_size_D),
+    .DMem_size_D(DMem_size_D),
     .regWrite_E(regWrite_E),
     .memWrite_E(memWrite_E),
     .jump_E(jump_E),
@@ -99,7 +103,9 @@ decode_execute_reg decode_execute_reg(
     .RD2_E(RD2_E),
     .PC_E(PC_E),
     .ImmExt_E(ImmExt_E),
-    .PCPlus4_E(PCPlus4_E)
+    .PCPlus4_E(PCPlus4_E),
+    .R_size_E(R_size_E),
+    .DMem_size_E(DMem_size_E)
 );
 
 
@@ -108,9 +114,9 @@ decode_execute_reg decode_execute_reg(
 // Operands from decode stage
 logic [WIDTH-1:0] RD1_E, RD2_E, ImmExt_E, PCPlus4_E, PC_E;
 // Control signals from decode stage
-logic regWrite_E, memWrite_E, jump_E, ALUsrc_E, PCsrc_E;
+logic regWrite_E, jump_E, ALUsrc_E, PCsrc_E;
 logic [1:0] resultSrc_E;
-logic [2:0] branch_E;
+logic [2:0] branch_E, R_size_E, DMem_size_E;
 logic [3:0] ALUctrl_E;
 logic [4:0] Rd_E;
 // Internal signals
@@ -124,16 +130,14 @@ top_execute top_execute(
     .RD1(RD1_E),
     .RD2(RD2_E),
     .ImmOp(ImmExt_E),
+    .PC_E(PC_E)
     .jump_E(jump_E),
     .branch_E(branch_E),
     .ALUout(ALUResult_E),
-    .PCsrc_E(PCsrc_E)
+    .PCsrc_E(PCsrc_E),
+    .PCTarget_E(PCTarget_E),
+    .writeData_E(writeData_E)
 );
-
-// Temporary signal assignments
-// assign PCsrc_E = jump_E || (branch_E == 3'b001 && EQ == 0);
-assign PCTarget_E = PC_E + (ImmExt_E << 1); // TODO Move this into top_execute
-assign writeData_E = RD2_E; // TODO Move this into top_execute
 
 
 // // // Execute-memory pipeline register // // //
@@ -142,15 +146,17 @@ execute_memory_reg execute_memory_reg(
     .clk(clk),
     .rst(rst),
     .regWrite_E(regWrite_E),
-    .memWrite_E(memWrite_E),
     .resultSrc_E(resultSrc_E),
+    .R_size_E(R_size_E),
+    .DMem_size_E(DMem_size_E),
     .Rd_E(Rd_E),
     .ALUResult_E(ALUResult_E),
     .writeData_E(writeData_E),
     .PCPlus4_E(PCPlus4_E),
     .regWrite_M(regWrite_M),
-    .memWrite_M(memWrite_M),
     .resultSrc_M(resultSrc_M),
+    .R_size_M(R_size_M),
+    .DMem_size_M(DMem_size_M),
     .Rd_M(Rd_M),
     .ALUResult_M(ALUResult_M),
     .writeData_M(writeData_M),
@@ -163,16 +169,22 @@ execute_memory_reg execute_memory_reg(
 // Operands from execute stage
 logic [WIDTH-1:0] ALUResult_M, writeData_M, PCPlus4_M;
 // Control signals from execute stage
-logic regWrite_M, memWrite_M;
+logic regWrite_M;
 logic [1:0] resultSrc_M;
+logic [2:0] R_size_M, DMem_size_M;
 logic [4:0] Rd_M;
 // Output signals
 logic [WIDTH-1:0] readData_M;
 
 top_memory top_memory(
     .clk(clk),
-    .rst(rst),
-    .memWrite_M(memWrite_M),
+    // .rst(rst),
+    .sw(R_size_M[2]),
+    .sh(R_size_M[1]),
+    .sb(R_size_M[0]),
+    .lw(DMem_size_M[2]),
+    .lh(DMem_size_M[1]),
+    .lb(DMem_size_M[0]),
     .ALUResult_M(ALUResult_M),
     .writeData_M(writeData_M),
     .readData_M(readData_M)
