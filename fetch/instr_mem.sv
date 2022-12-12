@@ -7,7 +7,8 @@ module instr_mem #(
     output logic [INSTRUCTION_WIDTH-1:0] RD
 );
 
-logic [DATA_WIDTH-1:0] rom_array [139:0];
+// Instruction memory defined as per specification given from memory map
+logic [DATA_WIDTH-1:0] rom_array [32'hBFC00FFF:32'hBFC00000]; //fixed syntax error: added h to 32'hBFC00FFF
 logic [DATA_WIDTH-1:0] byte1;
 logic [DATA_WIDTH-1:0] byte2;
 logic [DATA_WIDTH-1:0] byte3;
