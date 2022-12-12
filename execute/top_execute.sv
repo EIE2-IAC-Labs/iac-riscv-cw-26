@@ -17,8 +17,8 @@ logic EQ;
 logic [DATA_WIDTH-1:0] ALUop2;
 
 assign ALUop2 = ALUsrc ? ImmOp : RD2;
-assign PCTarget_E = PC_E + (ImmOp << 1); // TODO Move this into top_execute
-assign writeData_E = RD2; // TODO Move this into top_execute
+assign PCTarget_E = PC_E + (ImmOp << 1);
+assign writeData_E = RD2;
 
 
 alu ALU(
