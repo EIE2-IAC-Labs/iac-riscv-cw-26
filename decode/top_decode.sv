@@ -16,7 +16,7 @@ module top_decode #(
     output logic [4:0] Rd_D,
     output logic [WIDTH-1:0] RD1_D, RD2_D, ImmExt_D, a0,
     output logic [2:0] R_size_D, DMem_size_D,
-    output logic jalr, lui
+    output logic jalr, lui, load_extend_s
 );
 
 assign Rd_D = instr_D[11:7];
@@ -50,7 +50,8 @@ control_unit control_unit(
     .DMem_size(DMem_size_D),
     .ALUControlD(ALUctrl_D),
     .jalr(jalr),
-    .lui(lui)
+    .lui(lui),
+    .load_extend_s(load_extend_s)
 );
 
 sign_extend SignExtend (
