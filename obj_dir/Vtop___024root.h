@@ -15,16 +15,21 @@ class Vtop___024root final : public VerilatedModule {
     // DESIGN SPECIFIC STATE
     VL_IN8(clk,0,0);
     VL_IN8(rst,0,0);
-    CData/*2:0*/ top__DOT____Vcellout__decode_execute_reg__ALUctrl_E;
+    CData/*3:0*/ top__DOT__ALUctrl_D;
     CData/*0:0*/ top__DOT__regWrite_E;
-    CData/*0:0*/ top__DOT__memWrite_E;
     CData/*0:0*/ top__DOT__jump_E;
+    CData/*0:0*/ top__DOT__ALUsrc_E;
+    CData/*0:0*/ top__DOT__PCsrc_E;
     CData/*1:0*/ top__DOT__resultSrc_E;
     CData/*2:0*/ top__DOT__branch_E;
+    CData/*2:0*/ top__DOT__R_size_E;
+    CData/*2:0*/ top__DOT__DMem_size_E;
+    CData/*3:0*/ top__DOT__ALUctrl_E;
     CData/*4:0*/ top__DOT__Rd_E;
     CData/*0:0*/ top__DOT__regWrite_M;
-    CData/*0:0*/ top__DOT__memWrite_M;
     CData/*1:0*/ top__DOT__resultSrc_M;
+    CData/*2:0*/ top__DOT__R_size_M;
+    CData/*2:0*/ top__DOT__DMem_size_M;
     CData/*4:0*/ top__DOT__Rd_M;
     CData/*0:0*/ top__DOT__regWrite_W;
     CData/*1:0*/ top__DOT__resultSrc_W;
@@ -33,8 +38,11 @@ class Vtop___024root final : public VerilatedModule {
     CData/*7:0*/ top__DOT__top_fetch__DOT__instr_mem__DOT__byte2;
     CData/*7:0*/ top__DOT__top_fetch__DOT__instr_mem__DOT__byte3;
     CData/*7:0*/ top__DOT__top_fetch__DOT__instr_mem__DOT__byte4;
+    CData/*2:0*/ top__DOT__top_decode__DOT__ImmSrc_D;
+    CData/*0:0*/ top__DOT__top_execute__DOT__EQ;
+    CData/*0:0*/ top__DOT__top_execute__DOT__pc_src__DOT__and_result;
     CData/*0:0*/ __Vclklast__TOP__clk;
-    SData/*11:0*/ top__DOT__top_decode__DOT__SignExtend__DOT__imm;
+    SData/*11:0*/ top__DOT__top_decode__DOT__SignExtend__DOT__unnamedblk1__DOT__imm_type_1;
     VL_OUT(a0,31,0);
     IData/*31:0*/ top__DOT__instr_F;
     IData/*31:0*/ top__DOT__PC_F;
@@ -47,6 +55,7 @@ class Vtop___024root final : public VerilatedModule {
     IData/*31:0*/ top__DOT__ImmExt_E;
     IData/*31:0*/ top__DOT__PCPlus4_E;
     IData/*31:0*/ top__DOT__PC_E;
+    IData/*31:0*/ top__DOT__ALUResult_E;
     IData/*31:0*/ top__DOT__ALUResult_M;
     IData/*31:0*/ top__DOT__writeData_M;
     IData/*31:0*/ top__DOT__PCPlus4_M;
@@ -54,12 +63,14 @@ class Vtop___024root final : public VerilatedModule {
     IData/*31:0*/ top__DOT__readData_W;
     IData/*31:0*/ top__DOT__PCPlus4_W;
     IData/*31:0*/ top__DOT__top_fetch__DOT__next_PC;
-    IData/*31:0*/ top__DOT__top_decode__DOT__control_unit__DOT__instr;
+    IData/*31:0*/ top__DOT__top_decode__DOT__control_unit__DOT__main_control__DOT__instr;
+    IData/*19:0*/ top__DOT__top_decode__DOT__SignExtend__DOT__unnamedblk1__DOT__imm_type_lui;
+    IData/*19:0*/ top__DOT__top_decode__DOT__SignExtend__DOT__unnamedblk1__DOT__imm_type_jal;
     IData/*31:0*/ top__DOT__top_execute__DOT__ALUop2;
-    IData/*31:0*/ top__DOT__top_memory__DOT__ram__DOT____Vlvbound_h844a59a0__0;
-    VlUnpacked<CData/*7:0*/, 140> top__DOT__top_fetch__DOT__instr_mem__DOT__rom_array;
+    IData/*31:0*/ top__DOT__top_memory__DOT__dout;
+    VlUnpacked<CData/*7:0*/, 4096> top__DOT__top_fetch__DOT__instr_mem__DOT__rom_array;
     VlUnpacked<IData/*31:0*/, 32> top__DOT__top_decode__DOT__register__DOT__reg_array;
-    VlUnpacked<IData/*31:0*/, 10000> top__DOT__top_memory__DOT__ram__DOT__ram_array;
+    VlUnpacked<CData/*7:0*/, 131072> top__DOT__top_memory__DOT__ram__DOT__ram_array;
     VlUnpacked<CData/*0:0*/, 3> __Vm_traceActivity;
 
     // INTERNAL VARIABLES

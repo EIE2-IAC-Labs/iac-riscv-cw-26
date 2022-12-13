@@ -47,6 +47,7 @@ logic [1:0] resultSrc_D;
 logic [2:0] branch_D, R_size_D, DMem_size_D;
 logic [3:0] ALUctrl_D;
 logic [4:0] Rd_D;
+logic jalr; //added JALR output
 
 top_decode top_decode(
     .clk(clk),
@@ -67,7 +68,8 @@ top_decode top_decode(
     .ImmExt_D(ImmExt_D),
     .a0(a0),
     .R_size_D(R_size_D),
-    .DMem_size_D(DMem_size_D)
+    .DMem_size_D(DMem_size_D),
+    .jalr(jalr) //added JALR output
 );
 
 // // // Decode-execute pipeline register // // //
@@ -133,7 +135,8 @@ top_execute top_execute(
     .ALUout(ALUResult_E),
     .PCsrc_E(PCsrc_E),
     .PCTarget_E(PCTarget_E),
-    .writeData_E(writeData_E)
+    .writeData_E(writeData_E),
+    .jalr(jalr) //added JALR output
 );
 
 
