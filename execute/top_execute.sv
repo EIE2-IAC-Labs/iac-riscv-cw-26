@@ -8,6 +8,7 @@ module top_execute #(
     input logic [DATA_WIDTH-1:0] PC_E,
     input logic jump_E,
     input logic branch_E,
+    input logic jalr,
     output logic [DATA_WIDTH-1:0] ALUout,
     output logic PCsrc_E,
     output logic [DATA_WIDTH-1:0] PCTarget_E, writeData_E
@@ -17,7 +18,7 @@ logic EQ;
 logic [DATA_WIDTH-1:0] ALUop2;
 
 assign ALUop2 = ALUsrc ? ImmOp : RD2;
-assign PCTarget_E = PC_E + (ImmOp << 1);
+assign PCTarget_E = jalr ? ALUout : (PC_E + (ImmOp << 1));
 assign writeData_E = RD2;
 
 
