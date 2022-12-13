@@ -119,10 +119,19 @@ VL_INLINE_OPT void Vtop_memory___024root___combo__TOP__0(Vtop_memory___024root* 
         vlSelf->top_memory__DOT__hbw__DOT__s_e__DOT__sign 
             = (1U & (vlSelf->top_memory__DOT__dout 
                      >> 7U));
-        vlSelf->top_memory__DOT__hbw__DOT__be = (((- (IData)((IData)(vlSelf->top_memory__DOT__hbw__DOT__s_e__DOT__sign))) 
-                                                  << 8U) 
-                                                 | (0xffU 
-                                                    & vlSelf->top_memory__DOT__dout));
+        vlSelf->top_memory__DOT__hbw__DOT__be = ((IData)(vlSelf->top_memory__DOT__hbw__DOT__s_e__DOT__sign)
+                                                  ? 
+                                                 (0xffffff00U 
+                                                  | (0xffU 
+                                                     & vlSelf->top_memory__DOT__dout))
+                                                  : 
+                                                 ((IData)(vlSelf->top_memory__DOT__hbw__DOT__s_e__DOT__sign)
+                                                   ? 
+                                                  (0xffU 
+                                                   & vlSelf->top_memory__DOT__dout)
+                                                   : 
+                                                  (0xffU 
+                                                   & vlSelf->top_memory__DOT__dout)));
     } else {
         vlSelf->top_memory__DOT__hbw__DOT__be = (0xffU 
                                                  & vlSelf->top_memory__DOT__dout);

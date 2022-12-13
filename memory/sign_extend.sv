@@ -11,8 +11,12 @@ module sign_extend #(
 logic sign;
 always_comb begin
     if(s) begin
-        assign sign = din[BYTE_LEN-1];
-        assign dout = {{24{sign}},din};
+        assign sign = din[7];
+        case (sign)
+            1: assign dout = {{24{1'b1}},din};
+            0: assign dout = {{24{1'b0}},din};
+            default: assign dout = {{24{1'b0}},din};
+        endcase
     end
     else begin
         assign dout = {{24{1'b0}},din};

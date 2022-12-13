@@ -49,12 +49,16 @@ int main(int argc, char **argv, char **env) {
         }
         if(i > 4 && i < 6){
             top->sh = 0;
-            top->writeData_M = 0xBBBBBBBB;
+            top->lw = 0;
+            top->writeData_M = 0b10000001;
+            top->s = 1;
             top->sb = 1;
+
         
         }
         if(i > 6 && i < 8){
             top->sb = 0;
+            top->lb = 1;
         }
 
         
