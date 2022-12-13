@@ -18,8 +18,8 @@ module half_byte_word #(
     assign h = data[HALF_LEN-1:0];
     assign b = data[BYTE_LEN-1:0];
 
-    half_extend h_e(h,he);
-    sign_extend s_e(b,s,be);
+    half_extend h_e(h,s,he);
+    byte_extend s_e(b,s,be);
 
     always_comb begin
         if(lh)  begin

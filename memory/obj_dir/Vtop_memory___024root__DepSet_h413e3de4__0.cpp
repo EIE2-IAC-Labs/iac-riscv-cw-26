@@ -116,6 +116,22 @@ VL_INLINE_OPT void Vtop_memory___024root___combo__TOP__0(Vtop_memory___024root* 
                                                       (0x1ffffU 
                                                        & vlSelf->ALUResult_M)])));
     if (vlSelf->s) {
+        vlSelf->top_memory__DOT__hbw__DOT__h_e__DOT__sign 
+            = (1U & (vlSelf->top_memory__DOT__dout 
+                     >> 0xfU));
+        vlSelf->top_memory__DOT__hbw__DOT__he = ((IData)(vlSelf->top_memory__DOT__hbw__DOT__h_e__DOT__sign)
+                                                  ? 
+                                                 (0xffff0000U 
+                                                  | (0xffffU 
+                                                     & vlSelf->top_memory__DOT__dout))
+                                                  : 
+                                                 ((IData)(vlSelf->top_memory__DOT__hbw__DOT__h_e__DOT__sign)
+                                                   ? 
+                                                  (0xffffU 
+                                                   & vlSelf->top_memory__DOT__dout)
+                                                   : 
+                                                  (0xffffU 
+                                                   & vlSelf->top_memory__DOT__dout)));
         vlSelf->top_memory__DOT__hbw__DOT__s_e__DOT__sign 
             = (1U & (vlSelf->top_memory__DOT__dout 
                      >> 7U));
@@ -133,11 +149,12 @@ VL_INLINE_OPT void Vtop_memory___024root___combo__TOP__0(Vtop_memory___024root* 
                                                   (0xffU 
                                                    & vlSelf->top_memory__DOT__dout)));
     } else {
+        vlSelf->top_memory__DOT__hbw__DOT__he = (0xffffU 
+                                                 & vlSelf->top_memory__DOT__dout);
         vlSelf->top_memory__DOT__hbw__DOT__be = (0xffU 
                                                  & vlSelf->top_memory__DOT__dout);
     }
-    vlSelf->readData_M = ((IData)(vlSelf->lh) ? (0xffffU 
-                                                 & vlSelf->top_memory__DOT__dout)
+    vlSelf->readData_M = ((IData)(vlSelf->lh) ? vlSelf->top_memory__DOT__hbw__DOT__he
                            : ((IData)(vlSelf->lb) ? vlSelf->top_memory__DOT__hbw__DOT__be
                                : ((IData)(vlSelf->lw)
                                    ? vlSelf->top_memory__DOT__dout

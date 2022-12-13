@@ -69,7 +69,9 @@ VL_ATTR_COLD void Vtop_memory___024root___ctor_var_reset(Vtop_memory___024root* 
     for (int __Vi0=0; __Vi0<131072; ++__Vi0) {
         vlSelf->top_memory__DOT__ram__DOT__ram_array[__Vi0] = VL_RAND_RESET_I(8);
     }
+    vlSelf->top_memory__DOT__hbw__DOT__he = VL_RAND_RESET_I(32);
     vlSelf->top_memory__DOT__hbw__DOT__be = VL_RAND_RESET_I(32);
+    vlSelf->top_memory__DOT__hbw__DOT__h_e__DOT__sign = VL_RAND_RESET_I(1);
     vlSelf->top_memory__DOT__hbw__DOT__s_e__DOT__sign = VL_RAND_RESET_I(1);
     for (int __Vi0=0; __Vi0<2; ++__Vi0) {
         vlSelf->__Vm_traceActivity[__Vi0] = VL_RAND_RESET_I(1);
