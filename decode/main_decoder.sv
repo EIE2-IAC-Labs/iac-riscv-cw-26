@@ -28,7 +28,7 @@ always_comb begin
         7'b0100011: instr = S_type;
         7'b1100011: instr = B_type;
         7'b1101111: instr = jal;
-        7'b1100111: instr = jalr_o;
+        7'b1100111: instr = jalr;
         default: instr = UNDEFINED;
     endcase
 end
