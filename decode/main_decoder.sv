@@ -10,8 +10,8 @@ module main_decoder #(
     output logic JumpD,
     output logic [1:0] ALUOp,
     output logic [2:0] R_size,
-    output logic [2:0] DMem_size
-
+    output logic [2:0] DMem_size,
+    output logic jalr_o
 );
 
 typedef enum {UNDEFINED, R_type, addi, slli, L_type, lui, S_type, B_type, jal, jalr} Instr;
@@ -85,6 +85,8 @@ always_comb begin
         R_size = 3'b000;
         DMem_size = 3'b100;
     end
+
+jalr_o = instr == jalr;
 end
 
 endmodule
