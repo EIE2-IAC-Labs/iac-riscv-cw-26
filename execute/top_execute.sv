@@ -9,24 +9,25 @@ module top_execute #(
     input logic jump_E,
     input logic branch_E,
     input logic jalr,
-    output logic [DATA_WIDTH-1:0] ALUout,
+    input logic lui,
+    output logic [DATA_WIDTH-1:0] ALUout2,
     output logic PCsrc_E,
     output logic [DATA_WIDTH-1:0] PCTarget_E, writeData_E
 );
 
 logic EQ;
-logic [DATA_WIDTH-1:0] ALUop2;
+logic [DATA_WIDTH-1:0] ALUop2, ALUout1;
 
 assign ALUop2 = ALUsrc ? ImmOp : RD2;
-assign PCTarget_E = jalr ? ALUout : (PC_E + (ImmOp << 1));
+assign PCTarget_E = jalr ? ALUout1 : (PC_E + (ImmOp << 1));
 assign writeData_E = RD2;
-
+assign ALUout2 = lui ? ImmOp : ALUout1;
 
 alu ALU(
 .ALUop1(RD1),
 .ALUop2(ALUop2),
 .ALUctrl(ALUctrl),
-.SUM(ALUout),
+.SUM(ALUout1),
 .EQ(EQ)
 );
 

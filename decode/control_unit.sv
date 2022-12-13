@@ -14,7 +14,7 @@ module control_unit #(
     output logic [2:0] R_size,
     output logic [2:0] DMem_size,
     output logic [3:0] ALUControlD,
-    output logic jalr
+    output logic jalr, lui
 );
 
 logic [1:0] instr_type;       // interconnect wire.
@@ -31,7 +31,8 @@ main_decoder main_control (
     .R_size(R_size),
     .DMem_size(DMem_size),
     .ALUOp(instr_type),
-    .jalr_o(jalr)
+    .jalr_o(jalr),
+    .lui_o(lui)
 );
 
 ALU_decoder alu_control (
