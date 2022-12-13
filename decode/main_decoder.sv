@@ -11,7 +11,8 @@ module main_decoder #(
     output logic [1:0] ALUOp,
     output logic [2:0] R_size,
     output logic [2:0] DMem_size,
-    output logic jalr_o
+    output logic jalr_o, lui_o,
+    output logic load_extend_s
 );
 
 typedef enum {UNDEFINED, R_type, addi, slli, L_type, lui, S_type, B_type, jal, jalr} Instr;
@@ -86,7 +87,14 @@ always_comb begin
         DMem_size = 3'b100;
     end
 
-jalr_o = instr == jalr;
+    jalr_o = instr == jalr;
+    lui_o = instr == lui;
+    if(instr == L_type)
+    case(funct3)
+        3'b001: load_extend_s = 1'b1;
+        3'b000: load_extend_s = 1'b1;
+        default: load_extend_s = 1'b0;
+    endcase
 end
 
 endmodule
