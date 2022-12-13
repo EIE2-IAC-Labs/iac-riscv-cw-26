@@ -43,18 +43,23 @@ int main(int argc, char **argv, char **env) {
         }
         if(i > 2 && i < 4){
             top->sw = 0;
-            top->writeData_M = 0xAAAAAAAA;
-            top->lw = 1;
+            top->writeData_M = 0b1000100010001000;
+            top->lh = 1;
+            top->s = 1;
             top->sh = 1;
         }
         if(i > 4 && i < 6){
             top->sh = 0;
-            top->writeData_M = 0xBBBBBBBB;
+            top->lh = 0;
+            top->writeData_M = 0b10000001;
+            top->s = 1;
             top->sb = 1;
+
         
         }
         if(i > 6 && i < 8){
             top->sb = 0;
+            top->lb = 1;
         }
 
         

@@ -6,6 +6,7 @@ module half_byte_word #(
     input logic lw, // load word
     input logic lb, // load byte
     input logic lh, // load half
+    input logic s,
     input [CPU_WORD-1:0] data,
     output [CPU_WORD-1:0] dout
 );
@@ -17,7 +18,9 @@ module half_byte_word #(
     assign h = data[HALF_LEN-1:0];
     assign b = data[BYTE_LEN-1:0];
 
-    zero_extend ze(h,b,he,be);
+    half_extend h_e(h,s,he);
+    byte_extend s_e(b,s,be);
+
     always_comb begin
         if(lh)  begin
             assign dout = he;

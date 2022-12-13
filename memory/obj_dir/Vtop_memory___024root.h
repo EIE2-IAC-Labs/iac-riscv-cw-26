@@ -20,19 +20,17 @@ class Vtop_memory___024root final : public VerilatedModule {
     VL_IN8(lw,0,0);
     VL_IN8(lh,0,0);
     VL_IN8(lb,0,0);
-    CData/*7:0*/ top_memory__DOT__ram__DOT____Vlvbound_ha0ce625e__0;
-    CData/*7:0*/ top_memory__DOT__ram__DOT____Vlvbound_ha0ce625e__1;
-    CData/*7:0*/ top_memory__DOT__ram__DOT____Vlvbound_h159ea9a8__0;
-    CData/*7:0*/ top_memory__DOT__ram__DOT____Vlvbound_ha0ce625e__2;
-    CData/*7:0*/ top_memory__DOT__ram__DOT____Vlvbound_h159ea9a8__1;
-    CData/*7:0*/ top_memory__DOT__ram__DOT____Vlvbound_h1550fc18__0;
-    CData/*7:0*/ top_memory__DOT__ram__DOT____Vlvbound_h15512b87__0;
+    VL_IN8(s,0,0);
+    CData/*0:0*/ top_memory__DOT__hbw__DOT__h_e__DOT__sign;
+    CData/*0:0*/ top_memory__DOT__hbw__DOT__s_e__DOT__sign;
     CData/*0:0*/ __Vclklast__TOP__clk;
     VL_IN(ALUResult_M,31,0);
     VL_IN(writeData_M,31,0);
     VL_OUT(readData_M,31,0);
     IData/*31:0*/ top_memory__DOT__dout;
-    VlUnpacked<CData/*7:0*/, 4096> top_memory__DOT__ram__DOT__ram_array;
+    IData/*31:0*/ top_memory__DOT__hbw__DOT__he;
+    IData/*31:0*/ top_memory__DOT__hbw__DOT__be;
+    VlUnpacked<CData/*7:0*/, 131072> top_memory__DOT__ram__DOT__ram_array;
     VlUnpacked<CData/*0:0*/, 2> __Vm_traceActivity;
 
     // INTERNAL VARIABLES
