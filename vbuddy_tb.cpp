@@ -21,14 +21,14 @@ int main(int argc, char **argv, char **env) {
     if (vbdOpen() != 1)
         return(-1);
     vbdHeader("Lab 4: Reduced RISC-V");
-    vbdSetMode(0); // Toggle mode
+    vbdSetMode(1); // One-shot mode
 
     // Init simulation inputs
     top->clk = 1;
-    top->rst = 1;
+    top->rst = 0;
 
     int clk;
-    for (int i = 0; i < 1000; i ++) {
+    for (int i = 0; i < 10000; i ++) { // Simulate for 10,000 cycles
         
         // Dump variables into VCD file and toggle clock
         for (clk = 0; clk < 2; clk ++) {
@@ -47,7 +47,7 @@ int main(int argc, char **argv, char **env) {
         vbdBar(top->a0 & 0xff);
 
         // Update input signals
-        top->rst = i < 2;
+        top->rst = vbdFlag();
 
     }
 

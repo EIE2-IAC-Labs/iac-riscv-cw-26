@@ -4,6 +4,11 @@
 rm -rf obj_dir
 rm -f *.vcd
 
+# assemble instructions
+cd f1test
+make f1test
+cd ..
+
 # run Verilator to translate Verilog into C++, including C++ testbench
 verilator -Wall -y "fetch" -y "decode" -y "execute" -y "memory" -y "writeback" -y "pipeline_reg" -y "decode/sign_extend" -y "f1test" -y "reference" --cc --trace --exe top.sv vbuddy_tb.cpp
 
