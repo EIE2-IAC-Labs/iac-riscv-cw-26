@@ -60,7 +60,8 @@ always_comb begin
         L_type: ALUOp = 2'b00;
         S_type: ALUOp = 2'b00;
         B_type: ALUOp = 2'b01;
-        default: ALUOp = 2'b10;
+        R_type: ALUOp = 2'b10;
+        default: ALUOp = 2'b11; // Includes immediate-type instructions.
     endcase
     
     // Handling memory unit size.

@@ -20,7 +20,7 @@ int main(int argc, char **argv, char **env) {
     // Init Vbuddy
     if (vbdOpen() != 1)
         return(-1);
-    vbdHeader("Lab 4: Reduced RISC-V");
+    vbdHeader("F1 lights");
     vbdSetMode(1); // One-shot mode
 
     // Init simulation inputs

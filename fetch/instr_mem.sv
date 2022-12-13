@@ -13,9 +13,16 @@ logic [DATA_WIDTH-1:0] byte2;
 logic [DATA_WIDTH-1:0] byte3;
 logic [DATA_WIDTH-1:0] byte4;
 
+// Load f1 light sequence program
+// initial begin
+//     $display("Loading instructions.");
+//     $readmemh("f1test/f1.hex", rom_array);
+// end
+
+// Load reference program
 initial begin
     $display("Loading instructions.");
-    $readmemh("f1test/f1.hex", rom_array);
+    $readmemh("reference/pdf.hex", rom_array);
 end
 
 always_comb begin

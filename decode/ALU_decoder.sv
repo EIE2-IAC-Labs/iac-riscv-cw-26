@@ -16,7 +16,9 @@ always_comb begin
 
         default: begin
             case(funct3)
-                3'b000: ALUControlD = {funct7_bit, 3'b000}; // ADD SUB
+                3'b000: ALUControlD = {ALUOp == 2'b10 ? funct7_bit : 1'b0, 3'b000}; // ADD SUB
+                // The above ternary statement is needed because there is no immediate SUB instruction
+                // (the only asymmetry between register and immediate arithmetic instructions).
                 3'b001: ALUControlD = {funct7_bit, 3'b001}; // SLL
                 3'b010: ALUControlD = {funct7_bit, 3'b101}; // SLT
                 3'b011: ALUControlD = {funct7_bit, 3'b111}; // SLTU

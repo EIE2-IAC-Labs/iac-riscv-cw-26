@@ -24,9 +24,10 @@ assign d1 = wd[2*(WORD_LENGTH)-1:WORD_LENGTH];
 assign d2 = wd[3*(WORD_LENGTH)-1:2*(WORD_LENGTH)];
 assign d3 = wd[4*(WORD_LENGTH)-1:3*(WORD_LENGTH)];
 
+// Load data from one of the reference .mem files
 initial begin
     $display("Loading data memory.");
-    $readmemh("memory/dataram.mem", ram_array);
+    $readmemh("reference/sine.mem", ram_array, 20'h10000);
 end
 
 assign rd = {ram_array[a+3],ram_array[a+2],ram_array[a+1],ram_array[a]};
