@@ -25,6 +25,7 @@ logic [2:0] ImmSrc_D;
 
 register register (
     .clk(clk),
+    .rst(rst),
     .rs1(instr_D[19:15]),
     .rs2(instr_D[24:20]),
     .rd(Rd_W),
