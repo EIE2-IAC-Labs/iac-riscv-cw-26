@@ -2,13 +2,13 @@ module decode_execute_reg #(
     parameter WIDTH = 32
 ) (
     input logic clk, rst,
-    input logic regWrite_D, jump_D, ALUsrc_D, branch_D,
+    input logic regWrite_D, jump_D, ALUsrc_D, branch_D, jalr_D, lui_D,
     input logic [1:0] resultSrc_D,
     input logic [2:0] R_size_D, DMem_size_D,
     input logic [3:0] ALUctrl_D,
     input logic [4:0] Rd_D,
     input logic [WIDTH-1:0] RD1_D, RD2_D, PC_D, ImmExt_D, PCPlus4_D,
-    output logic regWrite_E, jump_E, ALUsrc_E, branch_E,
+    output logic regWrite_E, jump_E, ALUsrc_E, branch_E, jalr_E, lui_E,
     output logic [1:0] resultSrc_E,
     output logic [2:0] R_size_E, DMem_size_E,
     output logic [3:0] ALUctrl_E,
@@ -32,6 +32,8 @@ always_ff @(posedge clk) begin
         PCPlus4_E <= 0;
         R_size_E <= 0;
         DMem_size_E <= 0;
+        jalr_E <= 0;
+        lui_E <= 0;
     end else begin
         regWrite_E <= regWrite_D;
         resultSrc_E <= resultSrc_D;
@@ -47,6 +49,8 @@ always_ff @(posedge clk) begin
         PCPlus4_E <= PCPlus4_D;
         R_size_E <= R_size_D;
         DMem_size_E <= DMem_size_D;
+        jalr_E <= jalr_D;
+        lui_E <= lui_D;
     end
 end
 

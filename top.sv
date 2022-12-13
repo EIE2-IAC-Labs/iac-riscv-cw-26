@@ -42,12 +42,11 @@ logic [WIDTH-1:0] instr_D, PC_D, PCPlus4_D;
 // Operands
 logic [WIDTH-1:0] RD1_D, RD2_D, ImmExt_D;
 // Control signals
-logic regWrite_D, jump_D, ALUsrc_D, branch_D;
+logic regWrite_D, jump_D, ALUsrc_D, branch_D, jalr_D, lui_D;
 logic [1:0] resultSrc_D;
 logic [2:0] R_size_D, DMem_size_D;
 logic [3:0] ALUctrl_D;
 logic [4:0] Rd_D;
-logic jalr; //added JALR output
 
 top_decode top_decode(
     .clk(clk),
@@ -69,7 +68,8 @@ top_decode top_decode(
     .a0(a0),
     .R_size_D(R_size_D),
     .DMem_size_D(DMem_size_D),
-    .jalr(jalr) //added JALR output
+    .jalr(jalr_D),
+    .lui(lui_D)
 );
 
 // // // Decode-execute pipeline register // // //
@@ -80,6 +80,8 @@ decode_execute_reg decode_execute_reg(
     .regWrite_D(regWrite_D),
     .jump_D(jump_D),
     .branch_D(branch_D),
+    .jalr_D(jalr_D),
+    .lui_D(lui_D),
     .ALUsrc_D(ALUsrc_D),
     .resultSrc_D(resultSrc_D),
     .ALUctrl_D(ALUctrl_D),
@@ -94,6 +96,8 @@ decode_execute_reg decode_execute_reg(
     .regWrite_E(regWrite_E),
     .jump_E(jump_E),
     .branch_E(branch_E),
+    .jalr_E(jalr_E),
+    .lui_E(lui_E),
     .ALUsrc_E(ALUsrc_E),
     .resultSrc_E(resultSrc_E),
     .ALUctrl_E(ALUctrl_E),
@@ -113,7 +117,7 @@ decode_execute_reg decode_execute_reg(
 // Operands from decode stage
 logic [WIDTH-1:0] RD1_E, RD2_E, ImmExt_E, PCPlus4_E, PC_E;
 // Control signals from decode stage
-logic regWrite_E, jump_E, ALUsrc_E, PCsrc_E, branch_E;
+logic regWrite_E, jump_E, ALUsrc_E, PCsrc_E, branch_E, jalr_E, lui_E;
 logic [1:0] resultSrc_E;
 logic [2:0] R_size_E, DMem_size_E;
 logic [3:0] ALUctrl_E;
@@ -132,11 +136,12 @@ top_execute top_execute(
     .PC_E(PC_E),
     .jump_E(jump_E),
     .branch_E(branch_E),
-    .ALUout(ALUResult_E),
+    .ALUout2(ALUResult_E),
     .PCsrc_E(PCsrc_E),
     .PCTarget_E(PCTarget_E),
     .writeData_E(writeData_E),
-    .jalr(jalr) //added JALR output
+    .jalr(jalr_E), //added JALR output
+    .lui(lui_E)
 );
 
 
