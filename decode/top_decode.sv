@@ -10,7 +10,7 @@ module top_decode #(
     output logic regWrite_D,
     output logic [1:0] resultSrc_D,
     output logic jump_D,
-    output logic [2:0] branch_D,
+    output logic branch_D, //chaning width to 1
     output logic [3:0] ALUctrl_D,
     output logic ALUsrc_D,
     output logic [4:0] Rd_D,
