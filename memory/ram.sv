@@ -26,7 +26,7 @@ assign d3 = wd[4*(WORD_LENGTH)-1:3*(WORD_LENGTH)];
 
 initial begin
     $display("Loading data memory.");
-    $readmemh("memory/dataram.mem", ram_array);
+    $readmemh("dataram.mem", ram_array);
 end
 
 assign rd = {ram_array[a+3],ram_array[a+2],ram_array[a+1],ram_array[a]};

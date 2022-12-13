@@ -32,6 +32,7 @@ class Vtop_memory VL_NOT_FINAL : public VerilatedModel {
     VL_IN8(&lw,0,0);
     VL_IN8(&lh,0,0);
     VL_IN8(&lb,0,0);
+    VL_IN8(&s,0,0);
     VL_IN(&ALUResult_M,31,0);
     VL_IN(&writeData_M,31,0);
     VL_OUT(&readData_M,31,0);
