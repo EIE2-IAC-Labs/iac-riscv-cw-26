@@ -42,9 +42,9 @@ logic [WIDTH-1:0] instr_D, PC_D, PCPlus4_D;
 // Operands
 logic [WIDTH-1:0] RD1_D, RD2_D, ImmExt_D;
 // Control signals
-logic regWrite_D, jump_D, ALUsrc_D;
+logic regWrite_D, jump_D, ALUsrc_D, branch_D;
 logic [1:0] resultSrc_D;
-logic [2:0] branch_D, R_size_D, DMem_size_D;
+logic [2:0] R_size_D, DMem_size_D;
 logic [3:0] ALUctrl_D;
 logic [4:0] Rd_D;
 logic jalr; //added JALR output
@@ -113,9 +113,9 @@ decode_execute_reg decode_execute_reg(
 // Operands from decode stage
 logic [WIDTH-1:0] RD1_E, RD2_E, ImmExt_E, PCPlus4_E, PC_E;
 // Control signals from decode stage
-logic regWrite_E, jump_E, ALUsrc_E, PCsrc_E;
+logic regWrite_E, jump_E, ALUsrc_E, PCsrc_E, branch_E;
 logic [1:0] resultSrc_E;
-logic [2:0] branch_E, R_size_E, DMem_size_E;
+logic [2:0] R_size_E, DMem_size_E;
 logic [3:0] ALUctrl_E;
 logic [4:0] Rd_E;
 // Internal signals
