@@ -4,7 +4,8 @@
 # ra is used as the primary return address register.
 # t1 is used for the nested subroutine call from loop to routine (it was considered unnecessary to implement a stack here).
 # s0 and s1 are used for constants defined in init.
-# t0 and t2 are used as loop counters in loop and routine.
+# a0 contains the code for the f1 lights.
+# t2 is used as the loop counter in routine.
 
 main:
     JAL ra, init
@@ -31,16 +32,19 @@ init:
     ADDI zero, zero, 0
  
 _loop:
-    ADDI t0, t0, 1
+    SLLI a0, a0, 1
+    ADDI zero, zero, 0
+    ADDI zero, zero, 0
+    ADDI a0, a0, 1
     ADDI zero, zero, 0
     ADDI zero, zero, 0
     ADDI t2, zero, 0 # Reset t2 to 0 before calling routine
     ADDI zero, zero, 0
     ADDI zero, zero, 0
     JAL t1, routine
-    ADDI x0, x0, 0
-    ADDI x0, x0, 0
-    BNE t0, s0, _loop
+    ADDI zero, zero, 0
+    ADDI zero, zero, 0
+    BNE a0, s0, _loop
     ADDI zero, zero, 0
     ADDI zero, zero, 0
     JALR ra, ra, 0
