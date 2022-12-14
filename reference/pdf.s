@@ -5,12 +5,16 @@
 main:
     JAL     ra, init  # jump to init, ra and save position to ra
     ADDI zero, zero, 0
+    ADDI zero, zero, 0
     JAL     ra, build
+    ADDI zero, zero, 0
     ADDI zero, zero, 0
 forever:
     JAL     ra, display
     ADDI zero, zero, 0
+    ADDI zero, zero, 0
     J       forever
+    ADDI zero, zero, 0
     ADDI zero, zero, 0
 
 init:       # function to initialise PDF buffer memory 
@@ -24,7 +28,9 @@ _loop1:                         # repeat
     SB      zero, base_pdf(a1)  #     mem[base_pdf+a1) = 0
     BNE     a1, zero, _loop1    # until a1 = 0
     ADDI zero, zero, 0
+    ADDI zero, zero, 0
     RET
+    ADDI zero, zero, 0
     ADDI zero, zero, 0
 
 build:      # function to build prob dist func (pdf)
@@ -47,12 +53,14 @@ _loop2:                         # repeat
     ADDI zero, zero, 0
     ADDI    t1, t1, 1           #     increment bin count
     ADDI zero, zero, 0
-    ADDI zero, zero, 0
-    SB      t1, 0(a6)           #     update bin count
+    # The two below instructions have been swapped to avoid the data hazard without adding more no-ops.
     ADDI    a2, a2, 1           #     point to next data in array
+    SB      t1, 0(a6)           #     update bin count
     BNE     t1, a4, _loop2      # until bin count reaches max
     ADDI zero, zero, 0
+    ADDI zero, zero, 0
     RET
+    ADDI zero, zero, 0
     ADDI zero, zero, 0
 
 display:    # function send PDF array value to a0 for display
@@ -66,5 +74,7 @@ _loop3:                         # repeat
     ADDI zero, zero, 0
     BNE     a1, a2, _loop3      # until end of pdf array
     ADDI zero, zero, 0
+    ADDI zero, zero, 0
     RET
+    ADDI zero, zero, 0
     ADDI zero, zero, 0

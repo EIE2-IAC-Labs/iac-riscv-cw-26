@@ -45,9 +45,13 @@ int main(int argc, char **argv, char **env) {
         }
 
         // Send data to Vbuddy
-        vbdCycle(i);
         if (plotting) {
             vbdPlot(top->a0, 0, 0xff);
+            vbdCycle(i);
+        }
+        else if (i % 1000 == 0) {
+            vbdCycle(i);
+            // When we are not yet plotting, only print cycle every 1000 cycles to speed up simulation.
         }
         // vbdHex(1, top->a0 & 0xf);
         // vbdHex(2, (top->a0 >> 4) & 0xf);
@@ -56,7 +60,8 @@ int main(int argc, char **argv, char **env) {
         // vbdBar(top->a0 & 0xff);
 
         // Update input signals
-        top->rst = vbdFlag();
+        // top->rst = vbdFlag();
+        // Disable reset signal for now, to speed up testing
 
     }
 
