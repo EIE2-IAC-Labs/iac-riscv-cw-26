@@ -29,11 +29,10 @@ int main(int argc, char **argv, char **env) {
 
     int clk;
     bool plotting = false;
-    for (int i = 0; i < 100000; i ++) { // Simulate for 100,000 cycles
+    for (int i = 0; i < 1000000; i ++) { // Simulate for 1M cycles
         
         // Dump variables into VCD file and toggle clock
         for (clk = 0; clk < 2; clk ++) {
-            tfp->dump(2*i + clk);
             top->clk = !top->clk;
             top->eval();
         }
@@ -46,12 +45,13 @@ int main(int argc, char **argv, char **env) {
 
         // Send data to Vbuddy
         if (plotting) {
-            vbdPlot(top->a0, 0, 0xff);
+            vbdPlot(top->a0, 0, 200); // Max bin count = 200
             vbdCycle(i);
+            tfp->dump(2*i + clk); // For testing
         }
-        else if (i % 1000 == 0) {
+        else if (i % 10000 == 0) {
             vbdCycle(i);
-            // When we are not yet plotting, only print cycle every 1000 cycles to speed up simulation.
+            // When we are not yet plotting, only print cycle every 10000 cycles to speed up simulation.
         }
         // vbdHex(1, top->a0 & 0xf);
         // vbdHex(2, (top->a0 >> 4) & 0xf);
