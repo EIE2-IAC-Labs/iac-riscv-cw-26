@@ -9,13 +9,14 @@ module top_decode #(
     input logic [WIDTH-1:0] result_W,
     output logic regWrite_D,
     output logic [1:0] resultSrc_D,
-    //output logic memWrite_D,
-    //output logic jump_D,
-    output logic [2:0] branch_D,
+    output logic jump_D,
+    output logic branch_D, //chaning width to 1
     output logic [3:0] ALUctrl_D,
     output logic ALUsrc_D,
     output logic [4:0] Rd_D,
-    output logic [WIDTH-1:0] RD1_D, RD2_D, ImmExt_D, a0
+    output logic [WIDTH-1:0] RD1_D, RD2_D, ImmExt_D, a0,
+    output logic [2:0] R_size_D, DMem_size_D,
+    output logic jalr, lui, load_extend_s
 );
 
 assign Rd_D = instr_D[11:7];
@@ -24,6 +25,7 @@ logic [2:0] ImmSrc_D;
 
 register register (
     .clk(clk),
+    .rst(rst),
     .rs1(instr_D[19:15]),
     .rs2(instr_D[24:20]),
     .rd(Rd_W),
@@ -35,20 +37,27 @@ register register (
 );
 
 control_unit control_unit(
-    .funct3(instr_D[14:12]),
     .opcode(instr_D[6:0]),
-    .RegWrite(regWrite_D),
-    .ALUctrl(ALUctrl_D),
-    .ALUsrc(ALUsrc_D),
-    .ImmSrc(ImmSrc_D),
-    .RegWriteSrc(resultSrc_D),
-    .branch(branch_D)
+    .funct3(instr_D[14:12]),
+    .funct7(instr_D[31:25]),
+    .RegWriteD(regWrite_D),
+    .ResultSrcD(resultSrc_D),
+    .ALUsrcD(ALUsrc_D),
+    .ImmSrcD(ImmSrc_D),
+    .BranchD(branch_D),
+    .JumpD(jump_D),
+    .R_size(R_size_D),
+    .DMem_size(DMem_size_D),
+    .ALUControlD(ALUctrl_D),
+    .jalr(jalr),
+    .lui(lui),
+    .load_extend_s(load_extend_s)
 );
 
 sign_extend SignExtend (
-    .instruction(instr_D),
-    .ImmSrc(ImmSrc_D),
-    .ImmOp(ImmExt_D)
+    .InstrD(instr_D),
+    .ImmSrcD(ImmSrc_D),
+    .ImmExtD(ImmExt_D)
 );
     
 endmodule
