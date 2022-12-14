@@ -28,7 +28,7 @@ int main(int argc, char **argv, char **env) {
     top->rst = 1;
 
     int clk;
-    for (int i = 0; i < 1000; i ++) {
+    for (int i = 0; i < 100000; i ++) { // Rum simulation for 100,000 clock cycles
         
         // Dump variables into VCD file and toggle clock
         for (clk = 0; clk < 2; clk ++) {

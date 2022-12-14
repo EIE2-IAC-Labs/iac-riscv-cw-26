@@ -29,7 +29,7 @@ int main(int argc, char **argv, char **env) {
 
     int clk;
     bool plotting = false;
-    for (int i = 0; i < 10000; i ++) { // Simulate for 10,000 cycles
+    for (int i = 0; i < 100000; i ++) { // Simulate for 100,000 cycles
         
         // Dump variables into VCD file and toggle clock
         for (clk = 0; clk < 2; clk ++) {

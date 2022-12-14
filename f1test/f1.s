@@ -23,12 +23,8 @@ infloop:
     ADDI zero, zero, 0
 
 init:
-    ADDI s0, zero, 0xFF # Set s0 = 0xff
-    ADDI zero, zero, 0
-    ADDI zero, zero, 0
-    ADDI s1, zero, 8 # Set s1 = 8
-    ADDI zero, zero, 0
-    ADDI zero, zero, 0
+    ADDI s0, zero, 0xFF
+    ADDI s1, zero, 8
     JALR ra, ra, 0
     ADDI zero, zero, 0
     ADDI zero, zero, 0
@@ -38,11 +34,7 @@ _loop:
     ADDI zero, zero, 0
     ADDI zero, zero, 0
     ADDI a0, t0, 1
-    ADDI zero, zero, 0
-    ADDI zero, zero, 0
     ADDI t2, zero, 0 # Reset t2 to 0 before calling routine
-    ADDI zero, zero, 0
-    ADDI zero, zero, 0
     JAL t1, routine
     ADDI zero, zero, 0
     ADDI zero, zero, 0

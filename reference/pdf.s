@@ -5,16 +5,12 @@
 main:
     JAL     ra, init  # jump to init, ra and save position to ra
     ADDI zero, zero, 0
-    ADDI zero, zero, 0
     JAL     ra, build
-    ADDI zero, zero, 0
     ADDI zero, zero, 0
 forever:
     JAL     ra, display
     ADDI zero, zero, 0
-    ADDI zero, zero, 0
     J       forever
-    ADDI zero, zero, 0
     ADDI zero, zero, 0
 
 init:       # function to initialise PDF buffer memory 
@@ -26,28 +22,16 @@ _loop1:                         # repeat
     ADDI zero, zero, 0
     ADDI zero, zero, 0
     SB      zero, base_pdf(a1)  #     mem[base_pdf+a1) = 0
-    ADDI zero, zero, 0
-    ADDI zero, zero, 0
     BNE     a1, zero, _loop1    # until a1 = 0
     ADDI zero, zero, 0
-    ADDI zero, zero, 0
     RET
-    ADDI zero, zero, 0
     ADDI zero, zero, 0
 
 build:      # function to build prob dist func (pdf)
     LI      a1, base_data       # a1 = base address of data array
-    ADDI zero, zero, 0
-    ADDI zero, zero, 0
     LI      a2, 0               # a2 = offset into of data array 
-    ADDI zero, zero, 0
-    ADDI zero, zero, 0
     LI      a3, base_pdf        # a3 = base address of pdf array
-    ADDI zero, zero, 0
-    ADDI zero, zero, 0
     LI      a4, max_count       # a4 = maximum count to terminate
-    ADDI zero, zero, 0
-    ADDI zero, zero, 0
 _loop2:                         # repeat
     ADD     a5, a1, a2          #     a5 = data base address + offset
     ADDI zero, zero, 0
@@ -65,35 +49,22 @@ _loop2:                         # repeat
     ADDI zero, zero, 0
     ADDI zero, zero, 0
     SB      t1, 0(a6)           #     update bin count
-    ADDI zero, zero, 0
-    ADDI zero, zero, 0
     ADDI    a2, a2, 1           #     point to next data in array
-    ADDI zero, zero, 0
-    ADDI zero, zero, 0
     BNE     t1, a4, _loop2      # until bin count reaches max
     ADDI zero, zero, 0
-    ADDI zero, zero, 0
     RET
-    ADDI zero, zero, 0
     ADDI zero, zero, 0
 
 display:    # function send PDF array value to a0 for display
     LI      a1, 0               # a1 = offset into pdf array
-    ADDI zero, zero, 0
-    ADDI zero, zero, 0
     LI      a2, 255             # a2 = max index of pdf array
-    ADDI zero, zero, 0
     ADDI zero, zero, 0
 _loop3:                         # repeat
     LBU     a0, base_pdf(a1)    #   a0 = mem[base_pdf+a1)
-    ADDI zero, zero, 0
-    ADDI zero, zero, 0
     addi    a1, a1, 1           #   incr 
     ADDI zero, zero, 0
     ADDI zero, zero, 0
     BNE     a1, a2, _loop3      # until end of pdf array
     ADDI zero, zero, 0
-    ADDI zero, zero, 0
     RET
-    ADDI zero, zero, 0
     ADDI zero, zero, 0
