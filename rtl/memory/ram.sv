@@ -9,11 +9,12 @@ module ram #(
     input logic sb,
     input logic [ADDRESS_LENGTH-1:0] a,
     input logic clk,
-    output logic [ADDRESS_LENGTH-1:0] rd
+    output logic [ADDRESS_LENGTH-1:0] rd,
+    output logic [ADDRESS_LENGTH-1:0] ca //cache address
 );
 
 logic [WORD_LENGTH-1:0] ram_array[32'h1FFFF:0];
-
+logic [ADDRESS_LENGTH-1:0] offset_a;
 logic [WORD_LENGTH-1:0] d0;
 logic [WORD_LENGTH-1:0] d1;
 logic [WORD_LENGTH-1:0] d2;
@@ -29,8 +30,8 @@ initial begin
     $display("Loading data memory.");
     $readmemh("reference/gaussian.mem", ram_array, 20'h10000);
 end
-
-assign rd = {ram_array[a+3],ram_array[a+2],ram_array[a+1],ram_array[a]};
+assign offset_a = a - (a%4);
+assign rd = {ram_array[offset_a+3],ram_array[offset_a+2],ram_array[offset_a+1],ram_array[offset_a]};
     
 always_ff @(posedge clk) begin
     if (sb) begin
