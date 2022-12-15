@@ -9,7 +9,6 @@ module top_memory #(
     input logic lw,
     input logic lh,
     input logic lb,
-    input logic s,
     input logic [WIDTH-1:0] ALUResult_M,
     input logic [WIDTH-1:0] writeData_M,
     output logic [WIDTH-1:0] readData_M
@@ -37,7 +36,14 @@ always_comb begin
     cache_wen = storeIns || (loadIns && !cache_hit);
 end
 
-logic [WIDTH-1:0] dout;
+memory_output memory_output (
+    .din(memory_out),
+    .addr(ALUResult_M),
+    .lw(lw),
+    .lh(lh),
+    .lb(lb),
+    .dout(readData_M)
+);
 
 // // // Cache // // //
 
@@ -60,25 +66,25 @@ memory_input cache_input (
     .memory_in(cache_in1)
 );
 
+
 // // // RAM // // //
 
 ram ram(
+    .clk(clk),
+    .wen(storeIns),
+    .wd(ram_in),
+    .a(ALUResult_M),
+    .rd(ram_out)
+);
+
+memory_input ram_input (
     .sw(sw),
     .sh(sh),
     .sb(sb),
-    .wd(writeData_M),
-    .a(ALUResult_M),
-    .clk(clk),
-    .rd(dout)
-);
-
-half_byte_word hbw(
-    .lw(lw),
-    .lh(lh),
-    .lb(lb),
-    .s(s),
-    .data(dout),
-    .dout(readData_M)
+    .din(writeData_M),
+    .addr(ALUResult_M),
+    .memory_out(ram_out),
+    .memory_in(ram_in)
 );
 
 endmodule
