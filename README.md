@@ -1,1 +1,1 @@
-# Autumn IAC coursework
+# Joint statement
