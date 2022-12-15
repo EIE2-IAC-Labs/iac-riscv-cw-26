@@ -1,0 +1,3 @@
+v1. The current test program has 4 no-ops between every instruction. This is to test the progression of each instruction through the pipeline in isolation. This also means the immediate operands for the branches has to be modified to branch further. The differences can be seen in the old_instructions.mem and instructions.mem files.
+
+v2. It was found through theory and testing that putting 2 no-ops after each instruction guarantees correct execution. The bottleneck in terms of minimising the number of no-ops used comes from the dependence of the register file in the decode stage on the writeback stage. There must be 2 no-ops in between instructions to prevent a register being read before it is written.
