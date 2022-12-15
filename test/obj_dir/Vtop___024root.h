@@ -90,7 +90,6 @@ class Vtop___024root final : public VerilatedModule {
         IData/*31:0*/ top__DOT__top_memory__DOT__ram_out;
         IData/*31:0*/ top__DOT__top_memory__DOT__memory_out;
         IData/*23:0*/ top__DOT__top_memory__DOT__cache__DOT__tag_out;
-        IData/*31:0*/ top__DOT__top_memory__DOT__ram__DOT__offset_a;
         IData/*31:0*/ top__DOT__top_memory__DOT__hbw__DOT__he;
         IData/*31:0*/ top__DOT__top_memory__DOT__hbw__DOT__be;
         QData/*56:0*/ top__DOT__top_memory__DOT__cache__DOT__cache_out;

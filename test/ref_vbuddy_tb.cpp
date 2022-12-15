@@ -29,6 +29,7 @@ int main(int argc, char **argv, char **env) {
 
     int clk;
     bool plotting = false;
+    int offsetIndex = 0;
     for (int i = 0; i < 1000000; i ++) { // Simulate for 1M cycles
         
         // Dump variables into VCD file and toggle clock
@@ -47,7 +48,8 @@ int main(int argc, char **argv, char **env) {
         if (plotting) {
             vbdPlot(top->a0, 0, 200); // Max bin count = 200
             vbdCycle(i);
-            tfp->dump(2*i + clk); // For testing
+            tfp->dump(offsetIndex); // For testing
+            offsetIndex ++;
         }
         else if (i % 10000 == 0) {
             vbdCycle(i);

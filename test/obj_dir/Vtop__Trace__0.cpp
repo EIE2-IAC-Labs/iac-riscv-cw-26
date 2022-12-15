@@ -81,16 +81,18 @@ void Vtop___024root__trace_chg_sub_0(Vtop___024root* vlSelf, VerilatedVcd::Buffe
         bufp->chgCData(oldp+16,(((4U == vlSelf->top__DOT__top_decode__DOT__control_unit__DOT__main_control__DOT__instr)
                                   ? ((0x4000U & vlSelf->top__DOT__instr_D)
                                       ? ((0x2000U & vlSelf->top__DOT__instr_D)
-                                          ? 4U : ((0x1000U 
+                                          ? 0U : ((0x1000U 
                                                    & vlSelf->top__DOT__instr_D)
                                                    ? 2U
                                                    : 1U))
                                       : ((0x2000U & vlSelf->top__DOT__instr_D)
-                                          ? 4U : ((0x1000U 
-                                                   & vlSelf->top__DOT__instr_D)
-                                                   ? 2U
-                                                   : 1U)))
-                                  : 4U)),3);
+                                          ? ((0x1000U 
+                                              & vlSelf->top__DOT__instr_D)
+                                              ? 0U : 4U)
+                                          : ((0x1000U 
+                                              & vlSelf->top__DOT__instr_D)
+                                              ? 2U : 1U)))
+                                  : 0U)),3);
         bufp->chgCData(oldp+17,(vlSelf->top__DOT__ALUctrl_D),4);
         bufp->chgCData(oldp+18,((0x1fU & (vlSelf->top__DOT__instr_D 
                                           >> 7U))),5);
@@ -241,7 +243,7 @@ void Vtop___024root__trace_chg_sub_0(Vtop___024root* vlSelf, VerilatedVcd::Buffe
         bufp->chgCData(oldp+132,(vlSelf->top__DOT__top_memory__DOT__hbw__DOT__b),8);
         bufp->chgBit(oldp+133,(vlSelf->top__DOT__top_memory__DOT__hbw__DOT__h_e__DOT__sign));
         bufp->chgBit(oldp+134,(vlSelf->top__DOT__top_memory__DOT__hbw__DOT__s_e__DOT__sign));
-        bufp->chgIData(oldp+135,(vlSelf->top__DOT__top_memory__DOT__ram__DOT__offset_a),32);
+        bufp->chgIData(oldp+135,((0xfffffffcU & vlSelf->top__DOT__ALUResult_M)),32);
         bufp->chgCData(oldp+136,((0xffU & vlSelf->top__DOT__writeData_M)),8);
         bufp->chgCData(oldp+137,((0xffU & (vlSelf->top__DOT__writeData_M 
                                            >> 8U))),8);

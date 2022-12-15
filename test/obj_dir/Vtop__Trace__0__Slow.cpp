@@ -538,16 +538,18 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
     bufp->fullCData(oldp+17,(((4U == vlSelf->top__DOT__top_decode__DOT__control_unit__DOT__main_control__DOT__instr)
                                ? ((0x4000U & vlSelf->top__DOT__instr_D)
                                    ? ((0x2000U & vlSelf->top__DOT__instr_D)
-                                       ? 4U : ((0x1000U 
+                                       ? 0U : ((0x1000U 
                                                 & vlSelf->top__DOT__instr_D)
                                                 ? 2U
                                                 : 1U))
                                    : ((0x2000U & vlSelf->top__DOT__instr_D)
-                                       ? 4U : ((0x1000U 
-                                                & vlSelf->top__DOT__instr_D)
-                                                ? 2U
-                                                : 1U)))
-                               : 4U)),3);
+                                       ? ((0x1000U 
+                                           & vlSelf->top__DOT__instr_D)
+                                           ? 0U : 4U)
+                                       : ((0x1000U 
+                                           & vlSelf->top__DOT__instr_D)
+                                           ? 2U : 1U)))
+                               : 0U)),3);
     bufp->fullCData(oldp+18,(vlSelf->top__DOT__ALUctrl_D),4);
     bufp->fullCData(oldp+19,((0x1fU & (vlSelf->top__DOT__instr_D 
                                        >> 7U))),5);
@@ -696,7 +698,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
     bufp->fullCData(oldp+133,(vlSelf->top__DOT__top_memory__DOT__hbw__DOT__b),8);
     bufp->fullBit(oldp+134,(vlSelf->top__DOT__top_memory__DOT__hbw__DOT__h_e__DOT__sign));
     bufp->fullBit(oldp+135,(vlSelf->top__DOT__top_memory__DOT__hbw__DOT__s_e__DOT__sign));
-    bufp->fullIData(oldp+136,(vlSelf->top__DOT__top_memory__DOT__ram__DOT__offset_a),32);
+    bufp->fullIData(oldp+136,((0xfffffffcU & vlSelf->top__DOT__ALUResult_M)),32);
     bufp->fullCData(oldp+137,((0xffU & vlSelf->top__DOT__writeData_M)),8);
     bufp->fullCData(oldp+138,((0xffU & (vlSelf->top__DOT__writeData_M 
                                         >> 8U))),8);
