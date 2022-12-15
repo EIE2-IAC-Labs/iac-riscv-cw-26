@@ -19,6 +19,7 @@ Vtop_memory::Vtop_memory(VerilatedContext* _vcontextp__, const char* _vcname__)
     , lh{vlSymsp->TOP.lh}
     , lb{vlSymsp->TOP.lb}
     , s{vlSymsp->TOP.s}
+    , offset{vlSymsp->TOP.offset}
     , ALUResult_M{vlSymsp->TOP.ALUResult_M}
     , writeData_M{vlSymsp->TOP.writeData_M}
     , readData_M{vlSymsp->TOP.readData_M}

@@ -32,7 +32,8 @@ initial begin
 end
 assign offset_a = a - (a%4);
 assign rd = {ram_array[offset_a+3],ram_array[offset_a+2],ram_array[offset_a+1],ram_array[offset_a]};
-    
+assign ca = a;
+
 always_ff @(posedge clk) begin
     if (sb) begin
         ram_array[a] <= d0;

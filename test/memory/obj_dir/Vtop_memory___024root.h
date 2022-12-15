@@ -21,13 +21,17 @@ class Vtop_memory___024root final : public VerilatedModule {
     VL_IN8(lh,0,0);
     VL_IN8(lb,0,0);
     VL_IN8(s,0,0);
+    VL_IN8(offset,1,0);
+    CData/*7:0*/ top_memory__DOT__hbw__DOT__b;
     CData/*0:0*/ top_memory__DOT__hbw__DOT__h_e__DOT__sign;
     CData/*0:0*/ top_memory__DOT__hbw__DOT__s_e__DOT__sign;
     CData/*0:0*/ __Vclklast__TOP__clk;
+    SData/*15:0*/ top_memory__DOT__hbw__DOT__h;
     VL_IN(ALUResult_M,31,0);
     VL_IN(writeData_M,31,0);
     VL_OUT(readData_M,31,0);
     IData/*31:0*/ top_memory__DOT__dout;
+    IData/*31:0*/ top_memory__DOT__ram__DOT__offset_a;
     IData/*31:0*/ top_memory__DOT__hbw__DOT__he;
     IData/*31:0*/ top_memory__DOT__hbw__DOT__be;
     VlUnpacked<CData/*7:0*/, 131072> top_memory__DOT__ram__DOT__ram_array;

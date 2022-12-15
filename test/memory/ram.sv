@@ -13,7 +13,7 @@ module ram #(
 );
 
 logic [WORD_LENGTH-1:0] ram_array[32'h1FFFF:0];
-
+logic [ADDRESS_LENGTH-1:0] offset_a;
 logic [WORD_LENGTH-1:0] d0;
 logic [WORD_LENGTH-1:0] d1;
 logic [WORD_LENGTH-1:0] d2;
@@ -27,11 +27,11 @@ assign d3 = wd[4*(WORD_LENGTH)-1:3*(WORD_LENGTH)];
 // Load data from one of the reference .mem files
 initial begin
     $display("Loading data memory.");
-    $readmemh("reference/gaussian.mem", ram_array, 20'h10000);
+    $readmemh("dataram.mem", ram_array, 20'h10000);
 end
+assign offset_a = (a - (a%4)) + 1;
+assign rd = {ram_array[offset_a+3],ram_array[offset_a+2],ram_array[offset_a+1],ram_array[offset_a]};
 
-assign rd = {ram_array[a+3],ram_array[a+2],ram_array[a+1],ram_array[a]};
-    
 always_ff @(posedge clk) begin
     if (sb) begin
         ram_array[a] <= d0;

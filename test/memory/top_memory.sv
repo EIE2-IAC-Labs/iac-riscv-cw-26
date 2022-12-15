@@ -11,6 +11,7 @@ module top_memory #(
     input logic lh,
     input logic lb,
     input logic s,
+    input logic [1:0] offset,
     input logic [WIDTH-1:0] ALUResult_M,
     input logic [WIDTH-1:0] writeData_M,
     output logic [WIDTH-1:0] readData_M
@@ -33,6 +34,7 @@ half_byte_word hbw(
     .lh(lh),
     .lb(lb),
     .s(s),
+    .offset(offset),
     .data(dout),
     .dout(readData_M)
 );
