@@ -68,13 +68,13 @@
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/diffs-4edb932eb78e.js"></script>
   
 
-  <title>iac-riscv-cw-26/ref_vbuddy_tb.cpp at testing_pdfs · EIE2-IAC-Labs/iac-riscv-cw-26</title>
+  <title>iac-riscv-cw-26/triangle_tb.cpp at testing_pdfs · EIE2-IAC-Labs/iac-riscv-cw-26</title>
 
 
 
     
 
-  <meta name="request-id" content="C54B:1E00:5823DBE:5B36A20:639B159E" data-turbo-transient="true" /><meta name="html-safe-nonce" content="ab6cfa502e5f5abd7b05c254c15e5afc95209c9fe30e1ee245bb90f4aaa07885" data-turbo-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vZ2l0aHViLmNvbS9FSUUyLUlBQy1MYWJzL2lhYy1yaXNjdi1jdy0yNi90cmVlL3Rlc3RpbmdfcGRmcyIsInJlcXVlc3RfaWQiOiJDNTRCOjFFMDA6NTgyM0RCRTo1QjM2QTIwOjYzOUIxNTlFIiwidmlzaXRvcl9pZCI6IjczMjgyNjYwODQ3Nzg3MjE2ODUiLCJyZWdpb25fZWRnZSI6ImZyYSIsInJlZ2lvbl9yZW5kZXIiOiJpYWQifQ==" data-turbo-transient="true" /><meta name="visitor-hmac" content="7c83083b05a2b9404a3ad5c9d4569c7bd897dd6ae274556f62c853d7f1a3161d" data-turbo-transient="true" />
+  <meta name="request-id" content="C54B:1E00:58188EC:5B2B0CE:639B158A" data-turbo-transient="true" /><meta name="html-safe-nonce" content="ab6cfa502e5f5abd7b05c254c15e5afc95209c9fe30e1ee245bb90f4aaa07885" data-turbo-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vZ2l0aHViLmNvbS9FSUUyLUlBQy1MYWJzL2lhYy1yaXNjdi1jdy0yNi90cmVlL3Rlc3RpbmdfcGRmcyIsInJlcXVlc3RfaWQiOiJDNTRCOjFFMDA6NTgxODhFQzo1QjJCMENFOjYzOUIxNThBIiwidmlzaXRvcl9pZCI6IjczMjgyNjYwODQ3Nzg3MjE2ODUiLCJyZWdpb25fZWRnZSI6ImZyYSIsInJlZ2lvbl9yZW5kZXIiOiJpYWQifQ==" data-turbo-transient="true" /><meta name="visitor-hmac" content="68e8e5f66597141ec43170da75479d376843fd759c756d05e7f62fa50fad0322" data-turbo-transient="true" />
 
 
     <meta name="hovercard-subject-tag" content="repository:569702198" data-turbo-transient>
@@ -113,11 +113,11 @@
     <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
     <meta property="fb:app_id" content="1401488693436528">
     <meta name="apple-itunes-app" content="app-id=1477376905" />
-      <meta name="twitter:image:src" content="https://avatars.githubusercontent.com/u/115482120?s=400&amp;v=4" /><meta name="twitter:site" content="@github" /><meta name="twitter:card" content="summary" /><meta name="twitter:title" content="iac-riscv-cw-26/ref_vbuddy_tb.cpp at testing_pdfs · EIE2-IAC-Labs/iac-riscv-cw-26" /><meta name="twitter:description" content="Contribute to EIE2-IAC-Labs/iac-riscv-cw-26 development by creating an account on GitHub." />
-      <meta property="og:image" content="https://avatars.githubusercontent.com/u/115482120?s=400&amp;v=4" /><meta property="og:image:alt" content="Contribute to EIE2-IAC-Labs/iac-riscv-cw-26 development by creating an account on GitHub." /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="iac-riscv-cw-26/ref_vbuddy_tb.cpp at testing_pdfs · EIE2-IAC-Labs/iac-riscv-cw-26" /><meta property="og:url" content="https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26" /><meta property="og:description" content="Contribute to EIE2-IAC-Labs/iac-riscv-cw-26 development by creating an account on GitHub." />
+      <meta name="twitter:image:src" content="https://avatars.githubusercontent.com/u/115482120?s=400&amp;v=4" /><meta name="twitter:site" content="@github" /><meta name="twitter:card" content="summary" /><meta name="twitter:title" content="iac-riscv-cw-26/triangle_tb.cpp at testing_pdfs · EIE2-IAC-Labs/iac-riscv-cw-26" /><meta name="twitter:description" content="Contribute to EIE2-IAC-Labs/iac-riscv-cw-26 development by creating an account on GitHub." />
+      <meta property="og:image" content="https://avatars.githubusercontent.com/u/115482120?s=400&amp;v=4" /><meta property="og:image:alt" content="Contribute to EIE2-IAC-Labs/iac-riscv-cw-26 development by creating an account on GitHub." /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="iac-riscv-cw-26/triangle_tb.cpp at testing_pdfs · EIE2-IAC-Labs/iac-riscv-cw-26" /><meta property="og:url" content="https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26" /><meta property="og:description" content="Contribute to EIE2-IAC-Labs/iac-riscv-cw-26 development by creating an account on GitHub." />
       
     <link rel="assets" href="https://github.githubassets.com/">
-      <link rel="shared-web-socket" href="wss://alive.github.com/_sockets/u/67604951/ws?session=eyJ2IjoiVjMiLCJ1Ijo2NzYwNDk1MSwicyI6OTkyODg0NjU0LCJjIjoyNjI0MjA1MTIxLCJ0IjoxNjcxMTA4MDIwfQ==--2ae60a5bd751a235de8de678e5c49ab6d8a44191b62b59189c0f7e365695f150" data-refresh-url="/_alive" data-session-id="c8509f95b2b61b5ae798ba38ff0819caaa4a9df7cac9325e526205eecda132e4">
+      <link rel="shared-web-socket" href="wss://alive.github.com/_sockets/u/67604951/ws?session=eyJ2IjoiVjMiLCJ1Ijo2NzYwNDk1MSwicyI6OTkyODg0NjU0LCJjIjoyNzI0OTA0NTcwLCJ0IjoxNjcxMTA3OTg5fQ==--18e5c105621a3847d844af72312c10be8c5c94bfbee9fc703adee03071628b1c" data-refresh-url="/_alive" data-session-id="c8509f95b2b61b5ae798ba38ff0819caaa4a9df7cac9325e526205eecda132e4">
       <link rel="shared-web-socket-src" href="/assets-cdn/worker/socket-worker-b87581f5816c.js">
 
 
@@ -147,7 +147,7 @@
 
 
 
-    <link rel="canonical" href="https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/ref_vbuddy_tb.cpp" data-turbo-transient>
+    <link rel="canonical" href="https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/triangle_tb.cpp" data-turbo-transient>
   <meta name="turbo-body-classes" content="logged-in env-production page-responsive page-blob">
 
 
@@ -240,7 +240,7 @@
           spellcheck="false"
           autocomplete="off"
         >
-        <input type="hidden" value="c10VuywnwP-PDwmgiowAsWIbB-syiKlPzTq3U16dZ4tVpn-SC54uROT1tM-5dSb8gm_lQZzgoIJF-5_E7mnICg" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" />
+        <input type="hidden" value="Exgvz-mJuimkF_JAZI25SPajeOL4-3xSzW8RQvaehVk140XmzjBUks_tTy9XdJ8FFteaSFaTdZ9FrjnVRmoq2A" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" />
         <input type="hidden" class="js-site-search-type-field" name="type" >
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" aria-hidden="true" class="mr-1 header-search-key-slash"><path fill="none" stroke="#979A9C" opacity=".4" d="M3.5.5h12c1.7 0 3 1.3 3 3v13c0 1.7-1.3 3-3 3h-12c-1.7 0-3-1.3-3-3v-13c0-1.7 1.3-3 3-3z"></path><path fill="#979A9C" d="M11.8 6L8 15.1h-.9L10.8 6h1z"></path></svg>
 
@@ -439,7 +439,7 @@
 
   <a class="js-selected-navigation-item Header-link mt-md-n3 mb-md-n3 py-2 py-md-3 mr-0 mr-md-3 border-top border-md-top-0 border-white-fade" data-ga-click="Header, click, Nav menu - item:explore" data-turbo="false" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore" href="/explore">Explore</a>
 
-      <a class="js-selected-navigation-item Header-link d-block d-md-none py-2 py-md-3 border-top border-md-top-0 border-white-fade" data-ga-click="Header, click, Nav menu - item:Sponsors" data-hydro-click="{&quot;event_type&quot;:&quot;sponsors.button_click&quot;,&quot;payload&quot;:{&quot;button&quot;:&quot;HEADER_SPONSORS_DASHBOARD&quot;,&quot;sponsorable_login&quot;:&quot;AnlanQiu&quot;,&quot;originating_url&quot;:&quot;https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/ref_vbuddy_tb.cpp&quot;,&quot;user_id&quot;:67604951}}" data-hydro-click-hmac="93ba76247d770121aacbe69a643ad3bf6101f8963715dcf86b6ccc163071e2fe" data-turbo="false" data-selected-links=" /sponsors/accounts" href="/sponsors/accounts">Sponsors</a>
+      <a class="js-selected-navigation-item Header-link d-block d-md-none py-2 py-md-3 border-top border-md-top-0 border-white-fade" data-ga-click="Header, click, Nav menu - item:Sponsors" data-hydro-click="{&quot;event_type&quot;:&quot;sponsors.button_click&quot;,&quot;payload&quot;:{&quot;button&quot;:&quot;HEADER_SPONSORS_DASHBOARD&quot;,&quot;sponsorable_login&quot;:&quot;AnlanQiu&quot;,&quot;originating_url&quot;:&quot;https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/triangle_tb.cpp&quot;,&quot;user_id&quot;:67604951}}" data-hydro-click-hmac="a030582835950bde7ac6d1c894d3f2acf06a7ea20e829a4244becc1734d1f0d8" data-turbo="false" data-selected-links=" /sponsors/accounts" href="/sponsors/accounts">Sponsors</a>
 
     <a class="Header-link d-block d-md-none mr-0 mr-md-3 py-2 py-md-3 border-top border-md-top-0 border-white-fade" data-turbo="false" href="/settings/profile">Settings</a>
 
@@ -447,7 +447,7 @@
       <img class="avatar avatar-user" loading="lazy" decoding="async" src="https://avatars.githubusercontent.com/u/67604951?s=40&amp;v=4" width="20" height="20" alt="@AnlanQiu" />
       AnlanQiu
 </a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-turbo="false" action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="D3jw-b_1aQfokUU5ZZ8Yur4yofdykhAeGMQPFigSafyF_VOmdr7oRTRkqeg2a3A5D5-5vJTWsjN587yUydio6g" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-turbo="false" action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="aXOsR0STm7L183hwWSjUG9_DPxvG6HK_3rSBWoFhqf_j9g8Yjdga8CkGlKEK3LyYbm4nUCCs0JK_gzLYYKto6Q" />
       <button
         type="submit"
         class="Header-link mr-0 mr-md-3 py-2 py-md-3 border-top border-md-top-0 border-white-fade d-md-none btn-link d-block width-full text-left"
@@ -482,7 +482,7 @@
     <div class="Header-item mr-0 mr-md-3 flex-order-1 flex-md-order-none">
         
 
-<notification-indicator data-channel="eyJjIjoibm90aWZpY2F0aW9uLWNoYW5nZWQ6Njc2MDQ5NTEiLCJ0IjoxNjcxMTA4MDIwfQ==--b3615dccf32207063c5d3a48dc90c8eb3f562f44cd2f7c896962d4f2e5adb1f7" data-indicator-mode="global" data-tooltip-global="You have unread notifications" data-tooltip-unavailable="Notifications are unavailable at the moment." data-tooltip-none="You have no unread notifications" data-view-component="true" class="js-socket-channel">
+<notification-indicator data-channel="eyJjIjoibm90aWZpY2F0aW9uLWNoYW5nZWQ6Njc2MDQ5NTEiLCJ0IjoxNjcxMTA3OTg5fQ==--3711e8bc6d4e8ff122ae42df771789e27046b573409546ec79e33f44c5974e4d" data-indicator-mode="global" data-tooltip-global="You have unread notifications" data-tooltip-unavailable="Notifications are unavailable at the moment." data-tooltip-none="You have no unread notifications" data-view-component="true" class="js-socket-channel">
   <a id="AppHeader-notifications-button" href="/notifications"
     class="Header-link notification-indicator position-relative tooltipped tooltipped-sw"
 
@@ -639,7 +639,7 @@
   <details-dialog class="command-palette-details-dialog d-flex flex-column flex-justify-center height-fit" aria-label="command palette">
     <command-palette
       class="command-palette color-bg-default rounded-3 border color-shadow-small"
-      return-to=/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/ref_vbuddy_tb.cpp
+      return-to=/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/triangle_tb.cpp
       user-id="67604951"
       activation-hotkey="Mod+k,Mod+Alt+k"
       command-mode-hotkey="Mod+Shift+k"
@@ -1609,7 +1609,7 @@
         data-action="toggle:notifications-list-subscription-form#detailsToggled"
       >
 
-        <summary data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:569702198,&quot;originating_url&quot;:&quot;https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/ref_vbuddy_tb.cpp&quot;,&quot;user_id&quot;:67604951}}" data-hydro-click-hmac="198bbc98b93fcf0dc0ad581fabc2521cb52d1c5f11730bed10b60c6f8d2828a5" data-ga-click="Repository, click Watch settings, action:blob#show" aria-label="Notification settings" data-view-component="true" class="btn-sm btn">    <span data-menu-button>
+        <summary data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:569702198,&quot;originating_url&quot;:&quot;https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/triangle_tb.cpp&quot;,&quot;user_id&quot;:67604951}}" data-hydro-click-hmac="28bd909d5e12d034a9dc0ca4f6396626ffd57dd2378bc40c901e617c932d420b" data-ga-click="Repository, click Watch settings, action:blob#show" aria-label="Notification settings" data-view-component="true" class="btn-sm btn">    <span data-menu-button>
             <span
               hidden
               
@@ -1661,7 +1661,7 @@
             </header>
 
             <div class="SelectMenu-list">
-              <form data-target="notifications-list-subscription-form.form" data-action="submit:notifications-list-subscription-form#submitForm" data-turbo="false" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="7sa-udoXa3unfvPLF2_w8J27saNfjFUEpQfhwDYg4-Z6YZv-7a071OGtDGfTHd-mgR080vMvAc_prE6GVV--Hg" autocomplete="off" />
+              <form data-target="notifications-list-subscription-form.form" data-action="submit:notifications-list-subscription-form#submitForm" data-turbo="false" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="tPDncM9XPo6FiN3gs_BkCQu_ooXhrzNWiVWLovl8HBkgV8I3-O1uIcNbIkx3gktfFxkv9E0MZ53F_iTkmgNB4Q" autocomplete="off" />
 
                 <input type="hidden" name="repository_id" value="569702198">
 
@@ -1779,7 +1779,7 @@
           hidden
         >
           <div class="SelectMenu-modal notifications-component-dialog-modal overflow-visible">
-            <form data-target="notifications-list-subscription-form.customform" data-action="submit:notifications-list-subscription-form#submitCustomForm" data-turbo="false" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="divETWqjXDBcPTe12wmDd8K9OdrpFNABv7PqZlSjHhzijOEKXRkMnxruyBkfe6wh3hu0q0W3hMrzGEUgN9xD5A" autocomplete="off" />
+            <form data-target="notifications-list-subscription-form.customform" data-action="submit:notifications-list-subscription-form#submitCustomForm" data-turbo="false" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="cnC_Vf9bbrKE7soDepYYoIZfI4aW0_8oABMzGb_5e1jm15oSyOE-HcI9Na--5Df2mvmu9zpwq-NMuJxf3IYmoA" autocomplete="off" />
 
               <input type="hidden" name="repository_id" value="569702198">
 
@@ -1948,13 +1948,13 @@
       
 >
     <div class="SelectMenu-modal">
-        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-07f6ca">
+        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-8be587">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
     <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
 </svg>
         </button>
       <div
-        id="filter-menu-07f6ca"
+        id="filter-menu-8be587"
         class="d-flex flex-column flex-1 overflow-hidden"
 >
         <div
@@ -1996,10 +1996,10 @@
 
   <div data-view-component="true" class="js-toggler-container js-social-container starring-container d-flex">
     <div data-view-component="true" class="starred BtnGroup flex-1">
-      <form class="js-social-form BtnGroup-parent flex-auto js-deferred-toggler-target" data-turbo="false" action="/EIE2-IAC-Labs/iac-riscv-cw-26/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="IrvaCDd8Bjyv-kPzu8o61NANtzmExXlxBL3SjWup9ncwA8ILSVMJVx_SHPne1iuYPM6z87e9JgtOwYYTWR94Og" autocomplete="off" />
-          <input type="hidden" value="kOf3zLeQYFoRlaZpWPd4vim9WQY_eIozXLz-AZlJ1NyCX-_Pyb9vMaG9-WM962nyxX5dzAwA1UkWwKqfq_9akQ" data-csrf="true" class="js-confirm-csrf-token" />
+      <form class="js-social-form BtnGroup-parent flex-auto js-deferred-toggler-target" data-turbo="false" action="/EIE2-IAC-Labs/iac-riscv-cw-26/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="4czsyOmftck5O1OeXTFzjLRmWSx1yeBCeHy6bWiDKH3zdPTLl7C6ookTDJQ4LWLAWKVd5kaxvzgyAO7zWjWmMA" autocomplete="off" />
+          <input type="hidden" value="j0Qc8vbg8NWZ75yX3wDCeuofDwyoPTPYGYkFc3Bgzvud_ATxiM__vinHw526HNM2BtwLxptFbKJT9VHtQtZAtg" data-csrf="true" class="js-confirm-csrf-token" />
         <input type="hidden" name="context" value="repository">
-          <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:569702198,&quot;originating_url&quot;:&quot;https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/ref_vbuddy_tb.cpp&quot;,&quot;user_id&quot;:67604951}}" data-hydro-click-hmac="1a0bf2bd2b224d3023807e1f7890159bb61c8bc4f9c3c1c75cc8ea5d33fbf18f" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar" aria-label="Unstar this repository (0)" type="submit" data-view-component="true" class="rounded-left-2 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star-fill starred-button-icon d-inline-block mr-2">
+          <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:569702198,&quot;originating_url&quot;:&quot;https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/triangle_tb.cpp&quot;,&quot;user_id&quot;:67604951}}" data-hydro-click-hmac="e3afa86fc92f216d39eb49ca98f2bebce52c55754e22f73bf99464368021e4a8" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar" aria-label="Unstar this repository (0)" type="submit" data-view-component="true" class="rounded-left-2 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star-fill starred-button-icon d-inline-block mr-2">
     <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
 </svg><span data-view-component="true" class="d-inline">
             Starred
@@ -2017,13 +2017,13 @@
       
 >
     <div class="SelectMenu-modal">
-        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-486357">
+        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-15a4ed">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
     <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
 </svg>
         </button>
       <div
-        id="filter-menu-486357"
+        id="filter-menu-15a4ed"
         class="d-flex flex-column flex-1 overflow-hidden"
 >
         <div
@@ -2044,9 +2044,9 @@
 </details>
 </div>
     <div data-view-component="true" class="unstarred BtnGroup flex-1">
-      <form class="js-social-form BtnGroup-parent flex-auto" data-turbo="false" action="/EIE2-IAC-Labs/iac-riscv-cw-26/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="U6sl22zNnQyS4GZ5nA-hhe5RJOtO2-hDILa615kwr79QeqM7Oe_V8iy4GeQZpKJRyIZwZvQ_97i-ibLs6aQczw" autocomplete="off" />
+      <form class="js-social-form BtnGroup-parent flex-auto" data-turbo="false" action="/EIE2-IAC-Labs/iac-riscv-cw-26/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="UU-rIqpba4leLWgI7bgZWlQCvuwrC7jFWVD6vT-1JT5Sni3C_3kjd-B1F5VoExqOctXqYZHvpz7Hb_KGTyGWTg" autocomplete="off" />
         <input type="hidden" name="context" value="repository">
-          <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:569702198,&quot;originating_url&quot;:&quot;https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/ref_vbuddy_tb.cpp&quot;,&quot;user_id&quot;:67604951}}" data-hydro-click-hmac="6df352f9e5864d982904f4f235425c6c03c9888ef449bbbaef5f542462d61f33" data-ga-click="Repository, click star button, action:blob#show; text:Star" aria-label="Star this repository (0)" type="submit" data-view-component="true" class="js-toggler-target rounded-left-2 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star d-inline-block mr-2">
+          <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:569702198,&quot;originating_url&quot;:&quot;https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/triangle_tb.cpp&quot;,&quot;user_id&quot;:67604951}}" data-hydro-click-hmac="3bdf43401db3eb74c55a5634c1a8f3fde31c8d0d62fd9fce4ea7f29510dfc020" data-ga-click="Repository, click star button, action:blob#show; text:Star" aria-label="Star this repository (0)" type="submit" data-view-component="true" class="js-toggler-target rounded-left-2 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star d-inline-block mr-2">
     <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
 </svg><span data-view-component="true" class="d-inline">
             Star
@@ -2064,13 +2064,13 @@
       
 >
     <div class="SelectMenu-modal">
-        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-486357">
+        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-15a4ed">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
     <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
 </svg>
         </button>
       <div
-        id="filter-menu-486357"
+        id="filter-menu-15a4ed"
         class="d-flex flex-column flex-1 overflow-hidden"
 >
         <div
@@ -2273,7 +2273,7 @@
 
 
     
-<a class="d-none js-permalink-shortcut" data-hotkey="y" href="/EIE2-IAC-Labs/iac-riscv-cw-26/blob/bbef5f284c000396dc392b5c830d5f685560ef93/ref_vbuddy_tb.cpp">Permalink</a>
+<a class="d-none js-permalink-shortcut" data-hotkey="y" href="/EIE2-IAC-Labs/iac-riscv-cw-26/blob/bbef5f284c000396dc392b5c830d5f685560ef93/triangle_tb.cpp">Permalink</a>
 
 <div class="d-flex flex-items-start flex-shrink-0 pb-3 flex-wrap flex-md-nowrap flex-justify-between flex-md-justify-start">
   
@@ -2281,7 +2281,7 @@
   <details
     class="js-branch-select-menu details-reset details-overlay mr-0 mb-0 "
     id="branch-select-menu"
-    data-hydro-click-payload="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;REFS_SELECTOR_MENU&quot;,&quot;repository_id&quot;:569702198,&quot;originating_url&quot;:&quot;https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/ref_vbuddy_tb.cpp&quot;,&quot;user_id&quot;:67604951}}" data-hydro-click-hmac="5930ee0331738eb782ad2086ec75be1b63d14b324c934d4a347a57ec35d74561">
+    data-hydro-click-payload="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;REFS_SELECTOR_MENU&quot;,&quot;repository_id&quot;:569702198,&quot;originating_url&quot;:&quot;https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/triangle_tb.cpp&quot;,&quot;user_id&quot;:67604951}}" data-hydro-click-hmac="eb149715e5d18ad7045b376ba1e01512248cd95f5107d93b0298b4306c40a832">
     <summary class="btn css-truncate"
             data-hotkey="w"
             title="Switch branches or tags">
@@ -2349,10 +2349,10 @@
     <create-repo-from-selector
       check-tag-name-exists-path="/EIE2-IAC-Labs/iac-riscv-cw-26/branches/check_tag_name_exists"
     >
-      <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-turbo="false" action="/EIE2-IAC-Labs/iac-riscv-cw-26/branches" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="kvPrqaqDP41aaRuHysXie09tH8kLDQ-GHXPLB1KN7uwKMw1_Ayz50sXFJgM_I2anU2xE8dISw79SIQcDQIColA" />
+      <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-turbo="false" action="/EIE2-IAC-Labs/iac-riscv-cw-26/branches" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="JQiRvPQXw_Yog25C3hgjJEc13zRF6MQBGGb8l2Y8OlG9yHdqXbgFqbcvU8Yr_qf4WzSEDJz3CDhXNDCTdDF8KQ" />
         <input data-target="create-repo-from-selector.refName" type="hidden" name="name" value="{{ refName }}">
         <input type="hidden" name="branch"  value="testing_pdfs">
-        <input type="hidden" name="path_binary" value="cmVmX3ZidWRkeV90Yi5jcHA=">
+        <input type="hidden" name="path_binary" value="dHJpYW5nbGVfdGIuY3Bw">
 
         <button
           class="SelectMenu-item wb-break-word"
@@ -2360,14 +2360,14 @@
           role="menuitem"
           data-index="{{ index }}"
           data-action="click:create-repo-from-selector#createBranch"
-          data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;REFS_SELECTOR_MENU_CREATE_BRANCH&quot;,&quot;repository_id&quot;:569702198,&quot;ref_name&quot;:&quot;{{ refName }}&quot;,&quot;originating_url&quot;:&quot;https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/ref_vbuddy_tb.cpp&quot;,&quot;user_id&quot;:67604951}}" data-hydro-click-hmac="8f05db25b35146c80841bc1d4f620af2f49387635801a01c405fae1e43af43a3">
+          data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;REFS_SELECTOR_MENU_CREATE_BRANCH&quot;,&quot;repository_id&quot;:569702198,&quot;ref_name&quot;:&quot;{{ refName }}&quot;,&quot;originating_url&quot;:&quot;https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/triangle_tb.cpp&quot;,&quot;user_id&quot;:67604951}}" data-hydro-click-hmac="32657f1be35598c1dd2c7321116aafcb8976d2334f0767b8bdf516f976ab6aa0">
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-git-branch SelectMenu-icon flex-self-baseline">
     <path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122V6A2.5 2.5 0 0110 8.5H6a1 1 0 00-1 1v1.128a2.251 2.251 0 11-1.5 0V5.372a2.25 2.25 0 111.5 0v1.836A2.492 2.492 0 016 7h4a1 1 0 001-1v-.628A2.25 2.25 0 019.5 3.25zM4.25 12a.75.75 0 100 1.5.75.75 0 000-1.5zM3.5 3.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0z"></path>
 </svg>
           <div>
             <span class="text-bold">Create branch: {{ refName }}</span>
             <span class="color-fg-muted">from ‘testing_pdfs’</span>
-            <input type="hidden" value="BlGzRsCEViJYuVui-XJGg1Maeb77lX41WJV7G7Z-0zv-G8_RBP9yoNbZK_aBydM_8ZkfO4cEmFSSldCL2AcYLQ" data-csrf="true" data-target="create-repo-from-selector.checkTagNameExistsPathCsrf" />
+            <input type="hidden" value="gI_6DD_D5uMlO0F64kMauGltFrRjboBYFNnczFuH63R4xYab-7jCYatbMS6a-I8Ey-5wMR__Zjne2XdcNf4gYg" data-csrf="true" data-target="create-repo-from-selector.checkTagNameExistsPathCsrf" />
           </div>
         </button>
 </form>    </create-repo-from-selector>
@@ -2386,7 +2386,7 @@
               
 
 <template data-target="ref-selector.itemTemplate">
-  <a href="https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/{{ urlEncodedRefName }}/ref_vbuddy_tb.cpp" class="SelectMenu-item" role="menuitemradio" rel="nofollow" aria-checked="{{ isCurrent }}" data-index="{{ index }}" >
+  <a href="https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/{{ urlEncodedRefName }}/triangle_tb.cpp" class="SelectMenu-item" role="menuitemradio" rel="nofollow" aria-checked="{{ isCurrent }}" data-index="{{ index }}" >
     <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
     <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
 </svg>
@@ -2428,7 +2428,7 @@
               
 
 <template data-target="ref-selector.itemTemplate">
-  <a href="https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/{{ urlEncodedRefName }}/ref_vbuddy_tb.cpp" class="SelectMenu-item" role="menuitemradio" rel="nofollow" aria-checked="{{ isCurrent }}" data-index="{{ index }}" >
+  <a href="https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/{{ urlEncodedRefName }}/triangle_tb.cpp" class="SelectMenu-item" role="menuitemradio" rel="nofollow" aria-checked="{{ isCurrent }}" data-index="{{ index }}" >
     <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
     <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
 </svg>
@@ -2489,7 +2489,7 @@
 
 
   <h2 id="blob-path" class="breadcrumb flex-auto flex-self-center min-width-0 text-normal mx-2 width-full width-md-auto flex-order-1 flex-md-order-none mt-3 mt-md-0">
-    <span class="js-repo-root text-bold"><span class="js-path-segment d-inline-block wb-break-all"><a data-turbo-frame="repo-content-turbo-frame" href="/EIE2-IAC-Labs/iac-riscv-cw-26/tree/testing_pdfs"><span>iac-riscv-cw-26</span></a></span></span><span class="separator">/</span><strong class="final-path">ref_vbuddy_tb.cpp</strong>
+    <span class="js-repo-root text-bold"><span class="js-path-segment d-inline-block wb-break-all"><a data-turbo-frame="repo-content-turbo-frame" href="/EIE2-IAC-Labs/iac-riscv-cw-26/tree/testing_pdfs"><span>iac-riscv-cw-26</span></a></span></span><span class="separator">/</span><strong class="final-path">triangle_tb.cpp</strong>
   </h2>
     <a href="/EIE2-IAC-Labs/iac-riscv-cw-26/find/testing_pdfs" data-pjax="" data-hotkey="t" data-view-component="true" class="btn mr-2 d-none d-md-block">    Go to file
 </a>
@@ -2500,7 +2500,7 @@
 </summary>
   <div data-view-component="true">      <ul class="dropdown-menu dropdown-menu-sw">
         <li class="d-block d-md-none">
-          <a class="dropdown-item d-flex flex-items-baseline" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FIND_FILE_BUTTON&quot;,&quot;repository_id&quot;:569702198,&quot;originating_url&quot;:&quot;https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/ref_vbuddy_tb.cpp&quot;,&quot;user_id&quot;:67604951}}" data-hydro-click-hmac="de28775ea930d239e527a5f89f3cef03529c4781185fde6aa64ffff9e0d1fd5c" data-ga-click="Repository, find file, location:repo overview" data-hotkey="t" href="/EIE2-IAC-Labs/iac-riscv-cw-26/find/testing_pdfs">
+          <a class="dropdown-item d-flex flex-items-baseline" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FIND_FILE_BUTTON&quot;,&quot;repository_id&quot;:569702198,&quot;originating_url&quot;:&quot;https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/triangle_tb.cpp&quot;,&quot;user_id&quot;:67604951}}" data-hydro-click-hmac="40025bab7bc9b6721f4167558d8d058f4bf8433c97123a18015ffe24fc7150f0" data-ga-click="Repository, find file, location:repo overview" data-hotkey="t" href="/EIE2-IAC-Labs/iac-riscv-cw-26/find/testing_pdfs">
             <span class="flex-auto">Go to file</span>
             <span class="text-small color-fg-muted" aria-hidden="true">T</span>
 </a>        </li>
@@ -2512,13 +2512,13 @@
 </button>        </li>
         <li class="dropdown-divider" role="none"></li>
         <li>
-          <clipboard-copy data-toggle-for="blob-more-options-details" aria-label="Copy path" value="ref_vbuddy_tb.cpp" data-view-component="true" class="dropdown-item cursor-pointer">
+          <clipboard-copy data-toggle-for="blob-more-options-details" aria-label="Copy path" value="triangle_tb.cpp" data-view-component="true" class="dropdown-item cursor-pointer">
     
             Copy path
 
 </clipboard-copy>        </li>
         <li>
-          <clipboard-copy data-toggle-for="blob-more-options-details" aria-label="Copy permalink" value="https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/bbef5f284c000396dc392b5c830d5f685560ef93/ref_vbuddy_tb.cpp" data-view-component="true" class="dropdown-item cursor-pointer">
+          <clipboard-copy data-toggle-for="blob-more-options-details" aria-label="Copy permalink" value="https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/bbef5f284c000396dc392b5c830d5f685560ef93/triangle_tb.cpp" data-view-component="true" class="dropdown-item cursor-pointer">
     
             <span class="d-flex flex-items-baseline">
               <span class="flex-auto">Copy permalink</span>
@@ -2550,7 +2550,7 @@
     <include-fragment src="/EIE2-IAC-Labs/iac-riscv-cw-26/spoofed_commit_check/bbef5f284c000396dc392b5c830d5f685560ef93" data-test-selector="spoofed-commit-check"></include-fragment>
 
     <div class="Box d-flex flex-column flex-shrink-0 mb-3">
-  <include-fragment src="/EIE2-IAC-Labs/iac-riscv-cw-26/contributors/testing_pdfs/ref_vbuddy_tb.cpp" class="commit-loader">
+  <include-fragment src="/EIE2-IAC-Labs/iac-riscv-cw-26/contributors/testing_pdfs/triangle_tb.cpp" class="commit-loader">
     <div class="Box-header d-flex flex-items-center">
       <div class="Skeleton avatar avatar-user flex-shrink-0 ml-n1 mr-n1 mt-n1 mb-n1" style="width:24px;height:24px;"></div>
       <div class="Skeleton Skeleton--text col-5 ml-2">&nbsp;</div>
@@ -2584,23 +2584,23 @@
 
   <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1">
 
-      72 lines (57 sloc)
+      73 lines (57 sloc)
       <span class="file-info-divider"></span>
-    1.83 KB
+    1.84 KB
   </div>
 
   <div class="d-flex py-1 py-md-0 flex-auto flex-order-1 flex-md-order-2 flex-sm-grow-0 flex-justify-between hide-sm hide-md">
       
 
     <div class="BtnGroup">
-        <a data-permalink-href="/EIE2-IAC-Labs/iac-riscv-cw-26/raw/bbef5f284c000396dc392b5c830d5f685560ef93/ref_vbuddy_tb.cpp" href="/EIE2-IAC-Labs/iac-riscv-cw-26/raw/testing_pdfs/ref_vbuddy_tb.cpp" id="raw-url" data-view-component="true" class="js-permalink-replaceable-link btn-sm btn BtnGroup-item">    Raw
-</a>          <a data-permalink-href="/EIE2-IAC-Labs/iac-riscv-cw-26/blame/bbef5f284c000396dc392b5c830d5f685560ef93/ref_vbuddy_tb.cpp" href="/EIE2-IAC-Labs/iac-riscv-cw-26/blame/testing_pdfs/ref_vbuddy_tb.cpp" data-hotkey="b" data-view-component="true" class="js-update-url-with-hash js-permalink-replaceable-link btn-sm btn BtnGroup-item">    Blame
+        <a data-permalink-href="/EIE2-IAC-Labs/iac-riscv-cw-26/raw/bbef5f284c000396dc392b5c830d5f685560ef93/triangle_tb.cpp" href="/EIE2-IAC-Labs/iac-riscv-cw-26/raw/testing_pdfs/triangle_tb.cpp" id="raw-url" data-view-component="true" class="js-permalink-replaceable-link btn-sm btn BtnGroup-item">    Raw
+</a>          <a data-permalink-href="/EIE2-IAC-Labs/iac-riscv-cw-26/blame/bbef5f284c000396dc392b5c830d5f685560ef93/triangle_tb.cpp" href="/EIE2-IAC-Labs/iac-riscv-cw-26/blame/testing_pdfs/triangle_tb.cpp" data-hotkey="b" data-view-component="true" class="js-update-url-with-hash js-permalink-replaceable-link btn-sm btn BtnGroup-item">    Blame
 </a>    </div>
 
     <div class="d-flex">
         
 <div class="ml-1" data-test-selector="edit-dropdown-menu-component">
-  <form class="BtnGroup-parent js-update-url-with-hash " data-turbo="false" action="/EIE2-IAC-Labs/iac-riscv-cw-26/edit/testing_pdfs/ref_vbuddy_tb.cpp" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="xxZwu5sFA0GVbHxkpHQ9mP73Fes8dZhckMZxz-7iMPyth0qJFpF_KDTVpto9Z2v9Fqj1-4mItMAoIZOTIx1rCQ" autocomplete="off" />
+  <form class="BtnGroup-parent js-update-url-with-hash " data-turbo="false" action="/EIE2-IAC-Labs/iac-riscv-cw-26/edit/testing_pdfs/triangle_tb.cpp" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="_jt8quHSuPrAqbNEMCkm_2HKJ7nNsOE6PQlT3fj81w_PFLeDLLPqWwEThIxRVefcwHE263UssFyV_999GyxJxQ" autocomplete="off" />
       <button title="Edit this file" data-hotkey="e" data-disable-with="" data-test-selector="edit-icon-button" type="submit" data-view-component="true" class="btn-sm BtnGroup-item btn">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-pencil">
     <path fill-rule="evenodd" d="M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z"></path>
 </svg>
@@ -2610,7 +2610,7 @@
 </summary>    <div class="SelectMenu right-0">
       <div class="SelectMenu-modal width-full">
         <div class="SelectMenu-list SelectMenu-list--borderless py-2">
-          <form class="SelectMenu-item js-update-url-with-hash " data-turbo="false" action="/EIE2-IAC-Labs/iac-riscv-cw-26/edit/testing_pdfs/ref_vbuddy_tb.cpp" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="tTWjDkpula1HueOrG1t7pWS13v2HhyKZRkuDZ12SyjDfpJk8x_rpxOYAORWCSC3AjOo-7TJ6DgX-rGE7kG2RxQ" autocomplete="off" />
+          <form class="SelectMenu-item js-update-url-with-hash " data-turbo="false" action="/EIE2-IAC-Labs/iac-riscv-cw-26/edit/testing_pdfs/triangle_tb.cpp" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="0PQNg8x9iAicCxQybLhb_C-7yCnite24knBjGa9KoKrh28aqARzaqV2xI_oNxJrfjgDZe1opvN46hu-5TJo-YA" autocomplete="off" />
               <button title="Edit this file" data-test-selector="edit-text-button" type="submit" data-view-component="true" class="btn-invisible btn width-full d-flex flex-justify-between color-fg-default text-normal p-0">    <div class="mr-5">Edit this file</div>
               <div class="color-fg-muted">E</div>
 </button></form>
@@ -2629,10 +2629,10 @@
 
         
 <div data-test-selector="remote-clipboard-copy">
-  <remote-clipboard-copy class="d-inline-block btn-octicon" style="height: 26px" data-src="/EIE2-IAC-Labs/iac-riscv-cw-26/raw/bbef5f284c000396dc392b5c830d5f685560ef93/ref_vbuddy_tb.cpp" data-action="click:remote-clipboard-copy#remoteCopy">
+  <remote-clipboard-copy class="d-inline-block btn-octicon" style="height: 26px" data-src="/EIE2-IAC-Labs/iac-riscv-cw-26/raw/bbef5f284c000396dc392b5c830d5f685560ef93/triangle_tb.cpp" data-action="click:remote-clipboard-copy#remoteCopy">
   
 
-  <span data-target="remote-clipboard-copy.idle">      <span class="tooltipped tooltipped-nw cursor-pointer" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;COPY_RAW_CONTENTS_BUTTON&quot;,&quot;repository_id&quot;:569702198,&quot;originating_url&quot;:&quot;https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/ref_vbuddy_tb.cpp&quot;,&quot;user_id&quot;:67604951}}" data-hydro-click-hmac="ac0bccb07298723d074f8aa63806b5d003b34ccbaa98599294ed32e5931b4dc8" aria-label="Copy raw contents">
+  <span data-target="remote-clipboard-copy.idle">      <span class="tooltipped tooltipped-nw cursor-pointer" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;COPY_RAW_CONTENTS_BUTTON&quot;,&quot;repository_id&quot;:569702198,&quot;originating_url&quot;:&quot;https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/triangle_tb.cpp&quot;,&quot;user_id&quot;:67604951}}" data-hydro-click-hmac="c10026e728f6f6240d8db323bdd3acc07c7dc7e6717e2a9c4f73a9144553e81a" aria-label="Copy raw contents">
         <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy">
     <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
 </svg>
@@ -2657,7 +2657,7 @@
 </remote-clipboard-copy></div>
 
 
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" data-turbo="false" action="/EIE2-IAC-Labs/iac-riscv-cw-26/delete/testing_pdfs/ref_vbuddy_tb.cpp" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="sT4zwgSLLHcht_NADKQEhYV2ytBBRLXku-hS9WCtMarb9bNAUTKPA9CrCyxGW0iICBanM_XQCyuz187YESATHQ" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" data-turbo="false" action="/EIE2-IAC-Labs/iac-riscv-cw-26/delete/testing_pdfs/triangle_tb.cpp" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="drGDnOOeMqIKFMwbRCUhACjOuZGTwssmwj07I3N3OVe_Kz4Ai8V2rosEh1wDx9KPwJcj2oNFnVvd9UNkJqoSAA" />
             <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
               aria-label="Delete this file" data-disable-with>
               <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-trash">
@@ -2690,15 +2690,15 @@
                 </a>
             </li>
           <li>
-            <a class="dropdown-item" href="/EIE2-IAC-Labs/iac-riscv-cw-26/raw/testing_pdfs/ref_vbuddy_tb.cpp">
+            <a class="dropdown-item" href="/EIE2-IAC-Labs/iac-riscv-cw-26/raw/testing_pdfs/triangle_tb.cpp">
               View raw
             </a>
           </li>
             <li>
-              <remote-clipboard-copy class="dropdown-item" data-src="/EIE2-IAC-Labs/iac-riscv-cw-26/raw/testing_pdfs/ref_vbuddy_tb.cpp" data-action="click:remote-clipboard-copy#remoteCopy">
+              <remote-clipboard-copy class="dropdown-item" data-src="/EIE2-IAC-Labs/iac-riscv-cw-26/raw/testing_pdfs/triangle_tb.cpp" data-action="click:remote-clipboard-copy#remoteCopy">
   
 
-  <span data-target="remote-clipboard-copy.idle">                  <span class="cursor-pointer" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;COPY_RAW_CONTENTS_BUTTON&quot;,&quot;repository_id&quot;:569702198,&quot;originating_url&quot;:&quot;https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/ref_vbuddy_tb.cpp&quot;,&quot;user_id&quot;:67604951}}" data-hydro-click-hmac="ac0bccb07298723d074f8aa63806b5d003b34ccbaa98599294ed32e5931b4dc8">
+  <span data-target="remote-clipboard-copy.idle">                  <span class="cursor-pointer" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;COPY_RAW_CONTENTS_BUTTON&quot;,&quot;repository_id&quot;:569702198,&quot;originating_url&quot;:&quot;https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/testing_pdfs/triangle_tb.cpp&quot;,&quot;user_id&quot;:67604951}}" data-hydro-click-hmac="c10026e728f6f6240d8db323bdd3acc07c7dc7e6717e2a9c4f73a9144553e81a">
                     Copy raw contents
 </span></span>
   <span data-target="remote-clipboard-copy.fetching" hidden="hidden">                  Copy raw contents
@@ -2721,20 +2721,20 @@
 </span>
 </remote-clipboard-copy>            </li>
             <li>
-              <a class="dropdown-item" href="/EIE2-IAC-Labs/iac-riscv-cw-26/blame/testing_pdfs/ref_vbuddy_tb.cpp">
+              <a class="dropdown-item" href="/EIE2-IAC-Labs/iac-riscv-cw-26/blame/testing_pdfs/triangle_tb.cpp">
                 View blame
               </a>
             </li>
 
               <li class="dropdown-divider" role="none"></li>
               <li>
-                <a class="dropdown-item" href="/EIE2-IAC-Labs/iac-riscv-cw-26/edit/testing_pdfs/ref_vbuddy_tb.cpp">Edit file</a>
+                <a class="dropdown-item" href="/EIE2-IAC-Labs/iac-riscv-cw-26/edit/testing_pdfs/triangle_tb.cpp">Edit file</a>
               </li>
                 <li>
                   <a class="dropdown-item js-github-dev-shortcut js-blob-dropdown-click" data-test-selector="small-screen-github-dev-link" data-dropdown-tracking="{&quot;type&quot;:&quot;blob_edit_dropdown.dev_link_click&quot;,&quot;context&quot;:{&quot;repository_id&quot;:569702198,&quot;actor_id&quot;:67604951,&quot;edit_enabled&quot;:true,&quot;small_screen&quot;:true}}" href="https://github.dev/">Open with github.dev</a>
                 </li>
               <li>
-                <a class="dropdown-item menu-item-danger" href="/EIE2-IAC-Labs/iac-riscv-cw-26/delete/testing_pdfs/ref_vbuddy_tb.cpp">Delete file</a>
+                <a class="dropdown-item menu-item-danger" href="/EIE2-IAC-Labs/iac-riscv-cw-26/delete/testing_pdfs/triangle_tb.cpp">Delete file</a>
               </li>
         </ul>
       </details>
@@ -2771,7 +2771,7 @@
 </svg>
 </span></template>
 
-  <table data-hpc class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="C++" data-tagsearch-path="ref_vbuddy_tb.cpp">
+  <table data-hpc class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="C++" data-tagsearch-path="triangle_tb.cpp">
         <tr>
           <td id="L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
           <td id="LC1" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&quot;</span>Vtop.h<span class="pl-pds">&quot;</span></span></td>
@@ -2847,7 +2847,7 @@
         </tr>
         <tr>
           <td id="L18" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18"></td>
-          <td id="LC18" class="blob-code blob-code-inner js-file-line">    tfp-&gt;<span class="pl-c1">open</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>top.vcd<span class="pl-pds">&quot;</span></span>);</td>
+          <td id="LC18" class="blob-code blob-code-inner js-file-line">    tfp-&gt;<span class="pl-c1">open</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>triangle.vcd<span class="pl-pds">&quot;</span></span>);</td>
         </tr>
         <tr>
           <td id="L19" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="19"></td>
@@ -2906,11 +2906,11 @@
         </tr>
         <tr>
           <td id="L32" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="32"></td>
-          <td id="LC32" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">for</span> (<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; <span class="pl-c1">1000000</span>; i ++) { <span class="pl-c"><span class="pl-c">//</span> Simulate for 1M cycles</span></td>
+          <td id="LC32" class="blob-code blob-code-inner js-file-line">    </td>
         </tr>
         <tr>
           <td id="L33" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="33"></td>
-          <td id="LC33" class="blob-code blob-code-inner js-file-line">        </td>
+          <td id="LC33" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">for</span> (<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; <span class="pl-c1">1000000</span>; i ++) { <span class="pl-c"><span class="pl-c">//</span> Simulate for 1M cycles</span></td>
         </tr>
         <tr>
           <td id="L34" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="34"></td>
@@ -2964,115 +2964,120 @@
         </tr>
         <tr>
           <td id="L46" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="46"></td>
-          <td id="LC46" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> Send data to Vbuddy</span></td>
+          <td id="LC46" class="blob-code blob-code-inner js-file-line">
+</td>
         </tr>
         <tr>
           <td id="L47" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="47"></td>
-          <td id="LC47" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span> (plotting) {</td>
+          <td id="LC47" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> Send data to Vbuddy</span></td>
         </tr>
         <tr>
           <td id="L48" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="48"></td>
-          <td id="LC48" class="blob-code blob-code-inner js-file-line">            <span class="pl-c1">vbdPlot</span>(top-&gt;<span class="pl-smi">a0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">200</span>); <span class="pl-c"><span class="pl-c">//</span> Max bin count = 200</span></td>
+          <td id="LC48" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span> (plotting) {</td>
         </tr>
         <tr>
           <td id="L49" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="49"></td>
-          <td id="LC49" class="blob-code blob-code-inner js-file-line">            <span class="pl-c1">vbdCycle</span>(i);</td>
+          <td id="LC49" class="blob-code blob-code-inner js-file-line">            <span class="pl-c1">vbdPlot</span>(top-&gt;<span class="pl-smi">a0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">200</span>); <span class="pl-c"><span class="pl-c">//</span> Max bin count = 200</span></td>
         </tr>
         <tr>
           <td id="L50" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="50"></td>
-          <td id="LC50" class="blob-code blob-code-inner js-file-line">            tfp-&gt;<span class="pl-c1">dump</span>(<span class="pl-c1">2</span>*i + clk); <span class="pl-c"><span class="pl-c">//</span> For testing</span></td>
+          <td id="LC50" class="blob-code blob-code-inner js-file-line">            <span class="pl-c1">vbdCycle</span>(i);</td>
         </tr>
         <tr>
           <td id="L51" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="51"></td>
-          <td id="LC51" class="blob-code blob-code-inner js-file-line">        }</td>
+          <td id="LC51" class="blob-code blob-code-inner js-file-line">            tfp-&gt;<span class="pl-c1">dump</span>(<span class="pl-c1">2</span>*i + clk); <span class="pl-c"><span class="pl-c">//</span> For testing</span></td>
         </tr>
         <tr>
           <td id="L52" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="52"></td>
-          <td id="LC52" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">else</span> <span class="pl-k">if</span> (i % <span class="pl-c1">10000</span> == <span class="pl-c1">0</span>) {</td>
+          <td id="LC52" class="blob-code blob-code-inner js-file-line">        }</td>
         </tr>
         <tr>
           <td id="L53" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="53"></td>
-          <td id="LC53" class="blob-code blob-code-inner js-file-line">            <span class="pl-c1">vbdCycle</span>(i);</td>
+          <td id="LC53" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">else</span> <span class="pl-k">if</span> (i % <span class="pl-c1">10000</span> == <span class="pl-c1">0</span>) {</td>
         </tr>
         <tr>
           <td id="L54" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="54"></td>
-          <td id="LC54" class="blob-code blob-code-inner js-file-line">            <span class="pl-c"><span class="pl-c">//</span> When we are not yet plotting, only print cycle every 10000 cycles to speed up simulation.</span></td>
+          <td id="LC54" class="blob-code blob-code-inner js-file-line">            <span class="pl-c1">vbdCycle</span>(i);</td>
         </tr>
         <tr>
           <td id="L55" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="55"></td>
-          <td id="LC55" class="blob-code blob-code-inner js-file-line">        }</td>
+          <td id="LC55" class="blob-code blob-code-inner js-file-line">            <span class="pl-c"><span class="pl-c">//</span> When we are not yet plotting, only print cycle every 10000 cycles to speed up simulation.</span></td>
         </tr>
         <tr>
           <td id="L56" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="56"></td>
-          <td id="LC56" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> vbdHex(1, top-&gt;a0 &amp; 0xf);</span></td>
+          <td id="LC56" class="blob-code blob-code-inner js-file-line">        }</td>
         </tr>
         <tr>
           <td id="L57" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="57"></td>
-          <td id="LC57" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> vbdHex(2, (top-&gt;a0 &gt;&gt; 4) &amp; 0xf);</span></td>
+          <td id="LC57" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> vbdHex(1, top-&gt;a0 &amp; 0xf);</span></td>
         </tr>
         <tr>
           <td id="L58" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="58"></td>
-          <td id="LC58" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> vbdHex(3, (top-&gt;a0 &gt;&gt; 8) &amp; 0xf);</span></td>
+          <td id="LC58" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> vbdHex(2, (top-&gt;a0 &gt;&gt; 4) &amp; 0xf);</span></td>
         </tr>
         <tr>
           <td id="L59" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="59"></td>
-          <td id="LC59" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> vbdHex(4, (top-&gt;a0 &gt;&gt; 12) &amp; 0xf);</span></td>
+          <td id="LC59" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> vbdHex(3, (top-&gt;a0 &gt;&gt; 8) &amp; 0xf);</span></td>
         </tr>
         <tr>
           <td id="L60" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="60"></td>
-          <td id="LC60" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> vbdBar(top-&gt;a0 &amp; 0xff);</span></td>
+          <td id="LC60" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> vbdHex(4, (top-&gt;a0 &gt;&gt; 12) &amp; 0xf);</span></td>
         </tr>
         <tr>
           <td id="L61" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="61"></td>
-          <td id="LC61" class="blob-code blob-code-inner js-file-line">
-</td>
+          <td id="LC61" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> vbdBar(top-&gt;a0 &amp; 0xff);</span></td>
         </tr>
         <tr>
           <td id="L62" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="62"></td>
-          <td id="LC62" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> Update input signals</span></td>
+          <td id="LC62" class="blob-code blob-code-inner js-file-line">
+</td>
         </tr>
         <tr>
           <td id="L63" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="63"></td>
-          <td id="LC63" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> top-&gt;rst = vbdFlag();</span></td>
+          <td id="LC63" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> Update input signals</span></td>
         </tr>
         <tr>
           <td id="L64" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="64"></td>
-          <td id="LC64" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> Disable reset signal for now, to speed up testing</span></td>
+          <td id="LC64" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> top-&gt;rst = vbdFlag();</span></td>
         </tr>
         <tr>
           <td id="L65" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="65"></td>
-          <td id="LC65" class="blob-code blob-code-inner js-file-line">
-</td>
+          <td id="LC65" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> Disable reset signal for now, to speed up testing</span></td>
         </tr>
         <tr>
           <td id="L66" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="66"></td>
-          <td id="LC66" class="blob-code blob-code-inner js-file-line">    }</td>
+          <td id="LC66" class="blob-code blob-code-inner js-file-line">
+</td>
         </tr>
         <tr>
           <td id="L67" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="67"></td>
-          <td id="LC67" class="blob-code blob-code-inner js-file-line">
-</td>
+          <td id="LC67" class="blob-code blob-code-inner js-file-line">    }</td>
         </tr>
         <tr>
           <td id="L68" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="68"></td>
-          <td id="LC68" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span> vbdClose();</span></td>
-        </tr>
-        <tr>
-          <td id="L69" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="69"></td>
-          <td id="LC69" class="blob-code blob-code-inner js-file-line">    tfp-&gt;<span class="pl-c1">close</span>();</td>
-        </tr>
-        <tr>
-          <td id="L70" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="70"></td>
-          <td id="LC70" class="blob-code blob-code-inner js-file-line">    <span class="pl-c1">exit</span>(<span class="pl-c1">0</span>);</td>
-        </tr>
-        <tr>
-          <td id="L71" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="71"></td>
-          <td id="LC71" class="blob-code blob-code-inner js-file-line">
+          <td id="LC68" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
+          <td id="L69" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="69"></td>
+          <td id="LC69" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span> vbdClose();</span></td>
+        </tr>
+        <tr>
+          <td id="L70" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="70"></td>
+          <td id="LC70" class="blob-code blob-code-inner js-file-line">    tfp-&gt;<span class="pl-c1">close</span>();</td>
+        </tr>
+        <tr>
+          <td id="L71" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="71"></td>
+          <td id="LC71" class="blob-code blob-code-inner js-file-line">    <span class="pl-c1">exit</span>(<span class="pl-c1">0</span>);</td>
+        </tr>
+        <tr>
           <td id="L72" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="72"></td>
-          <td id="LC72" class="blob-code blob-code-inner js-file-line">}</td>
+          <td id="LC72" class="blob-code blob-code-inner js-file-line">
+</td>
+        </tr>
+        <tr>
+          <td id="L73" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="73"></td>
+          <td id="LC73" class="blob-code blob-code-inner js-file-line">}</td>
         </tr>
   </table>
 </div>
@@ -3098,7 +3103,7 @@
             Copy permalink
           </clipboard-copy>
         </li>
-        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/EIE2-IAC-Labs/iac-riscv-cw-26/blame/bbef5f284c000396dc392b5c830d5f685560ef93/ref_vbuddy_tb.cpp">View git blame</a></li>
+        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/EIE2-IAC-Labs/iac-riscv-cw-26/blame/bbef5f284c000396dc392b5c830d5f685560ef93/triangle_tb.cpp">View git blame</a></li>
           <li><a class="dropdown-item" id="js-new-issue" role="menuitem" href="/EIE2-IAC-Labs/iac-riscv-cw-26/issues/new">Reference in new issue</a></li>
       </ul>
     </details-menu>
