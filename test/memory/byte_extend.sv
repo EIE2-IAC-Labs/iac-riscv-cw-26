@@ -1,4 +1,3 @@
-/* verilator lint_off LATCH */
 module byte_extend #(
     parameter WORD_LENGTH = 32,
     parameter BYTE_LEN = 8

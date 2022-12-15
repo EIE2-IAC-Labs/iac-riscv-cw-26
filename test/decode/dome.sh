@@ -1,5 +1,5 @@
 rm -rf obj_dir
-rm -f *.vcd
+rm -f top.vcd
 
 
 verilator --Wall --cc --trace ALU_decoder.sv --exe aludecode_tb.cpp
