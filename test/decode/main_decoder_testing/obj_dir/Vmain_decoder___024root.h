@@ -17,7 +17,6 @@ class Vmain_decoder___024root final : public VerilatedModule {
     VL_IN8(opcode,6,0);
     VL_OUT8(RegWriteD,0,0);
     VL_OUT8(ResultSrcD,1,0);
-    VL_OUT8(MemWriteD,0,0);
     VL_OUT8(ALUsrcD,0,0);
     VL_OUT8(ImmSrcD,2,0);
     VL_OUT8(BranchD,0,0);
@@ -25,6 +24,9 @@ class Vmain_decoder___024root final : public VerilatedModule {
     VL_OUT8(ALUOp,1,0);
     VL_OUT8(R_size,2,0);
     VL_OUT8(DMem_size,2,0);
+    VL_OUT8(jalr_o,0,0);
+    VL_OUT8(lui_o,0,0);
+    VL_OUT8(load_extend_s,0,0);
     IData/*31:0*/ main_decoder__DOT__instr;
 
     // INTERNAL VARIABLES

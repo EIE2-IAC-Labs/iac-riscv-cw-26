@@ -4,15 +4,15 @@ module main_decoder #(
     input logic [6:0] opcode,
     output logic RegWriteD,
     output logic [1:0] ResultSrcD,
-    output logic MemWriteD,
     output logic ALUsrcD,
     output logic [2:0] ImmSrcD,
     output logic BranchD,
     output logic JumpD,
     output logic [1:0] ALUOp,
     output logic [2:0] R_size,
-    output logic [2:0] DMem_size
-
+    output logic [2:0] DMem_size,
+    output logic jalr_o, lui_o,
+    output logic load_extend_s
 );
 
 typedef enum {UNDEFINED, R_type, addi, slli, L_type, lui, S_type, B_type, jal, jalr} Instr;
@@ -43,7 +43,7 @@ always_comb begin
         jalr: ResultSrcD = 2'b10;
         default: ResultSrcD = 2'b00;
     endcase
-    MemWriteD = instr == S_type;
+    // MemWriteD = instr == S_type;
     ALUsrcD = instr == addi || instr == slli || instr == L_type || instr == lui || instr == S_type;
     case(instr)
         lui: ImmSrcD = 3'b001;
@@ -60,11 +60,41 @@ always_comb begin
         L_type: ALUOp = 2'b00;
         S_type: ALUOp = 2'b00;
         B_type: ALUOp = 2'b01;
-        default: ALUOp = 2'b10;
+        R_type: ALUOp = 2'b10;
+        default: ALUOp = 2'b11; // Includes immediate-type instructions.
     endcase
-    case(instr)
-        L_type: R_size = funct3;
-        S_type: DMem_size = funct3;
+    
+    // Handling memory unit size.
+    if(instr == L_type) begin
+        case(funct3)
+            3'b010: DMem_size = 3'b100;
+            3'b001: DMem_size = 3'b010;
+            3'b101: DMem_size = 3'b010;
+            3'b000: DMem_size = 3'b001;
+            3'b100: DMem_size = 3'b001;
+            default: DMem_size = 3'b100;
+        endcase
+        R_size = 3'b000;
+    end else if(instr == S_type) begin
+        case(funct3)
+            3'b010: R_size = 3'b100;
+            3'b001: R_size = 3'b010;
+            3'b000: R_size = 3'b001;
+            default: R_size = 3'b000;
+        endcase
+        DMem_size = 3'b100;
+    end else begin
+        R_size = 3'b000;
+        DMem_size = 3'b100;
+    end
+
+    jalr_o = instr == jalr;
+    lui_o = instr == lui;
+    if(instr == L_type)
+    case(funct3)
+        3'b001: load_extend_s = 1'b1;
+        3'b000: load_extend_s = 1'b1;
+        default: load_extend_s = 1'b0;
     endcase
 end
 

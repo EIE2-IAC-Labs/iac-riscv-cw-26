@@ -47,7 +47,6 @@ VL_ATTR_COLD void Vmain_decoder___024root___ctor_var_reset(Vmain_decoder___024ro
     vlSelf->opcode = VL_RAND_RESET_I(7);
     vlSelf->RegWriteD = VL_RAND_RESET_I(1);
     vlSelf->ResultSrcD = VL_RAND_RESET_I(2);
-    vlSelf->MemWriteD = VL_RAND_RESET_I(1);
     vlSelf->ALUsrcD = VL_RAND_RESET_I(1);
     vlSelf->ImmSrcD = VL_RAND_RESET_I(3);
     vlSelf->BranchD = VL_RAND_RESET_I(1);
@@ -55,5 +54,8 @@ VL_ATTR_COLD void Vmain_decoder___024root___ctor_var_reset(Vmain_decoder___024ro
     vlSelf->ALUOp = VL_RAND_RESET_I(2);
     vlSelf->R_size = VL_RAND_RESET_I(3);
     vlSelf->DMem_size = VL_RAND_RESET_I(3);
+    vlSelf->jalr_o = VL_RAND_RESET_I(1);
+    vlSelf->lui_o = VL_RAND_RESET_I(1);
+    vlSelf->load_extend_s = VL_RAND_RESET_I(1);
     vlSelf->main_decoder__DOT__instr = 0;
 }
