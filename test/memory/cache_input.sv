@@ -6,8 +6,6 @@ module memory_input #(
     output logic [WIDTH-1:0] memory_in
 );
 
-// Note: the way ram and cache have been designed means that this component works for both of them.
-
 always_comb begin
     if (sw)
         memory_in = din;
