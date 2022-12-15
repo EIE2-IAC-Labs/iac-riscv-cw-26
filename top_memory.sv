@@ -9,8 +9,6 @@ module top_memory #(
     input logic lw,
     input logic lh,
     input logic lb,
-    input logic s,
-    input logic [1:0] offset,
     input logic [WIDTH-1:0] ALUResult_M,
     input logic [WIDTH-1:0] writeData_M,
     output logic [WIDTH-1:0] readData_M
@@ -23,22 +21,29 @@ assign storeIns = sw || sh || sb;
 
 // Cache signals
 logic cache_hit, cache_wen;
-logic [WIDTH-1:0] cache_out, cache_in, cache_store;
+logic [WIDTH-1:0] cache_out, cache_in1, cache_in2;
 
 // RAM signals
-logic [WIDTH-1:0] ram_out;
+logic [WIDTH-1:0] ram_out, ram_in;
 
 logic [WIDTH-1:0] memory_out;
 
 // Note: this design uses a write-through cache for simplicity.
 
-assign cache_wen = storeIns || (loadIns && !cache_hit);
-// Write to cache on a store instruction or on a failed load instruction.
+always_comb begin
+    memory_out = cache_hit ? cache_out : ram_out; // If we have a cache miss, output from the ram instead.
+    cache_in2 = storeIns ? cache_in1 : ram_out; // If instruction is a sw, write writeData to cache (as well as to ram).
+    cache_wen = storeIns || (loadIns && !cache_hit);
+end
 
-assign cache_in = storeIns ? cache_store : ram_out;
-// Data to write to cache can either come from a store instruction, or from the ram on a failed load instruction.
-
-assign memory_out = cache_hit ? cache_out : ram_out;
+memory_output memory_output (
+    .din(memory_out),
+    .addr(ALUResult_M),
+    .lw(lw),
+    .lh(lh),
+    .lb(lb),
+    .dout(readData_M)
+);
 
 // // // Cache // // //
 
@@ -46,41 +51,40 @@ cache cache (
     .clk(clk),
     .wen(cache_wen),
     .addr(ALUResult_M),
-    .din(cache_in),
+    .din(cache_in2),
     .hit(cache_hit),
     .dout(cache_out)
 );
 
-// Convert writeData to cache_store
-cache_store_input cache_store_input (
+memory_input cache_input (
     .sw(sw),
     .sh(sh),
     .sb(sb),
     .din(writeData_M),
     .addr(ALUResult_M),
-    .cache_out(cache_out),
-    .cache_store(cache_store)
+    .memory_out(cache_out),
+    .memory_in(cache_in1)
 );
+
 
 // // // RAM // // //
 
 ram ram(
-    .sw(sw),
-    .sh(sh),
-    .sb(sb),
-    .wd(writeData_M),
-    .a(ALUResult_M),
     .clk(clk),
+    .wen(storeIns),
+    .wd(ram_in),
+    .a(ALUResult_M),
     .rd(ram_out)
 );
 
-half_byte_word hbw(
-    .lw(lw),
-    .lh(lh),
-    .lb(lb),
-    .s(s),
-    .data(memory_out),
-    .dout(readData_M)
+memory_input ram_input (
+    .sw(sw),
+    .sh(sh),
+    .sb(sb),
+    .din(writeData_M),
+    .addr(ALUResult_M),
+    .memory_out(ram_out),
+    .memory_in(ram_in)
 );
 
 endmodule
