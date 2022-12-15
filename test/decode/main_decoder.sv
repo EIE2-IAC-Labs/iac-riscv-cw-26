@@ -72,7 +72,7 @@ always_comb begin
             3'b101: DMem_size = 3'b010;
             3'b000: DMem_size = 3'b001;
             3'b100: DMem_size = 3'b001;
-            default: DMem_size = 3'b100;
+            default: DMem_size = 3'b000;
         endcase
         R_size = 3'b000;
     end else if(instr == S_type) begin
@@ -82,10 +82,10 @@ always_comb begin
             3'b000: R_size = 3'b001;
             default: R_size = 3'b000;
         endcase
-        DMem_size = 3'b100;
+        DMem_size = 3'b000;
     end else begin
         R_size = 3'b000;
-        DMem_size = 3'b100;
+        DMem_size = 3'b000;
     end
 
     jalr_o = instr == jalr;
