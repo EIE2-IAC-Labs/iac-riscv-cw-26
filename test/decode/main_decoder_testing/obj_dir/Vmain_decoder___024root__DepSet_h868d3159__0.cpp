@@ -19,33 +19,10 @@ VL_INLINE_OPT void Vmain_decoder___024root___combo__TOP__0(Vmain_decoder___024ro
                     | (IData)(vlSelf->opcode));
     vlSelf->main_decoder__DOT__instr = Vmain_decoder__ConstPool__TABLE_h23a0d96f_0
         [__Vtableidx1];
-    vlSelf->RegWriteD = (((((((1U == vlSelf->main_decoder__DOT__instr) 
-                              | (2U == vlSelf->main_decoder__DOT__instr)) 
-                             | (3U == vlSelf->main_decoder__DOT__instr)) 
-                            | (4U == vlSelf->main_decoder__DOT__instr)) 
-                           | (5U == vlSelf->main_decoder__DOT__instr)) 
-                          | (8U == vlSelf->main_decoder__DOT__instr)) 
-                         | (9U == vlSelf->main_decoder__DOT__instr));
+    vlSelf->lui_o = (5U == vlSelf->main_decoder__DOT__instr);
     vlSelf->JumpD = ((8U == vlSelf->main_decoder__DOT__instr) 
                      | (9U == vlSelf->main_decoder__DOT__instr));
-    if ((4U == vlSelf->main_decoder__DOT__instr)) {
-        vlSelf->ResultSrcD = 1U;
-        vlSelf->ALUOp = 0U;
-        vlSelf->R_size = vlSelf->funct3;
-    } else {
-        vlSelf->ResultSrcD = ((8U == vlSelf->main_decoder__DOT__instr)
-                               ? 2U : ((9U == vlSelf->main_decoder__DOT__instr)
-                                        ? 2U : 0U));
-        vlSelf->ALUOp = ((6U == vlSelf->main_decoder__DOT__instr)
-                          ? 0U : ((7U == vlSelf->main_decoder__DOT__instr)
-                                   ? 1U : 2U));
-    }
-    vlSelf->MemWriteD = (6U == vlSelf->main_decoder__DOT__instr);
-    vlSelf->ALUsrcD = (((((2U == vlSelf->main_decoder__DOT__instr) 
-                          | (3U == vlSelf->main_decoder__DOT__instr)) 
-                         | (4U == vlSelf->main_decoder__DOT__instr)) 
-                        | (5U == vlSelf->main_decoder__DOT__instr)) 
-                       | (6U == vlSelf->main_decoder__DOT__instr));
+    vlSelf->BranchD = (7U == vlSelf->main_decoder__DOT__instr);
     vlSelf->ImmSrcD = ((5U == vlSelf->main_decoder__DOT__instr)
                         ? 1U : ((6U == vlSelf->main_decoder__DOT__instr)
                                  ? 2U : ((7U == vlSelf->main_decoder__DOT__instr)
@@ -53,12 +30,52 @@ VL_INLINE_OPT void Vmain_decoder___024root___combo__TOP__0(Vmain_decoder___024ro
                                                    == vlSelf->main_decoder__DOT__instr)
                                                    ? 4U
                                                    : 0U))));
-    vlSelf->BranchD = (7U == vlSelf->main_decoder__DOT__instr);
-    if ((4U != vlSelf->main_decoder__DOT__instr)) {
+    vlSelf->ALUsrcD = (((((2U == vlSelf->main_decoder__DOT__instr) 
+                          | (3U == vlSelf->main_decoder__DOT__instr)) 
+                         | (4U == vlSelf->main_decoder__DOT__instr)) 
+                        | (5U == vlSelf->main_decoder__DOT__instr)) 
+                       | (6U == vlSelf->main_decoder__DOT__instr));
+    if ((4U == vlSelf->main_decoder__DOT__instr)) {
+        vlSelf->ResultSrcD = 1U;
+        vlSelf->ALUOp = 0U;
+        vlSelf->R_size = 0U;
+        vlSelf->DMem_size = ((4U & (IData)(vlSelf->funct3))
+                              ? ((2U & (IData)(vlSelf->funct3))
+                                  ? 4U : ((1U & (IData)(vlSelf->funct3))
+                                           ? 2U : 1U))
+                              : ((2U & (IData)(vlSelf->funct3))
+                                  ? 4U : ((1U & (IData)(vlSelf->funct3))
+                                           ? 2U : 1U)));
+        vlSelf->load_extend_s = ((1U == (IData)(vlSelf->funct3)) 
+                                 | (0U == (IData)(vlSelf->funct3)));
+    } else {
+        vlSelf->ResultSrcD = ((8U == vlSelf->main_decoder__DOT__instr)
+                               ? 2U : ((9U == vlSelf->main_decoder__DOT__instr)
+                                        ? 2U : 0U));
         if ((6U == vlSelf->main_decoder__DOT__instr)) {
-            vlSelf->DMem_size = vlSelf->funct3;
+            vlSelf->ALUOp = 0U;
+            vlSelf->R_size = ((2U == (IData)(vlSelf->funct3))
+                               ? 4U : ((1U == (IData)(vlSelf->funct3))
+                                        ? 2U : ((0U 
+                                                 == (IData)(vlSelf->funct3))
+                                                 ? 1U
+                                                 : 0U)));
+        } else {
+            vlSelf->ALUOp = ((7U == vlSelf->main_decoder__DOT__instr)
+                              ? 1U : ((1U == vlSelf->main_decoder__DOT__instr)
+                                       ? 2U : 3U));
+            vlSelf->R_size = 0U;
         }
+        vlSelf->DMem_size = 4U;
     }
+    vlSelf->jalr_o = (9U == vlSelf->main_decoder__DOT__instr);
+    vlSelf->RegWriteD = (((((((1U == vlSelf->main_decoder__DOT__instr) 
+                              | (2U == vlSelf->main_decoder__DOT__instr)) 
+                             | (3U == vlSelf->main_decoder__DOT__instr)) 
+                            | (4U == vlSelf->main_decoder__DOT__instr)) 
+                           | (5U == vlSelf->main_decoder__DOT__instr)) 
+                          | (8U == vlSelf->main_decoder__DOT__instr)) 
+                         | (9U == vlSelf->main_decoder__DOT__instr));
 }
 
 void Vmain_decoder___024root___eval(Vmain_decoder___024root* vlSelf) {

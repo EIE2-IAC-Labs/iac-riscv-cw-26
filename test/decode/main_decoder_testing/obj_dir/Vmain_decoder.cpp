@@ -15,7 +15,6 @@ Vmain_decoder::Vmain_decoder(VerilatedContext* _vcontextp__, const char* _vcname
     , opcode{vlSymsp->TOP.opcode}
     , RegWriteD{vlSymsp->TOP.RegWriteD}
     , ResultSrcD{vlSymsp->TOP.ResultSrcD}
-    , MemWriteD{vlSymsp->TOP.MemWriteD}
     , ALUsrcD{vlSymsp->TOP.ALUsrcD}
     , ImmSrcD{vlSymsp->TOP.ImmSrcD}
     , BranchD{vlSymsp->TOP.BranchD}
@@ -23,6 +22,9 @@ Vmain_decoder::Vmain_decoder(VerilatedContext* _vcontextp__, const char* _vcname
     , ALUOp{vlSymsp->TOP.ALUOp}
     , R_size{vlSymsp->TOP.R_size}
     , DMem_size{vlSymsp->TOP.DMem_size}
+    , jalr_o{vlSymsp->TOP.jalr_o}
+    , lui_o{vlSymsp->TOP.lui_o}
+    , load_extend_s{vlSymsp->TOP.load_extend_s}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context

@@ -18,16 +18,17 @@ class Vcontrol_unit___024root final : public VerilatedModule {
     VL_IN8(funct7,6,0);
     VL_OUT8(RegWriteD,0,0);
     VL_OUT8(ResultSrcD,1,0);
-    VL_OUT8(MemWriteD,0,0);
     VL_OUT8(ALUsrcD,0,0);
     VL_OUT8(ImmSrcD,2,0);
-    VL_OUT8(BranchD,2,0);
+    VL_OUT8(BranchD,0,0);
     VL_OUT8(JumpD,0,0);
     VL_OUT8(R_size,2,0);
     VL_OUT8(DMem_size,2,0);
     VL_OUT8(ALUControlD,3,0);
+    VL_OUT8(jalr,0,0);
+    VL_OUT8(lui,0,0);
+    VL_OUT8(load_extend_s,0,0);
     IData/*31:0*/ control_unit__DOT__main_control__DOT__instr;
-    VlUnpacked<CData/*0:0*/, 2> __Vm_traceActivity;
 
     // INTERNAL VARIABLES
     Vcontrol_unit__Syms* const vlSymsp;

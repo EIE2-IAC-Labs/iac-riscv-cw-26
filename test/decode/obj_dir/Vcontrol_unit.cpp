@@ -16,7 +16,6 @@ Vcontrol_unit::Vcontrol_unit(VerilatedContext* _vcontextp__, const char* _vcname
     , funct7{vlSymsp->TOP.funct7}
     , RegWriteD{vlSymsp->TOP.RegWriteD}
     , ResultSrcD{vlSymsp->TOP.ResultSrcD}
-    , MemWriteD{vlSymsp->TOP.MemWriteD}
     , ALUsrcD{vlSymsp->TOP.ALUsrcD}
     , ImmSrcD{vlSymsp->TOP.ImmSrcD}
     , BranchD{vlSymsp->TOP.BranchD}
@@ -24,6 +23,9 @@ Vcontrol_unit::Vcontrol_unit(VerilatedContext* _vcontextp__, const char* _vcname
     , R_size{vlSymsp->TOP.R_size}
     , DMem_size{vlSymsp->TOP.DMem_size}
     , ALUControlD{vlSymsp->TOP.ALUControlD}
+    , jalr{vlSymsp->TOP.jalr}
+    , lui{vlSymsp->TOP.lui}
+    , load_extend_s{vlSymsp->TOP.load_extend_s}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context

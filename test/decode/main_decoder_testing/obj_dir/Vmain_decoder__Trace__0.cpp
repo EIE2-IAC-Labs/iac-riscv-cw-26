@@ -27,15 +27,17 @@ void Vmain_decoder___024root__trace_chg_sub_0(Vmain_decoder___024root* vlSelf, V
     bufp->chgCData(oldp+1,(vlSelf->opcode),7);
     bufp->chgBit(oldp+2,(vlSelf->RegWriteD));
     bufp->chgCData(oldp+3,(vlSelf->ResultSrcD),2);
-    bufp->chgBit(oldp+4,(vlSelf->MemWriteD));
-    bufp->chgBit(oldp+5,(vlSelf->ALUsrcD));
-    bufp->chgCData(oldp+6,(vlSelf->ImmSrcD),3);
-    bufp->chgBit(oldp+7,(vlSelf->BranchD));
-    bufp->chgBit(oldp+8,(vlSelf->JumpD));
-    bufp->chgCData(oldp+9,(vlSelf->ALUOp),2);
-    bufp->chgCData(oldp+10,(vlSelf->R_size),3);
-    bufp->chgCData(oldp+11,(vlSelf->DMem_size),3);
-    bufp->chgIData(oldp+12,(vlSelf->main_decoder__DOT__instr),32);
+    bufp->chgBit(oldp+4,(vlSelf->ALUsrcD));
+    bufp->chgCData(oldp+5,(vlSelf->ImmSrcD),3);
+    bufp->chgBit(oldp+6,(vlSelf->BranchD));
+    bufp->chgBit(oldp+7,(vlSelf->JumpD));
+    bufp->chgCData(oldp+8,(vlSelf->ALUOp),2);
+    bufp->chgCData(oldp+9,(vlSelf->R_size),3);
+    bufp->chgCData(oldp+10,(vlSelf->DMem_size),3);
+    bufp->chgBit(oldp+11,(vlSelf->jalr_o));
+    bufp->chgBit(oldp+12,(vlSelf->lui_o));
+    bufp->chgBit(oldp+13,(vlSelf->load_extend_s));
+    bufp->chgIData(oldp+14,(vlSelf->main_decoder__DOT__instr),32);
 }
 
 void Vmain_decoder___024root__trace_cleanup(void* voidSelf, VerilatedVcd* /*unused*/) {

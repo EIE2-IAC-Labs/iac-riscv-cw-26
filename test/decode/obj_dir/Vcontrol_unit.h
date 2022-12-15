@@ -30,14 +30,16 @@ class Vcontrol_unit VL_NOT_FINAL : public VerilatedModel {
     VL_IN8(&funct7,6,0);
     VL_OUT8(&RegWriteD,0,0);
     VL_OUT8(&ResultSrcD,1,0);
-    VL_OUT8(&MemWriteD,0,0);
     VL_OUT8(&ALUsrcD,0,0);
     VL_OUT8(&ImmSrcD,2,0);
-    VL_OUT8(&BranchD,2,0);
+    VL_OUT8(&BranchD,0,0);
     VL_OUT8(&JumpD,0,0);
     VL_OUT8(&R_size,2,0);
     VL_OUT8(&DMem_size,2,0);
     VL_OUT8(&ALUControlD,3,0);
+    VL_OUT8(&jalr,0,0);
+    VL_OUT8(&lui,0,0);
+    VL_OUT8(&load_extend_s,0,0);
 
     // CELLS
     // Public to allow access to /* verilator public */ items.
