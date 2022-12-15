@@ -1,3 +1,4 @@
+/* verilator lint_off UNUSED */
 module cache_store_input #(
     parameter WIDTH = 32
 ) (

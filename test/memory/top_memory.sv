@@ -19,7 +19,6 @@ logic loadIns;
 assign loadIns = lw || lh || lb;
 logic storeIns;
 assign storeIns = sw || sh || sb;
-
 // Cache signals
 logic cache_hit, cache_wen;
 logic [WIDTH-1:0] cache_out, cache_in, cache_store;
@@ -79,6 +78,7 @@ half_byte_word hbw(
     .lb(lb),
     .s(s),
     .data(memory_out),
+    .offset(ALUResult_M[1:0]),
     .dout(readData_M)
 );
 

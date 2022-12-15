@@ -39,33 +39,7 @@ int main(int argc, char **argv, char **env)
             top->clk = !top->clk;
             top->eval();
         }
-        if (i < 2)
-        {
-            top->ALUResult_M = 0x1001;
-            top->sw = 1;
-            top->writeData_M = 0xAABBCCDD;
-        }
-        if (i < 4 && i > 2)
-        {
-            top->sw = 0;
-            top->lb = 1;
-            top->offset = 0b00;
-        }
-        if (i < 6 && i > 4)
-        {
-            top->offset = 0b01;
-        }
-        if (i < 8 && i > 6)
-        {
-            top->offset = 0b10;
-        }
-        if (i < 10 && i > 8)
-        {
-            top->offset = 0b11;
-        }
-        if(i>10){
-            top->offset = 0b00;
-        }
+
     }
 
     // vbdClose();

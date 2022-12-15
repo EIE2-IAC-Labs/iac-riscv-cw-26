@@ -1,3 +1,4 @@
+/* verilator lint_off UNUSED */ 
 module control_unit #(
 ) (
     input logic [6:0] opcode,

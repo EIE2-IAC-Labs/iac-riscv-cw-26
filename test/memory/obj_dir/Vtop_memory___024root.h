@@ -21,7 +21,10 @@ class Vtop_memory___024root final : public VerilatedModule {
     VL_IN8(lh,0,0);
     VL_IN8(lb,0,0);
     VL_IN8(s,0,0);
-    VL_IN8(offset,1,0);
+    CData/*0:0*/ top_memory__DOT__storeIns;
+    CData/*0:0*/ top_memory__DOT__cache_hit;
+    CData/*0:0*/ top_memory__DOT__cache__DOT__valid;
+    CData/*1:0*/ top_memory__DOT__hbw__DOT__offset;
     CData/*7:0*/ top_memory__DOT__hbw__DOT__b;
     CData/*0:0*/ top_memory__DOT__hbw__DOT__h_e__DOT__sign;
     CData/*0:0*/ top_memory__DOT__hbw__DOT__s_e__DOT__sign;
@@ -30,12 +33,18 @@ class Vtop_memory___024root final : public VerilatedModule {
     VL_IN(ALUResult_M,31,0);
     VL_IN(writeData_M,31,0);
     VL_OUT(readData_M,31,0);
-    IData/*31:0*/ top_memory__DOT__dout;
+    IData/*31:0*/ top_memory__DOT__cache_out;
+    IData/*31:0*/ top_memory__DOT__ram_out;
+    IData/*31:0*/ top_memory__DOT__memory_out;
+    IData/*23:0*/ top_memory__DOT__cache__DOT__tag_out;
     IData/*31:0*/ top_memory__DOT__ram__DOT__offset_a;
     IData/*31:0*/ top_memory__DOT__hbw__DOT__he;
     IData/*31:0*/ top_memory__DOT__hbw__DOT__be;
+    QData/*56:0*/ top_memory__DOT__cache__DOT__cache_out;
+    VlUnpacked<QData/*56:0*/, 64> top_memory__DOT__cache__DOT__cache_array;
+    VlUnpacked<QData/*56:0*/, 16> top_memory__DOT__cache__DOT__cache_subarray;
     VlUnpacked<CData/*7:0*/, 131072> top_memory__DOT__ram__DOT__ram_array;
-    VlUnpacked<CData/*0:0*/, 2> __Vm_traceActivity;
+    VlUnpacked<CData/*0:0*/, 3> __Vm_traceActivity;
 
     // INTERNAL VARIABLES
     Vtop_memory__Syms* const vlSymsp;

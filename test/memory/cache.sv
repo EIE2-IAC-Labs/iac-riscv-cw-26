@@ -1,3 +1,4 @@
+/* verilator lint_off UNUSED */
 module cache #(
     parameter DATA_WIDTH = 32,
     parameter SET_WIDTH = 6,
