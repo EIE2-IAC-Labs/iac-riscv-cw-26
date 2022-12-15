@@ -2,7 +2,7 @@
 
 # cleanup
 rm -rf obj_dir
-rm -f *.vcd
+rm -f top.vcd
 
 # assemble instructions
 cd f1test
