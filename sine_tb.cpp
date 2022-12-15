@@ -28,15 +28,16 @@ int main(int argc, char **argv, char **env) {
     top->rst = 0;
 
     int clk;
+    bool plotting = false;
+    
     for (int i = 0; i < 1000000; i ++) { // Simulate for 1M cycles
-        bool plotting = false;
         // Dump variables into VCD file and toggle clock
         for (clk = 0; clk < 2; clk ++) {
             top->clk = !top->clk;
             top->eval();
         }
 
-        if (top->a0 != 0 && i % 300 == 0) {
+        if (top->a0 != 0) {
             plotting = true;
             // Only start plotting when a0 reaches non-zero,
             // i.e. the program has finished calculating the bin values and is starting to display them.
