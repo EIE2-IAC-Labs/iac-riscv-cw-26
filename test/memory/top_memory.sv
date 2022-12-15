@@ -25,7 +25,7 @@ logic cache_hit, cache_wen;
 logic [WIDTH-1:0] cache_out, cache_in, cache_store;
 
 // RAM signals
-logic [WIDTH-1:0] ram_out, ram_in;
+logic [WIDTH-1:0] ram_out;
 
 logic [WIDTH-1:0] memory_out;
 
@@ -51,14 +51,14 @@ cache cache (
 );
 
 // Convert writeData to cache_store
-cache_input cache_input (
+cache_store_input cache_store_input (
     .sw(sw),
     .sh(sh),
     .sb(sb),
     .din(writeData_M),
     .addr(ALUResult_M),
-    .memory_out(cache_out),
-    .memory_in(cache_store)
+    .cache_out(cache_out),
+    .cache_store(cache_store)
 );
 
 // // // RAM // // //
