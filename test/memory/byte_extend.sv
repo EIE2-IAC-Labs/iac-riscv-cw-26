@@ -10,15 +10,15 @@ module byte_extend #(
 logic sign;
 always_comb begin
     if(s) begin
-        assign sign = din[7];
+        sign = din[7];
         case (sign)
-            1: assign dout = {{24{1'b1}},din};
-            0: assign dout = {{24{1'b0}},din};
-            default: assign dout = {{24{1'b0}},din};
+            1: dout = {{24{1'b1}},din};
+            0: dout = {{24{1'b0}},din};
+            default: dout = {{24{1'b0}},din};
         endcase
     end
     else begin
-        assign dout = {{24{1'b0}},din};
+        dout = {{24{1'b0}},din};
     end    
 end
 endmodule

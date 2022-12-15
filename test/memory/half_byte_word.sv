@@ -18,21 +18,25 @@ module half_byte_word #(
 
     always_comb begin
         case (offset)
+            0: begin
+                h = data[15:0];
+                b = data[7:0];
+            end
             1: begin
-                assign h = data[23:8];
-                assign b = data[15:8];
+                h = data[23:8];
+                b = data[15:8];
             end
             2: begin
-                assign h = data[31:16];
-                assign b = data[23:16];
+                h = data[31:16];
+                b = data[23:16];
             end
             3: begin
-                assign h = data[31:16];
-                assign b = data[31:24];
+                h = data[31:16];
+                b = data[31:24];
             end
             default: begin
-                assign h = data[15:0];
-                assign b = data[7:0];
+                h = 0;
+                b = 0;
             end
         endcase
     end
@@ -42,16 +46,16 @@ module half_byte_word #(
 
     always_comb begin
         if(lh)  begin
-            assign dout = he;
+            dout = he;
         end
         else if(lb) begin
-            assign dout = be;
+            dout = be;
         end
         else if(lw) begin
-            assign dout = data;
+            dout = data;
         end
         else begin
-            assign dout = {CPU_WORD{1'b0}};
+            dout = {CPU_WORD{1'b0}};
         end
     end
 
