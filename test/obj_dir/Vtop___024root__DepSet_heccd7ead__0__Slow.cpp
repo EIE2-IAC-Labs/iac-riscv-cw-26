@@ -11,24 +11,29 @@ VL_ATTR_COLD void Vtop___024root___initial__TOP__0(Vtop___024root* vlSelf) {
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___initial__TOP__0\n"); );
     // Init
-    VlWide<3>/*95:0*/ __Vtemp_h20e8dc28__0;
+    VlWide<4>/*127:0*/ __Vtemp_h8d0025c5__0;
+    VlWide<3>/*95:0*/ __Vtemp_hb99be335__0;
     // Body
     VL_WRITEF("Loading data memory.\n");
-    __Vtemp_h20e8dc28__0[0U] = 0x2e6d656dU;
-    __Vtemp_h20e8dc28__0[1U] = 0x7369616eU;
-    __Vtemp_h20e8dc28__0[2U] = 0x67617573U;
-    VL_READMEM_N(true, 8, 131072, 0, VL_CVT_PACK_STR_NW(3, __Vtemp_h20e8dc28__0)
+    __Vtemp_h8d0025c5__0[0U] = 0x2e6d656dU;
+    __Vtemp_h8d0025c5__0[1U] = 0x6172616dU;
+    __Vtemp_h8d0025c5__0[2U] = 0x2f646174U;
+    __Vtemp_h8d0025c5__0[3U] = 0x72746cU;
+    VL_READMEM_N(true, 8, 131072, 0, VL_CVT_PACK_STR_NW(4, __Vtemp_h8d0025c5__0)
                  ,  &(vlSelf->top__DOT__top_memory__DOT__ram__DOT__ram_array)
                  , 0x10000U, ~0ULL);
     VL_WRITEF("Loading instructions.\n");
-    VL_READMEM_N(true, 8, 4096, 3217031168, std::string{"pdf.hex"}
+    __Vtemp_hb99be335__0[0U] = 0x2e686578U;
+    __Vtemp_hb99be335__0[1U] = 0x6c2f6631U;
+    __Vtemp_hb99be335__0[2U] = 0x7274U;
+    VL_READMEM_N(true, 8, 4096, 3217031168, VL_CVT_PACK_STR_NW(3, __Vtemp_hb99be335__0)
                  ,  &(vlSelf->top__DOT__top_fetch__DOT__instr_mem__DOT__rom_array)
                  , 3217031168, ~0ULL);
     vlSelf->top__DOT__top_decode__DOT__control_unit__DOT__main_control__DOT__instr = 0U;
 }
 
-extern const VlUnpacked<IData/*31:0*/, 1024> Vtop__ConstPool__TABLE_h025c9579_0;
-extern const VlUnpacked<CData/*3:0*/, 64> Vtop__ConstPool__TABLE_h4b62dad7_0;
+extern const VlUnpacked<IData/*31:0*/, 1024> Vtop__ConstPool__TABLE_h23a0d96f_0;
+extern const VlUnpacked<CData/*3:0*/, 64> Vtop__ConstPool__TABLE_h4fb9e2bf_0;
 
 VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
@@ -84,9 +89,10 @@ VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
     __Vtableidx1 = ((0x380U & (vlSelf->top__DOT__instr 
                                >> 5U)) | (0x7fU & vlSelf->top__DOT__instr));
     vlSelf->top__DOT__top_decode__DOT__control_unit__DOT__main_control__DOT__instr 
-        = Vtop__ConstPool__TABLE_h025c9579_0[__Vtableidx1];
+        = Vtop__ConstPool__TABLE_h23a0d96f_0[__Vtableidx1];
     if ((4U == vlSelf->top__DOT__top_decode__DOT__control_unit__DOT__main_control__DOT__instr)) {
         vlSelf->top__DOT__resultSrc = 1U;
+        vlSelf->top__DOT__R_size = 0U;
         vlSelf->top__DOT__DMem_size = ((0x4000U & vlSelf->top__DOT__instr)
                                         ? ((0x2000U 
                                             & vlSelf->top__DOT__instr)
@@ -100,7 +106,6 @@ VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
                                            ((0x1000U 
                                              & vlSelf->top__DOT__instr)
                                              ? 2U : 1U)));
-        vlSelf->top__DOT__R_size = 0U;
         vlSelf->top__DOT__load_extend_s = ((1U == (7U 
                                                    & (vlSelf->top__DOT__instr 
                                                       >> 0xcU))) 
@@ -114,7 +119,6 @@ VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
                                                  == vlSelf->top__DOT__top_decode__DOT__control_unit__DOT__main_control__DOT__instr)
                                                  ? 2U
                                                  : 0U));
-        vlSelf->top__DOT__DMem_size = 4U;
         vlSelf->top__DOT__R_size = ((6U == vlSelf->top__DOT__top_decode__DOT__control_unit__DOT__main_control__DOT__instr)
                                      ? ((2U == (7U 
                                                 & (vlSelf->top__DOT__instr 
@@ -134,6 +138,7 @@ VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
                                                    ? 1U
                                                    : 0U)))
                                      : 0U);
+        vlSelf->top__DOT__DMem_size = 4U;
     }
     __Vtableidx2 = ((0x20U & (vlSelf->top__DOT__instr 
                               >> 0x19U)) | ((0x1cU 
@@ -155,7 +160,7 @@ VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
                                                       == vlSelf->top__DOT__top_decode__DOT__control_unit__DOT__main_control__DOT__instr)
                                                       ? 2U
                                                       : 3U))))));
-    vlSelf->top__DOT__ALUctrl = Vtop__ConstPool__TABLE_h4b62dad7_0
+    vlSelf->top__DOT__ALUctrl = Vtop__ConstPool__TABLE_h4fb9e2bf_0
         [__Vtableidx2];
     vlSelf->top__DOT__top_decode__DOT__SignExtend__DOT__unnamedblk1__DOT__imm_type_1 = 0U;
     vlSelf->top__DOT__top_decode__DOT__SignExtend__DOT__unnamedblk1__DOT__imm_type_lui = 0U;
@@ -449,7 +454,7 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
         vlSelf->top__DOT__top_decode__DOT__register__DOT__reg_array[__Vi0] = VL_RAND_RESET_I(32);
     }
     vlSelf->top__DOT__top_decode__DOT__register__DOT__i = VL_RAND_RESET_I(32);
-    vlSelf->top__DOT__top_decode__DOT__register__DOT____Vlvbound_h20c3b2fb__0 = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT__top_decode__DOT__register__DOT____Vlvbound_hdb85cb42__0 = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__top_decode__DOT__control_unit__DOT__main_control__DOT__instr = 0;
     vlSelf->top__DOT__top_decode__DOT__SignExtend__DOT__unnamedblk1__DOT__imm_type_1 = VL_RAND_RESET_I(12);
     vlSelf->top__DOT__top_decode__DOT__SignExtend__DOT__unnamedblk1__DOT__imm_type_lui = VL_RAND_RESET_I(20);

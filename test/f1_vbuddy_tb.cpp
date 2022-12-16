@@ -2,7 +2,7 @@
 
 #include "verilated.h"
 #include "verilated_vcd_c.h"
-// #include "vbuddy.cpp"
+#include "vbuddy.cpp"
 
 int main(int argc, char **argv, char **env) {
 
@@ -18,54 +18,36 @@ int main(int argc, char **argv, char **env) {
     tfp->open("top_f1.vcd");
 
     // Init Vbuddy
-    // if (vbdOpen() != 1)
-    //     return(-1);
-    // vbdHeader("F1 lights");
-    // vbdSetMode(1); // One-shot mode
+    if (vbdOpen() != 1)
+        return(-1);
+    vbdHeader("F1 lights");
+    vbdSetMode(1); // One-shot mode
 
     // Init simulation inputs
     top->clk = 1;
     top->rst = 0;
 
-    
     int clk;
-    bool plotting = false;
-    for (int i = 0; i < 1000000; i ++) { // Simulate for 1M cycles
+    for (int i = 0; i < 10000; i ++) { // Simulate for 10,000 cycles
         
         // Dump variables into VCD file and toggle clock
         for (clk = 0; clk < 2; clk ++) {
-            // tfp->dump(2*i + clk); 
+            tfp->dump(2*i + clk);
             top->clk = !top->clk;
             top->eval();
         }
 
-    //   vbdCycle(i);
+        // Send data to Vbuddy
+        vbdCycle(i);
         // vbdHex(1, top->a0 & 0xf);
         // vbdHex(2, (top->a0 >> 4) & 0xf);
         // vbdHex(3, (top->a0 >> 8) & 0xf);
         // vbdHex(4, (top->a0 >> 12) & 0xf);
         // Although the register a0 is 32 bits, we will not be using it to store any numbers higher than 16 bits.
-        // vbdBar(top->a0 & 0xff);
-        if (top->a0 != 0) {
-            plotting = true;
-             tfp->dump(2*i + clk); 
-            // Only start plotting when a0 reaches non-zero,
-            // i.e. the program has finished calculating the bin values and is starting to display them.
-        }
+        vbdBar(top->a0 & 0xff);
 
-        // // // Send data to Vbuddy
-        // if (i>10000) {
-        //     vbdPlot(top->a0, 0, 200); // Max bin count = 200
-        //     vbdCycle(i);
-        //     tfp->dump(2*i + clk); // For testing
-        // }
-        // else if (i % 10000 == 0) {
-        //     vbdCycle(i);
-        //     // When we are not yet plotting, only print cycle every 10000 cycles to speed up simulation.
-        // }
-
-        // // Update input signals
-        // top->rst = vbdFlag();
+        // Update input signals
+        top->rst = vbdFlag();
 
     }
 
