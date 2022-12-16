@@ -23,10 +23,10 @@ verilator -Wall -y "fetch" -y "decode" -y "execute" -y "memory" -y "writeback" -
 echo "\n Making object"
 make -j -C obj_dir/ -f Vtop.mk Vtop
 
+sed -i 's/counter_test\/counter.hex/__file__/' fetch/instr_mem.sv
+sed -i 's/memory\/dataram.mem/__file__/' memory/ram.sv
+
 # run executable simulation file
 echo "\nRunning simulation"
 sudo obj_dir/Vtop
 echo "\nSimulation completed"
-
-sed -i 's/counter_test\/counter.hex/__file__/' fetch/instr_mem.sv
-sed -i 's/memory\/dataram.mem/__file__/' memory/ram.sv

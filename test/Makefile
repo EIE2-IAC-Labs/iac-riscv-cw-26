@@ -1,4 +1,4 @@
-SHELL =: /bin/bash
+SHELL := /bin/bash
 
 counter:
 	echo "Making counter"
@@ -8,6 +8,6 @@ f1:
 	echo "Making F1"
 	source f1_vbuddy_sim.sh
 
-reference:
+ref:
 	echo "Making reference"
 	source ref_vbuddy_sim.sh
