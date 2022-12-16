@@ -23,5 +23,5 @@ sed -i 's/memory\/dataram.mem/__file__/' memory/ram.sv
 
 # run executable simulation file
 echo "\nRunning simulation"
-obj_dir/Vtop
+sudo obj_dir/Vtop
 echo "\nSimulation completed"
