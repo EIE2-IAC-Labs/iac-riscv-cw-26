@@ -1,3 +1,4 @@
+/*verilator lint_off UNUSED */
 module ram #(
     parameter ADDRESS_LENGTH = 32,
     parameter WORD_LENGTH = 8
@@ -28,7 +29,7 @@ assign d3 = wd[4*(WORD_LENGTH)-1:3*(WORD_LENGTH)];
 // Load data from one of the reference .mem files
 initial begin
     $display("Loading data memory.");
-    $readmemh("reference/gaussian.mem", ram_array, 20'h10000);
+    $readmemh("__file__", ram_array, 20'h10000);
 end
 // assign offset_ra = (a - (a%4)) + 1;
 assign offset_ra = {r_a[ADDRESS_LENGTH-1:2], 2'b0};
