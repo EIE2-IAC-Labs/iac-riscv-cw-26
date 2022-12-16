@@ -26,7 +26,8 @@ Ebed60c06750f72001dad64799198d4b91f917e3 (extra output logic for R_size and DMem
 
 My next contribution from me was the instruction memory, where the input address was used to index a memory byte, and this along with the 3 bytes next to it were concatenated to form the output word.
 
-(This was done as part of Lab 4, so I have not included the commit link)
+https://github.com/BlueCP/IA_lab4_reducedRISCV/commit/a76c3de4d8fe9dac81daee504d32199f6b4a22fd (before addition of byte addressing)
+https://github.com/BlueCP/IA_lab4_reducedRISCV/commit/0df84af2fce715a863ded97c9c9a81da4e57c4c2 (after addition of byte addressing)
 
 ## F1 Assembly Code
 
