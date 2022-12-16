@@ -9,6 +9,9 @@ cd f1test
 make f1test
 cd ..
 
+sed -i 's/__file__/f1test\/f1.hex/' fetch/instr_mem.sv
+sed -i 's/__file__/memory\/dataram.mem' memory/ram.sv 
+
 # run Verilator to translate Verilog into C++, including C++ testbench
 verilator -Wall -y "fetch" -y "decode" -y "execute" -y "memory" -y "writeback" -y "pipeline_reg" -y "decode/sign_extend" -y "f1test" --cc --trace --exe top.sv f1_vbuddy_tb.cpp
 
@@ -20,3 +23,5 @@ echo "\nRunning simulation"
 obj_dir/Vtop
 echo "\nSimulation completed"
 
+sed -i 's/f1test\/f1.hex/__file__/' fetch/instr_mem.sv
+sed -i 's/memory\/dataram.mem/__file__/' memory/ram.sv 
