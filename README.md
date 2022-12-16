@@ -10,4 +10,5 @@ This repository contains three branches to be assessed: main, cache, and single_
 - The 'main' branch contains the pipelined CPU.
 - The 'cache' branch contains the pipelined CPU with a two-way associating write-back cache.
 - The 'single_cycle' branch contains the single-cycle version of the CPU.
-In each branch, the test folder contains .vcd test results. The folder test/media contains images and videos as additional testing evidence. The f1_vbuddy_sim.sh and ref_vbuddy_sim.sh bash scripts can be used to assemble and run the F1 and reference programs respectively.
+
+In each branch, the test folder contains .vcd test results. The folder test/media contains images and videos as additional testing evidence. The commands 'make f1' and 'make ref' can be used to assemble and run the F1 and reference programs respectively. For the reference program, the distribution to calculate the PDF of can be changed by modifying ref_vbuddy_sim.sh.
