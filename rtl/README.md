@@ -7,15 +7,15 @@
 | sign_extend.sv | x | | * | |
 | ALU_decoder.sv | x | | x | * |
 | control_unit.sv |  | | * | |
-| main_decoder.sv | x | | * | |
+| main_decoder.sv | x | | * |x|
 | register.sv | x | | | * |
-| top_decode.sv | * | | | |
+| top_decode.sv | * | | | X|
 | alu.sv | | | | * |
 | pc_src.sv | | | * | * |
 | top_execute.sv | * | | | x |
 | adder.sv | | * | | |
 | instr_mem.sv | x | x | * | |
-| mux_2.sv | | * | | |
+| mux_2.sv | | * | | *|
 | PC_Reg.sv | | * | | |
 | top_fetch.sv | * | | | |
 | byte_extend.sv | | * | | |
@@ -31,6 +31,7 @@
 | memory_writeback_reg.sv | * | | | |
 | top_writeback.sv | * | | | |
 | top.sv | * | | | |
+|spatial_cache.sv||||*|
 
 - The files cache.sv and cache_store_input.sv are only for the cache branch.
 - top_memory has two principal contributors: Roshan and Corey.
@@ -69,6 +70,6 @@
 | generate_ram.py | | * | | |
 | calc_pdf.py | * | | | |
 | pdf.s | x | | | |
-| Makefile (f1) | | * | | |
+| Makefile (f1) | | * | | *|
 
 - For f1.s, Roshan, Corey, and Anlan were considered to have contributed equally.
