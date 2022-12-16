@@ -15,59 +15,56 @@ module top_memory #(
     output logic [WIDTH-1:0] readData_M
 );
 
-logic loadIns;
-assign loadIns = lw || lh || lb;
-logic storeIns;
-assign storeIns = sw || sh || sb;
+// Internal signals
+logic loadIns, storeIns;
+
 // Cache signals
-logic cache_hit, cache_wen;
-logic [WIDTH-1:0] cache_out, cache_in, cache_store;
+logic cache_hit, cache_evict;
+logic [WIDTH-1:0] cache_out, cache_store, cache_addr_out;
 
-// RAM signals
-logic [WIDTH-1:0] ram_out;
+// Other memory signals
+logic [WIDTH-1:0] ram_out, memory_out;
 
-logic [WIDTH-1:0] memory_out;
-
-// Note: this design uses a write-through cache for simplicity.
-
-assign cache_wen = storeIns || (loadIns && !cache_hit);
-// Write to cache on a store instruction or on a failed load instruction.
-
-assign cache_in = storeIns ? cache_store : ram_out;
-// Data to write to cache can either come from a store instruction, or from the ram on a failed load instruction.
-
-assign memory_out = cache_hit ? cache_out : ram_out;
+always_comb begin
+    loadIns = lw || lh || lb;
+    storeIns = sw || sh || sb;
+    memory_out = cache_hit ? cache_out : ram_out;
+end
 
 // // // Cache // // //
 
 cache cache (
     .clk(clk),
-    .wen(cache_wen),
-    .addr(ALUResult_M),
-    .din(cache_in),
+    .loadIns(loadIns),
+    .storeIns(storeIns),
+    .addr_in(ALUResult_M),
+    .cache_store(cache_store),
+    .ram_out(ram_out),
     .hit(cache_hit),
+    .evict(cache_evict),
+    .addr_out(cache_addr_out),
     .dout(cache_out)
 );
 
-// Convert writeData to cache_store
 cache_store_input cache_store_input (
     .sw(sw),
     .sh(sh),
     .sb(sb),
     .din(writeData_M),
     .addr(ALUResult_M),
-    .cache_out(cache_out),
+    .mem_out(memory_out),
     .cache_store(cache_store)
 );
 
 // // // RAM // // //
 
 ram ram(
-    .sw(sw),
-    .sh(sh),
-    .sb(sb),
-    .wd(writeData_M),
-    .a(ALUResult_M),
+    .sw(cache_evict),
+    .sh(0),
+    .sb(0),
+    .wd(cache_out),
+    .r_a(ALUResult_M),
+    .w_a(cache_addr_out),
     .clk(clk),
     .rd(ram_out)
 );
