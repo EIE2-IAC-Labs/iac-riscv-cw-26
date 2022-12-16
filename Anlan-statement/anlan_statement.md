@@ -14,7 +14,7 @@ The last part of the control unit is the PCSrc component. This signal determined
 
 ## Sign Extend
 
-My second contribution was the sign extend module, sign_extend.sv. Here, I took an input signal ImmSrcD, which determined the instruction which the immediate came from. Based on this, the direction, length and nature of the sign extend were determined, and a 32-bit binary was outputted.
+My second contribution was the sign extend module, sign_extend.sv. Here, I took an input signal ImmSrcD, which determined the instruction which the immediate came from. Based on this, the direction, length and nature of the sign extend were determined, and a 32-bit binary was outputted. A more detailed explanation can be found in the 'Special Design Decisions section' later in this file.
 
 Commit links for control unit modules and the sign extend module:
 
