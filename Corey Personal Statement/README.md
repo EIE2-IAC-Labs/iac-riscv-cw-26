@@ -120,7 +120,7 @@ The main challenge encountered in this aspect of the memory was the byte address
 Another challenge I encountered was the sign extension however this was easily implemented using a case statement and clever concatination based off of control signals. The case statement was used as it is easier to read and see what is being said.
 
 ### Testing Done
-![Testing Evidence]()
+![Testing Evidence](https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/tree/main/test/memory) within the memory section on the github. This is not an extensive test however it is enough to show basic functionality.
 
 ## Cache
 
@@ -198,7 +198,9 @@ This allowed for the cache or ram (depending on whether or not there is a hit) t
 
 ### Challenges Encountered
 
-The main challenges throughout the development of the memory
+The main challenges throughout the development of the cache were the offset and offset address, this was a difficult sticking point for an amount of time, however after discussing with my group there were a number of errors in my code, a main one was the use of assign within an always_comb block that caused a serious error which lead to the offset. One of the other issues I had was with the offset address aspect on the ram.sv file this was again easily fixed after discussion with my group as there was an error in how the offset address was calculated.
+
+### Testing Done
 
 ## Program Counter
 
