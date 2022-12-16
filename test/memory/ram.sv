@@ -31,7 +31,7 @@ initial begin
     $readmemh("reference/gaussian.mem", ram_array, 20'h10000);
 end
 // assign offset_ra = (a - (a%4)) + 1;
-assign offset_ra = {a[ADDRESS_LENGTH-1:2], 2'b0};
+assign offset_ra = {r_a[ADDRESS_LENGTH-1:2], 2'b0};
 assign rd = {ram_array[offset_ra+3],ram_array[offset_ra+2],ram_array[offset_ra+1],ram_array[offset_ra]};
 
 always_ff @(posedge clk) begin
