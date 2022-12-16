@@ -27,7 +27,7 @@ assign d3 = wd[4*(WORD_LENGTH)-1:3*(WORD_LENGTH)];
 // Load data from one of the reference .mem files
 initial begin
     $display("Loading data memory.");
-    $readmemh("test/gaussian.mem", ram_array, 20'h10000);
+    $readmemh("__file__", ram_array, 20'h10000);
 end
 
 assign rd = {ram_array[a+3],ram_array[a+2],ram_array[a+1],ram_array[a]};

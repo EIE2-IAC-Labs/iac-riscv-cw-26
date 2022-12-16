@@ -22,7 +22,7 @@ logic [DATA_WIDTH-1:0] byte4;
 // Load reference program
 initial begin
     $display("Loading instructions.");
-    $readmemh("test/pdf.hex", rom_array);
+    $readmemh("__file__", rom_array);
 end
 
 always_comb begin
