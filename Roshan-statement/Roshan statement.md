@@ -4,7 +4,7 @@
 
 ### Conversion to pipelining
 
-At the start of the project, I discussed the idea of starting with a pipelined CPU with my team. I believed it would be easier to change the structure of the CPU to be compatible with pipelining before making other large changes; the alternative would have been to make these sturctural changes at the end with a larger number of files. As such, my time was initially spent creating five new folders and top-level modules for the five pipeline stages. The pipeline registers were also added to separate signals of different stages. All of this was done in accordance with the schematics shown in the pipelining lecture.
+At the start of the project, I discussed the idea of starting with a pipelined CPU with my team. I believed it would be easier to change the structure of the CPU to be compatible with pipelining before making other large changes; the alternative would have been to make these structural changes at the end with a larger number of files. As such, my time was initially spent creating five new folders and top-level modules for the five pipeline stages. The pipeline registers were also added to separate signals of different stages. All of this was done in accordance with the schematics shown in the pipelining lecture.
 
 In order to test the CPU while making these changes, it was necessary to put temporary logic in the top-level module, which was later expanded by my team members. Testing each stage as it was completed allowed me to handle issues as soon as they arose, although the extent of these issues was syntax errors and typos.
 
@@ -28,7 +28,7 @@ Commits: e5974b686708244ce006a416b16ef820ff9bd6e8, 8be0da46df7bedb040577438c3444
 
 ### Experimenting with no-ops
 
-In the previous version of the test program (implementing a simple counter, from lab 4), four no-ops were added after each instruction to ensure that each instruction would be able to go through the pipeline in isolation, as it was thought this would make testing clearer. However, I wanted to try using fewer no-ops to test the intended function of pipelining (being able to execute multiple instructions in parallel), and found that two no-ops were sufficient after each instruction. This limit is imposed by two stage dependencies: firstly, the dependence of the PC counter on the result of the execute stage (i.e. whether or not to branch, and by how much); and secondly, the dependence of the register file on the writeback stage (so as to avoid read-before-write data hazards). Using this smaller number of no-ops did not change the function of the program but it did make it faster, as expected.
+In the previous version of the test program (implementing a simple counter, from lab 4), four no-ops were added after each instruction to ensure that each instruction would be able to go through the pipeline in isolation, as it was thought this would make testing clearer. However, I wanted to try using fewer no-ops to test the intended function of pipelining (being able to execute multiple instructions in parallel), and found that two no-ops were sufficient after each instruction. This limit is imposed by two stage dependencies: firstly, the dependence of the PC counter on the result of the execute stage (i.e., whether or not to branch, and by how much); and secondly, the dependence of the register file on the writeback stage (so as to avoid read-before-write data hazards). Using this smaller number of no-ops did not change the function of the program but it did make it faster, as expected.
 
 Commit: 9f4c4df0282fe934ed059678b34365f49c57c2f9.
 
@@ -45,7 +45,7 @@ Although a prototype of the F1 light sequence program had been written by anothe
 - Not returning from some subroutines.
 - Not including a proper way for the program to terminate.
 - Not including a sufficient number of no-ops.
-- Generating the wrong light seqeuence due to a lack of SLLI instruction.
+- Generating the wrong light sequence due to a lack of SLLI instruction.
 and several other issues. Therefore, I completely overhauled the entire program, although the basic structure remained the same.
 
 The way the trigger was implemented in the F1 program was simply through the reset signal. When the program is first run, the light sequence starts automatically, then terminates. In order to run it again, the CPU can be reset. Although other methods were possible, such as implementing an interrupt, this was thought to be the simplest and most functional solution.
@@ -66,7 +66,7 @@ Commits: 021a79acfbff94ed3ac1092b5195e3e497d7a0ad, b69f900680eb17389b1731d449379
 
 ### Preparing the CPU for the reference program
 
-The LUI and LBU instructions needed to be added to run the reference program. Since LUI is a unique instruction, like JALR, I decided to add a new signal specficifically for it in the decode block. In the execute block, this signal sets the result of the ALU to the immediate if it is asserted, as required.
+The LUI and LBU instructions needed to be added to run the reference program. Since LUI is a unique instruction, like JALR, I decided to add a new signal specifically for it in the decode block. In the execute block, this signal sets the result of the ALU to the immediate if it is asserted, as required.
 
 Commit: e6495016712d4f30571a44773eca90840252ca35.
 
@@ -85,7 +85,7 @@ There were some issues with the program itself due to the fact that I was using 
 
 I experimented with the number of no-ops, initially adding two no-ops after every instruction. I then removed no-ops where there was no risk of data hazards (such as places where several immediates are loaded into registers at once). There were some places where it was possible to swap instructions to reduce the number of no-ops needed without changing the function of the program. Despite my efforts to find a way around the limitation, I confirmed my earlier finding that two no-ops per instruction was necessary to avoid both read-before-write hazards and branch hazards.
 
-To test the reference program, I created a new bash script and testbench. The bash script assembed the code in pdf.s as well as running Verilator, allowing changes to the program to be tested quickly. The testbench contained a 'plotting' variable which was only set to true if a0 becomes non-zero. The intention was to only start outputting data to Vbuddy when the program reaches the 'display' phase, since this typically took more than 100,000 clock cycles. A downside of this approach is that it strips away leading 0s which are legitimate bin counts. However, given that the CPU is only allowed to have one output (a0), this was seen as unavoidable, since there is no other way to tell whether displaying has started. The number of cycles taken is highly variable depending on the distribution so counting cycles was not an option. Another important change to the testbench was only writing the cycle number to the Vbuddy every 1000 cycles, in the time before the 'display' stage of the program had been reached. This was the only way for the program to run in a reasonable time. 
+To test the reference program, I created a new bash script and testbench. The bash script assembled the code in pdf.s as well as running Verilator, allowing changes to the program to be tested quickly. The testbench contained a 'plotting' variable which was only set to true if a0 becomes non-zero. The intention was to only start outputting data to Vbuddy when the program reaches the 'display' phase, since this typically took more than 100,000 clock cycles. A downside of this approach is that it strips away leading 0s which are legitimate bin counts. However, given that the CPU is only allowed to have one output (a0), this was seen as unavoidable, since there is no other way to tell whether displaying has started. The number of cycles taken is highly variable depending on the distribution so counting cycles was not an option. Another important change to the testbench was only writing the cycle number to the Vbuddy every 1000 cycles, in the time before the 'display' stage of the program had been reached. This was the only way for the program to run in a reasonable time. 
 
 Commits: be9a0147c7dfd7f85e3f28c4e9cd5908b19c9174, df9896f701c083c28a23d94e8b8e92ba42a95951, b6d5687d88cfd02c4315ef3dbbcf7e71dcd37581.
 
@@ -145,10 +145,12 @@ This version of the cache required significantly more thought to implement. A co
 
 Testing the cache revealed no major issues. Most errors were syntax errors which were fixed quickly.
 
+During the 'display' phase of the reference program, I calculated the hit rate of the cache to be approximately 91%, which is reasonably high. The size of the cache, 256 bytes, is theoretically sufficient to store the entire PDF array, which has 256 bins of 1 byte each. However, in practice there are conflicts because of overlapping set bits, so a perfect hit rate is not achieved.
+
 ## Reflection
 
-This project has taught me a great deal about how to work with other people in group projects, and has vastly improved my knowledge of and confidence with Git and GitHub. The most interesting part of this project was the implementation of the two-way associative write-back cache, as evidenced by my handwritten work in this folder. I have learned a considerable amount about the practical aspects of implementing a cache, and feel that I understand the content much more deeply than immediately following the lecture.
+This project has taught me a great deal about how to work with other people in group projects and has vastly increased my confidence with Git and GitHub. The most interesting part of this project was the implementation of the two-way associative write-back cache, as evidenced by my handwritten work in this folder. I have learned a considerable amount about the practical aspects of implementing a cache, and feel that I understand the content much more deeply now than immediately following the lecture.
 
 Many of the issues in this project can be traced back to a lack of proper communication, which caused conflicts between modules. As such, the main thing to improve for next time would be better communication between team members to make sure all components work in accordance with each other.
 
-If I had more time, I would have liked to implement a more complex cache, such as one which took greater advantage of spatial locality. This would have been particularly useful for the reference program as it used a large array. The current cache has some spatial locality, but only to store up to three future values of an array. In addition, we did not implement all of the RISC-V instructions; most notably, most of the immediate-type instructions are missing, because they were not needed. Although it was not my part of the work, I would have liked if we could have implemented a more complete RISC-V instruction set, in order to be able to run more complex, interesting programs.
+If I had more time, I would have liked to implement a more complex cache, such as one which took greater advantage of spatial locality. This would have been particularly useful for the reference program as it used a large array. The current cache has some spatial locality, but only to store up to three future values of an array. In addition, we did not implement all of the RISC-V instructions; notably, most of the immediate-type instructions are missing, because they were not needed for this task. Although it was not my part of the work, I would have liked if we could have implemented a more complete RISC-V instruction set, in order to be able to run more complex programs.

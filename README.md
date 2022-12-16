@@ -8,7 +8,7 @@ Our group has successfully implemented a pipelined RISC-V CPU with a cache. Test
 
 This repository contains three branches to be assessed: main, cache, and single_cycle.
 - The 'main' branch contains the pipelined CPU.
-- The 'cache' branch contains the pipelined CPU with a two-way associating write-back cache.
+- The 'cache' branch contains the pipelined CPU with a two-way associative write-back cache.
 - The 'single_cycle' branch contains the single-cycle version of the CPU.
 
 In each branch, the test folder contains .vcd test results. The folder test/media contains images and videos as additional testing evidence. The commands 'make f1' and 'make ref' can be used to assemble and run the F1 and reference programs respectively. For the reference program, the distribution to calculate the PDF of can be changed by modifying ref_vbuddy_sim.sh.
