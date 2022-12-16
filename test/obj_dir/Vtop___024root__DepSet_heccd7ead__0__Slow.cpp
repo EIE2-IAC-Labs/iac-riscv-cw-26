@@ -11,23 +11,26 @@ VL_ATTR_COLD void Vtop___024root___initial__TOP__0(Vtop___024root* vlSelf) {
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___initial__TOP__0\n"); );
     // Init
-    VlWide<4>/*127:0*/ __Vtemp_h8d0025c5__0;
-    VlWide<4>/*127:0*/ __Vtemp_h7c77a82d__0;
+    VlWide<6>/*191:0*/ __Vtemp_h6814dc49__0;
+    VlWide<5>/*159:0*/ __Vtemp_h1cc7b422__0;
     // Body
     VL_WRITEF("Loading data memory.\n");
-    __Vtemp_h8d0025c5__0[0U] = 0x2e6d656dU;
-    __Vtemp_h8d0025c5__0[1U] = 0x6172616dU;
-    __Vtemp_h8d0025c5__0[2U] = 0x2f646174U;
-    __Vtemp_h8d0025c5__0[3U] = 0x72746cU;
-    VL_READMEM_N(true, 8, 131072, 0, VL_CVT_PACK_STR_NW(4, __Vtemp_h8d0025c5__0)
+    __Vtemp_h6814dc49__0[0U] = 0x2e6d656dU;
+    __Vtemp_h6814dc49__0[1U] = 0x7369616eU;
+    __Vtemp_h6814dc49__0[2U] = 0x67617573U;
+    __Vtemp_h6814dc49__0[3U] = 0x6e63652fU;
+    __Vtemp_h6814dc49__0[4U] = 0x66657265U;
+    __Vtemp_h6814dc49__0[5U] = 0x7265U;
+    VL_READMEM_N(true, 8, 131072, 0, VL_CVT_PACK_STR_NW(6, __Vtemp_h6814dc49__0)
                  ,  &(vlSelf->top__DOT__top_memory__DOT__ram__DOT__ram_array)
                  , 0x10000U, ~0ULL);
     VL_WRITEF("Loading instructions.\n");
-    __Vtemp_h7c77a82d__0[0U] = 0x2e686578U;
-    __Vtemp_h7c77a82d__0[1U] = 0x742f6631U;
-    __Vtemp_h7c77a82d__0[2U] = 0x31746573U;
-    __Vtemp_h7c77a82d__0[3U] = 0x66U;
-    VL_READMEM_N(true, 8, 4096, 3217031168, VL_CVT_PACK_STR_NW(4, __Vtemp_h7c77a82d__0)
+    __Vtemp_h1cc7b422__0[0U] = 0x2e686578U;
+    __Vtemp_h1cc7b422__0[1U] = 0x2f706466U;
+    __Vtemp_h1cc7b422__0[2U] = 0x656e6365U;
+    __Vtemp_h1cc7b422__0[3U] = 0x65666572U;
+    __Vtemp_h1cc7b422__0[4U] = 0x72U;
+    VL_READMEM_N(true, 8, 4096, 3217031168, VL_CVT_PACK_STR_NW(5, __Vtemp_h1cc7b422__0)
                  ,  &(vlSelf->top__DOT__top_fetch__DOT__instr_mem__DOT__rom_array)
                  , 3217031168, ~0ULL);
     vlSelf->top__DOT__top_decode__DOT__control_unit__DOT__main_control__DOT__instr = 0U;
