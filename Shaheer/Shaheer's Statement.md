@@ -5,7 +5,7 @@
 - [ALU Decoder](#alu-decoder-)
 - [Register File](#register-file-)
 - [Single Cycle CPU](#single-cycle-cpu-)
-- Spatial Cache(#cache)
+- [Spatial Cache](#cache)
 - [Testing](#testing)
 - [Commits](#commits)
 - [Reflection](#reflection)
