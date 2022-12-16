@@ -37,7 +37,7 @@ always_ff @(posedge clk)
             D1[i] <= 32'b0;
             D2[i] <= 32'b0;
             D3[i] <= 32'b0;
-            D4[i] <= 32'b0;_
+            D4[i] <= 32'b0;
         end
 
     else if (!V[set] || overwrite) begin

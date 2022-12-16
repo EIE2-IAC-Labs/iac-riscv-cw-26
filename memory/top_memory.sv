@@ -16,7 +16,16 @@ module top_memory #(
     output logic [WIDTH-1:0] readData_M
 );
 
-logic [WIDTH-1:0] dout;
+logic [WIDTH-1:0] dout1;
+logic [WIDTH-1:0] dout2;
+logic [WIDTH-1:0] dout3;
+logic [WIDTH-1:0] dout4;
+logic hit_out;
+logic [WIDTH-1:0] cache_out;
+
+assign mem_out = hit_out ? cache_out : dout1;
+
+
 
 ram ram(
     .sw(sw),
@@ -25,7 +34,24 @@ ram ram(
     .wd(writeData_M),
     .a(ALUResult_M),
     .clk(clk),
-    .rd(dout)
+    .rd1(dout1),
+    .rd2(dout2),
+    .rd3(dout3),
+    .rd4(dout4)
+);
+
+spatial_cache cache(
+    .clk(clk),
+    .rst(0),
+    .overwrite(sw),
+    .instr(writeData_M),
+    .data1(dout1),
+    .data2(dout2),
+    .data3(dout3),
+    .data4(dout4),
+    .hit_out(hit_out),
+    .data_out(cache_out)
+
 );
 
 half_byte_word hbw(
@@ -33,7 +59,7 @@ half_byte_word hbw(
     .lh(lh),
     .lb(lb),
     .s(s),
-    .data(dout),
+    .data(mem_out),
     .dout(readData_M)
 );
 

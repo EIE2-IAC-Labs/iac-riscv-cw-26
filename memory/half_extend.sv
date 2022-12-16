@@ -10,15 +10,15 @@ module half_extend #(
 logic sign;
 always_comb begin
     if(s) begin
-        assign sign = din[WORD_LENGTH-1];
+        sign = din[WORD_LENGTH-1];
         case (sign)
-            1: assign dout = {{16{1'b1}},din};
-            0: assign dout = {{16{1'b0}},din};
-            default: assign dout = {{16{1'b0}},din};
+            1: dout = {{16{1'b1}},din};
+            0: dout = {{16{1'b0}},din};
+            default: dout = {{16{1'b0}},din};
         endcase
     end
     else begin
-        assign dout = {{16{1'b0}},din};
+        dout = {{16{1'b0}},din};
     end    
 end
 endmodule
