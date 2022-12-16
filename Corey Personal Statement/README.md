@@ -2,6 +2,24 @@
 
 Throughout the project I was mainly in charge of implementing the memory as well as the program counter in the single cycled, pipelined and cache version, however I also worked on the assembly programs and wrote some makefile to make running the simulations easier.
 
+- [Corey Personal Statement](#corey-personal-statement)
+  - [Memory](#memory)
+    - [Store Instructions](#store-instructions)
+    - [Load instructions](#load-instructions)
+    - [Challenges encountered](#challenges-encountered)
+    - [Testing Done](#testing-done)
+  - [Cache](#cache)
+    - [Challenges Encountered](#challenges-encountered-1)
+    - [Testing Done](#testing-done-1)
+  - [Program Counter](#program-counter)
+    - [Challenges Encountered](#challenges-encountered-2)
+  - [Assembly](#assembly)
+    - [Challenges Encountered](#challenges-encountered-3)
+    - [Testing](#testing)
+  - [Makefile](#makefile)
+    - [Challenges Encountered](#challenges-encountered-4)
+  - [Reflection](#reflection)
+
 ## Memory 
 
 The following was all initially implemented in the following commit [Finalised Testing](https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/commit/f42a9f13187c43600c24fb1266fa717dd6c6bb62) and then fully finalised in the following commit [Added an input signal s for lbu and lb instruction](https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/commit/d42da76e7e56fe7099b33abaf2848585a7b71e6c)
@@ -265,6 +283,15 @@ The main challenge encountered within this task was the syntax of the RISC V ass
 
 When simulated the f1 light sequence worked exactly as expected [F1 lights](https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/blob/main/test/media/F1_lights.mp4)
 
+## Makefile
+
+The following was initially implemented in commite [Added makefile](https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/commit/cd01e18b412ae529cc6b89fb285df9f3c951dd8e) and finalised in [fixed make file to allow source](https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/commit/ecd975f64e0c5e69c96b1bcd44c79fe722efd3b4)
+
+The last and definitely smallest part of my role within the group was a makefile for each of the branches which allows automatic loading of the correct ram and instruction memory using the `sed` bash command.
+
+### Challenges Encountered
+
+The default shell in a make file isnt BASH its shell so i had to add the line `SHELL := /bin/bash` in order to use the command `source x.sh` as it allows for the make file to be ran without using `chmod +x x.sh`.
 ## Reflection
 
 On reflection I feel like my knowledge and understanding of system verilog, git, bash and overall memory design. I feel like as a group once we got to grips with streamlined github development we were very efficient with how we developed the cpu over the past couple of weeks also implementing a system in which every pull request would be read over by another member of the group in order to maintain consistency and accuracy in the source code. 
