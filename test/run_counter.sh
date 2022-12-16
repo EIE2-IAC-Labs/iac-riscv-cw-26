@@ -3,7 +3,7 @@
 # cleanup
 echo "\n Cleanup"
 rm -rf obj_dir
-rm -f top.vcd
+rm -f top_counter.vcd
 
 # assemble instructions
 echo "\n Assembling"
