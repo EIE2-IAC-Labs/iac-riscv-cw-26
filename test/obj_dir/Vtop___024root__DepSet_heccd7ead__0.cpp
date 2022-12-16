@@ -174,7 +174,7 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
                                               & vlSelf->top__DOT__instr_D)
                                               ? ((0x2000U 
                                                   & vlSelf->top__DOT__instr_D)
-                                                  ? 4U
+                                                  ? 0U
                                                   : 
                                                  ((0x1000U 
                                                    & vlSelf->top__DOT__instr_D)
@@ -182,7 +182,11 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
                                                    : 1U))
                                               : ((0x2000U 
                                                   & vlSelf->top__DOT__instr_D)
-                                                  ? 4U
+                                                  ? 
+                                                 ((0x1000U 
+                                                   & vlSelf->top__DOT__instr_D)
+                                                   ? 0U
+                                                   : 4U)
                                                   : 
                                                  ((0x1000U 
                                                    & vlSelf->top__DOT__instr_D)
@@ -195,7 +199,7 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
                                              ((9U == vlSelf->top__DOT__top_decode__DOT__control_unit__DOT__main_control__DOT__instr)
                                                ? 2U
                                                : 0U));
-            vlSelf->top__DOT__DMem_size_E = 4U;
+            vlSelf->top__DOT__DMem_size_E = 0U;
             vlSelf->top__DOT__R_size_E = ((6U == vlSelf->top__DOT__top_decode__DOT__control_unit__DOT__main_control__DOT__instr)
                                            ? ((2U == 
                                                (7U 
