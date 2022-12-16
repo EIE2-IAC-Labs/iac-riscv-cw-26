@@ -15,7 +15,7 @@ int main(int argc, char **argv, char **env) {
     Verilated::traceEverOn(true);
     VerilatedVcdC* tfp = new VerilatedVcdC;
     top->trace(tfp, 99);
-    tfp->open("top_gaussian.vcd");
+    tfp->open("top.vcd");
 
     // Init Vbuddy
     if (vbdOpen() != 1)

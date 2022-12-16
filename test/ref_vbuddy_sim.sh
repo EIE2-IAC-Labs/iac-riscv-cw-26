@@ -2,7 +2,7 @@
 
 # cleanup
 rm -rf obj_dir
-rm -f top_gaussian.vcd
+rm -f top.vcd
 
 # assemble instructions
 cd reference
