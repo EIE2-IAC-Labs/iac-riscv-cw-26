@@ -26,7 +26,7 @@ assign d1 = wd[2*(WORD_LENGTH)-1:WORD_LENGTH];
 assign d2 = wd[3*(WORD_LENGTH)-1:2*(WORD_LENGTH)];
 assign d3 = wd[4*(WORD_LENGTH)-1:3*(WORD_LENGTH)];
 
-// Load data from one of the reference .mem files
+// Load data from one of the .mem files
 initial begin
     $display("Loading data memory.");
     $readmemh("__file__", ram_array, 20'h10000);

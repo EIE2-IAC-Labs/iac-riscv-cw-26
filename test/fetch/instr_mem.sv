@@ -16,10 +16,10 @@ logic [DATA_WIDTH-1:0] byte4;
 // // Load f1 light sequence program
 // initial begin
 //     $display("Loading instructions.");
-//     $readmemh("f1test/f1.hex", rom_array);
+//     $readmemh("__file__", rom_array);
 // end
 
-// Load reference program
+// Load program
 initial begin
     $display("Loading instructions.");
     $readmemh("__file__", rom_array);
