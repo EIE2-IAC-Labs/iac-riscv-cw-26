@@ -1,10 +1,11 @@
 # Table of Contents:
 - [Table of Contents:](#table-of-contents)
 - [Introduction](#introduction)
-  - [ALU](#alu)
-- [ALU Decoder ](#alu-decoder-)
-- [Register File ](#register-file-)
-- [Single Cycle CPU ](#single-cycle-cpu-)
+ - [ALU](#alu)
+- [ALU Decoder](#alu-decoder-)
+- [Register File](#register-file-)
+- [Single Cycle CPU](#single-cycle-cpu-)
+- Spatial Cache(#cache)
 - [Testing](#testing)
 - [Commits](#commits)
 - [Reflection](#reflection)
@@ -24,7 +25,7 @@ Due to overlap of content in the project and everyone's willingness to work toge
 
 ---
 
-## ALU
+# ALU
 
 Initially, the ALU top file (`top_execute.sv`) in both single cycle and pipelining originally had the register, mux, and ALU modules. However, when working on the project and designing the cpu, we designed everythihg according to the pipelined version instead of first implementing the single cycle version. One could say we laid out the pipes first (rather this course was laying pipes in me) and then implemented single cycle (top-down approach instead of  down-top). Hence, the top file has the ALU, PC_Src, and internal mux modules.
 
@@ -125,6 +126,30 @@ Register 10 is used as the `a0` output that drives the value of the F1 and PDF r
 # Single Cycle CPU <a name ="single_cycle"></a>
 
 Initially, the whole LAB 4 CPU, which was completed by all of us, was copyed to this repo by Roshan and then we all started working on adding extra functionality with pipelining in mind. We first completed the pipelining CPU and then later, once we had enough time - still not enough to finish the wishbone though, I took the liberty to remove all the pipeling registers and re-writing/editing/debugging the `top.sv` file and others to make sure single cycle was working properly. Minor issues were debugged and lagter all F1 and reference tests worked. The single cycle cpu can be found in the [single_cycle](#https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/tree/single_cycle) branch of this repo.
+
+
+# Spatial Cache <a name ="cache"></a>
+
+I tried implementing the spatial locality cache, which can be found in the (#[Spatial_Cache branch](https://github.com/EIE2-IAC-Labs/iac-riscv-cw-26/tree/Spatial_Cache)). The design schematic was referenced from [lecture 9 slides](#http://www.ee.ic.ac.uk/pcheung/teaching/EIE2-IAC/Lecture%209%20-%20Cache%20Memory%20(slides).pdf). It uses the 27 most significant bit of `Instr` as `Tag` and used `Instr[4]` as `SET` to have 2 blockd of the cache. The block offset was implemented to store 4 words with a 2 bit as the byte offset. This means that the cache at most can store 8 data words. 
+
+
+```systemverilog
+    else if (!V[set] || overwrite) begin
+    tag[set] <= instr_tag;
+    V[set] <= 1'b1;
+    D1[set] <= data1;
+    D2[set] <= data2;
+    D3[set] <= data3;
+    D4[set] <= data4;
+```
+
+The Data ram had to be changed so that it would have 4 outputs with the byte offset and be stored into cache. Cache would store when either overwrite (`sw`) would be high or when the V flag would be `0` based on the `SET` value. The cache would only output when `hit_out` would be high based on the block offset or else it would output 0 and the top file was modified accordingly so that it would only read the data from the cache if `hit_out` was high.
+
+The cache would reset to all `0` when `rst` would equal to 1. For testing purposes, `rst` is hardwired as 0.
+
+
+NOTE: I did not have much time to implement half word bytes sadly 🥲.
+
 
 # Testing
 
