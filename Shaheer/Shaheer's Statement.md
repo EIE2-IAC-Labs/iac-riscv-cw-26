@@ -234,5 +234,7 @@ While there were many challenges faced, this coursework was extremely exhilerati
 
 This project has taught me a great deal about how to effectively split work in a group, and has improved my confidence and knowledgde of Git, Github, bash, verilog, and shell scripts. It also taught me that testing and debugging is a major part of any project and is usually the hardest one to do.
 
-If I had more time, I would have liked to implement the additonal stretched goals such as the multiple cycle multiplication and subtraction and wishbone criterias. 
+If I had more time, I would have liked to implement the additonal stretched goals such as the multiple cycle multiplication and subtraction and wishbone requirements.[^1]
+
+[^1]: Please excuse all the grammer and english mistakes
 
